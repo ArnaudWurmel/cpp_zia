@@ -1,0 +1,44 @@
+//
+// Created by wurmel_a on 16/10/17.
+//
+
+#include "Configuration.h"
+
+zia::Configuration::Configuration() {
+    _port = 0;
+    _host = "";
+}
+
+/**
+ * setHost
+ * @param host: new host value
+ */
+void    zia::Configuration::setHost(std::string const& host) {
+    _host = host;
+}
+
+/**
+ * getHost
+ * @return the current host
+ */
+std::string const&  zia::Configuration::getHost() const {
+    return _host;
+}
+
+/**
+ * setPort
+ * @param port: new port value
+ */
+void    zia::Configuration::setPort(unsigned short port) {
+    _port = port;
+}
+
+/**
+ * getPort
+ * @return the current port
+ */
+unsigned short  zia::Configuration::getPort() const {
+    return _port;
+}
+
+zia::Configuration::~Configuration() {}
