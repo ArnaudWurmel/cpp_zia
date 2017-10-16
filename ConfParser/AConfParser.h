@@ -15,6 +15,7 @@ namespace zia {
 
         virtual void    loadConfiguration() = 0;
         virtual bool    checkConfiguration() = 0;
+        virtual Configuration const&    getConfiguration() const = 0;
     };
 }
 

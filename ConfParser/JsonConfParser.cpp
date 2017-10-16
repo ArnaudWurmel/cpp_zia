@@ -21,7 +21,14 @@ void    zia::JsonConfParser::loadConfiguration() {
  * If something mandatory missing, false else true
  */
 bool    zia::JsonConfParser::checkConfiguration() {
+    return false;
+}
 
+/**
+ * @return the current configuration
+ */
+zia::Configuration const&   zia::JsonConfParser::getConfiguration() const {
+    return _configuration;
 }
 
 zia::JsonConfParser::~JsonConfParser() {}

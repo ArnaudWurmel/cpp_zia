@@ -16,6 +16,7 @@ namespace zia {
     public:
         void    loadConfiguration();
         bool    checkConfiguration();
+        Configuration const&    getConfiguration() const;
 
     private:
         Configuration   _configuration;
