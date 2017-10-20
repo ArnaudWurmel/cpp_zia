@@ -7,6 +7,8 @@
 zia::Configuration::Configuration() {
     _port = 0;
     _host = "";
+    _modulePath = "";
+    _sitePath = "";
 }
 
 /**
@@ -40,5 +42,38 @@ void    zia::Configuration::setPort(unsigned short port) {
 unsigned short  zia::Configuration::getPort() const {
     return _port;
 }
+
+/**
+ * setModulePath
+ * @param modulePath: new module path value
+ */
+void    zia::Configuration::setModulePath(std::string const& modulePath) {
+    _modulePath = modulePath;
+}
+
+/**
+ * getModulePath
+ * @return module path
+ */
+std::string const&  zia::Configuration::getModulePath() const {
+    return _modulePath;
+}
+
+/**
+ * setSitePath
+ * @param modulePath: new module path value
+ */
+void    zia::Configuration::setSitePath(std::string const& sitePath) {
+    _sitePath = sitePath;
+}
+
+/**
+ * getSitePath
+ * @return module path
+ */
+std::string const&  zia::Configuration::getSitePath() const {
+    return _sitePath;
+}
+
 
 zia::Configuration::~Configuration() {}

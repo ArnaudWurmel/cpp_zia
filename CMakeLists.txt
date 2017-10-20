@@ -5,7 +5,7 @@ project(zia)
 set(CMAKE_CXX_STANDARD 11)
 
 # Source files
-set(SOURCE_FILES main.cpp ConfParser/Configuration.cpp ConfParser/Configuration.h Logger/Logger.h ConfParser/AConfParser.h ConfParser/JsonConfParser.cpp ConfParser/JsonConfParser.h)
+set(SOURCE_FILES main.cpp ConfParser/Configuration.cpp ConfParser/Configuration.h Logger/Logger.h ConfParser/AConfParser.h ConfParser/JsonConfParser.cpp ConfParser/JsonConfParser.h lib/json.hpp Exceptions/Exceptions.cpp Exceptions/Exceptions.h)
 
 include_directories(
         ./lib

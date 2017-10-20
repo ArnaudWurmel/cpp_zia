@@ -2,3 +2,7 @@ cmake-build-debug/*
 Makefile
 zia
 .idea/*
+CMakeCache.txt
+CMakeFiles/*
+cmake_install.cmake
+zia.cbp
