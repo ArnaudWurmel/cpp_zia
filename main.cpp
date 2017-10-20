@@ -2,6 +2,7 @@
 #include <memory>
 #include "ConfParser/AConfParser.h"
 #include "ConfParser/JsonConfParser.h"
+#include "VirtualHostManager/VirtualHostManager.h"
 
 int main() {
     std::unique_ptr<zia::AConfParser>   confParser(new zia::JsonConfParser());
@@ -10,13 +11,25 @@ int main() {
         confParser->loadConfiguration();
     }
     catch (std::exception& e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
         return 1;
     }
-    if (!confParser->checkConfiguration()) {
+    if (!confParser->checkConfiguration(zia::AConfParser::Zia)) {
         std::cerr << "Can't validate configuration" << std::endl;
         return 1;
     }
-    std::cout << confParser->getConfiguration().getHost() << ":" << confParser->getConfiguration().getPort() << std::endl;
+    zia::VirtualHostManager vHostManager(confParser->getConfiguration());
+
+    try {
+        if (!vHostManager.loadVHost()) {
+            std::cerr << "Can't load vHost, check configuration file" << std::endl;
+            return 1;
+        }
+        vHostManager.runVHost();
+    }
+    catch (std::exception& e) {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
     return 0;
 }

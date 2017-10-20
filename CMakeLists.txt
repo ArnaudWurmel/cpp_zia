@@ -5,7 +5,7 @@ project(zia)
 set(CMAKE_CXX_STANDARD 11)
 
 # Source files
-set(SOURCE_FILES main.cpp ConfParser/Configuration.cpp ConfParser/Configuration.h Logger/Logger.h ConfParser/AConfParser.h ConfParser/JsonConfParser.cpp ConfParser/JsonConfParser.h lib/json.hpp Exceptions/Exceptions.cpp Exceptions/Exceptions.h)
+set(SOURCE_FILES main.cpp ConfParser/Configuration.cpp ConfParser/Configuration.h Logger/Logger.h ConfParser/AConfParser.h ConfParser/JsonConfParser.cpp ConfParser/JsonConfParser.h lib/json.hpp Exceptions/Exceptions.cpp Exceptions/Exceptions.h VirtualHostManager/VirtualHostManager.cpp VirtualHostManager/VirtualHostManager.h VirtualHostManager/VHost.cpp VirtualHostManager/VHost.h ConfParser/ADirectoryReader.h ConfParser/LinuxDirectoryReader.cpp ConfParser/LinuxDirectoryReader.cpp ConfParser/LinuxDirectoryReader.h ConfParser/ADirectoryReader.cpp VirtualHostManager/Socket/ISocket.h VirtualHostManager/Socket/ISocketAcceptor.h VirtualHostManager/Socket/LinuxAcceptor.cpp VirtualHostManager/Socket/LinuxAcceptor.h VirtualHostManager/Socket/ISocketAcceptor.cpp)
 
 include_directories(
         ./lib
@@ -43,7 +43,8 @@ endif(WIN32)
 
 if (WIN32)
 	target_compile_options(
-		Network PRIVATE 
+		zia PRIVATE
 		"/EHsc"
 	)
 endif(WIN32)
+target_link_libraries(zia pthread)

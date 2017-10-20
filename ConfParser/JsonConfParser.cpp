@@ -26,8 +26,8 @@ void    zia::JsonConfParser::loadConfiguration() {
     confFile.open(_filepath);
     if (confFile.is_open()) {
         say("Configuration file opened");
-        nlohmann::json  json = nlohmann::json::parse(confFile);
         say("Parsing json file...");
+        nlohmann::json  json = nlohmann::json::parse(confFile);
         nlohmann::json::iterator it = json.begin();
 
         while (it != json.end()) {
@@ -85,7 +85,7 @@ void    zia::JsonConfParser::setModulePath(nlohmann::json const& json) {
 void    zia::JsonConfParser::setSitePath(nlohmann::json const& json) {
     if (!json.is_string())
         throw zia::ParsingExcept("Not a string for site_available");
-    _configuration.setModulePath(json);
+    _configuration.setSitePath(json);
 }
 
 zia::JsonConfParser::~JsonConfParser() {}
