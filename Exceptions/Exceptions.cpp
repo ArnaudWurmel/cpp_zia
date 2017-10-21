@@ -14,3 +14,6 @@ zia::Exceptions::~Exceptions() {}
 
 zia::ParsingExcept::ParsingExcept(std::string const& what) : Exceptions("ParsingExcept `" + what + "`") {}
 zia::ParsingExcept::~ParsingExcept() {}
+
+zia::NetworkExcept::NetworkExcept(std::string const& what) : Exceptions("NetworkExcept `" + what + "`") {}
+zia::NetworkExcept::~NetworkExcept() {}

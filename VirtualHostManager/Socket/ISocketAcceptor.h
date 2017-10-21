@@ -15,13 +15,14 @@ namespace zia {
 
     public:
         virtual void    startAccept() = 0;
-        virtual bool    haveAWaitingClient() = 0;
         virtual std::shared_ptr<zia::ISocket> acceptClient() = 0;
+        virtual SOCKET&  getServerSocket() = 0;
         virtual void    run() = 0;
         virtual void    stop() = 0;
 
     public:
-        static ISocketAcceptor  *getSocketAcceptor();
+        static ISocketAcceptor  *getSocketAcceptor(unsigned short);
+        static int  getMaxFds(std::vector<std::shared_ptr<ISocket> > const&, SOCKET&);
     };
 }
 

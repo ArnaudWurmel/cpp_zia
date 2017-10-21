@@ -46,14 +46,13 @@ void    zia::VirtualHostManager::runVHost() {
     while (_vhostList.size() > 0) {
         std::unique_lock<std::mutex>    lck(condVarLocker);
 
-        _conditionVariable.wait(lck);
+        _conditionVariable.wait_for(lck, std::chrono::milliseconds(500));
         it = _vhostList.begin();
         while (it != _vhostList.end()) {
             if (!(*it)->running()) {
                 _vhostList.erase(it);
             }
-            else
-                ++it;
+            ++it;
         }
     }
 }

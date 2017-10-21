@@ -6,23 +6,24 @@
 #define ZIA_LINUXACCEPTOR_H
 
 # include "ISocketAcceptor.h"
+#include "LinuxSocket.h"
 
 namespace zia {
     class LinuxAcceptor : public zia::ISocketAcceptor {
     public:
-        LinuxAcceptor();
+        LinuxAcceptor(unsigned short);
         ~LinuxAcceptor();
 
     public:
         virtual void    startAccept();
-        virtual bool    haveAWaitingClient();
         virtual std::shared_ptr<zia::ISocket> acceptClient();
+        virtual SOCKET& getServerSocket();
         virtual void    run();
         virtual void    stop();
 
     private:
-        std::queue<std::shared_ptr<zia::ISocket> > _clientList;
-        std::mutex  _queueLocker;
+        std::unique_ptr<LinuxSocket>    _serverSocket;
+        unsigned short  _port;
     };
 
 }

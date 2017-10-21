@@ -18,11 +18,14 @@ namespace zia {
     public:
         virtual ~ISocket() {}
 
+        virtual bool    bind(unsigned short port) = 0;
         virtual void    write(std::string const&) = 0;
+        virtual bool    haveSomethingToWrite() const = 0;
+        virtual void    flushWrite() = 0;
         virtual std::string    read() = 0;
         virtual void    close() = 0;
         virtual bool    isOpen() const = 0;
-        virtual SOCKET const&  getSocket() const = 0;
+        virtual SOCKET&  getSocket() = 0;
     };
 }
 

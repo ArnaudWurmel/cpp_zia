@@ -27,6 +27,12 @@ namespace zia {
         ParsingExcept(std::string const&);
         ~ParsingExcept();
     };
+
+    class   NetworkExcept : public Exceptions {
+    public:
+        NetworkExcept(std::string const&);
+        ~NetworkExcept();
+    };
 }
 
 #endif //ZIA_EXCEPTIONS_H

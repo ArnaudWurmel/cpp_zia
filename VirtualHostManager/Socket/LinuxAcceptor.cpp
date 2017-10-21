@@ -3,25 +3,27 @@
 //
 
 #include "LinuxAcceptor.h"
+#include "../../Exceptions/Exceptions.h"
 
-zia::LinuxAcceptor::LinuxAcceptor() {}
-
-void    zia::LinuxAcceptor::startAccept() {
-
+zia::LinuxAcceptor::LinuxAcceptor(unsigned short port) : _port(port) {
+    _serverSocket = std::unique_ptr<LinuxSocket>(new LinuxSocket);
 }
 
-bool    zia::LinuxAcceptor::haveAWaitingClient() {
-    _queueLocker.lock();
-    bool state = _clientList.size() > 0;
-    _queueLocker.unlock();
-    return state;
+void    zia::LinuxAcceptor::startAccept() {
+    if (!_serverSocket->bind(_port)) {
+        throw NetworkExcept("Can't bind server");
+    }
 }
 
 std::shared_ptr<zia::ISocket> zia::LinuxAcceptor::acceptClient() {
-    _queueLocker.lock();
-    std::shared_ptr<zia::ISocket>   client = _clientList.front();
-    _clientList.pop();
-    return client;
+    struct sockaddr_in  cliAddr;
+    socklen_t lengthClient = sizeof(cliAddr);
+    int sockAddr;
+
+    if ((sockAddr = accept(_serverSocket->getSocket(), (struct sockaddr *)&cliAddr, &lengthClient)) == -1) {
+        throw NetworkExcept("Accept failure");
+    }
+    return std::shared_ptr<zia::ISocket>(new LinuxSocket(sockAddr));
 }
 
 void    zia::LinuxAcceptor::run() {
@@ -30,6 +32,10 @@ void    zia::LinuxAcceptor::run() {
 
 void    zia::LinuxAcceptor::stop() {
 
+}
+
+SOCKET& zia::LinuxAcceptor::getServerSocket() {
+    return _serverSocket->getSocket();
 }
 
 zia::LinuxAcceptor::~LinuxAcceptor() {}

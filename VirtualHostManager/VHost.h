@@ -9,6 +9,8 @@
 #include <memory>
 #include <condition_variable>
 #include "../ConfParser/Configuration.h"
+#include "Socket/ISocket.h"
+#include "Socket/ISocketAcceptor.h"
 
 namespace zia {
     class VHost {
@@ -22,8 +24,10 @@ namespace zia {
 
     private:
         void    hostLoop();
+        void    monitoreSocket(std::unique_ptr<ISocketAcceptor>&);
 
     private:
+        std::vector<std::shared_ptr<zia::ISocket> >  _clientList;
         std::unique_ptr<std::thread>    _vhostLoop;
         Configuration   _hostConfiguration;
         std::condition_variable&    _cv;
