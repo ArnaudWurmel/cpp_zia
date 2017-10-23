@@ -66,7 +66,6 @@ void    zia::VHost::monitoreSocket(std::unique_ptr<ISocketAcceptor>& socketAccep
         }
     }
     it = _clientList.begin();
-    std::cout << "Here" << std::endl;
     while (it != _clientList.end()) {
         if (FD_ISSET((*it)->getSocket(), &rsok)) {
             std::cout << "Readed : " << (*it)->read() << std::endl;

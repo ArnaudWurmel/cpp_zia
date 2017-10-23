@@ -68,7 +68,6 @@ std::string zia::LinuxSocket::read() {
     std::string result;
     ssize_t readed;
 
-    std::cout << "BufferBefore : <" << buffer << ">" <<  std::endl;
     while (!setResultToBuffer(buffer, result)) {
         if ((readed = ::read(_socket, tmp, READ_SIZE)) <= 0) {
             close();

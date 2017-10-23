@@ -75,5 +75,4 @@ std::string const&  zia::Configuration::getSitePath() const {
     return _sitePath;
 }
 
-
 zia::Configuration::~Configuration() {}
