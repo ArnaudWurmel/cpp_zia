@@ -2,6 +2,7 @@
 // Created by wurmel_a on 20/10/17.
 //
 
+#include <sys/select.h>
 #include "VHost.h"
 #include "Socket/ISocketAcceptor.h"
 #include "../Exceptions/Exceptions.h"

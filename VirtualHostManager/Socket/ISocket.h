@@ -9,7 +9,7 @@
 # include <mutex>
 # include <condition_variable>
 
-#if __linux__
+#if !_WIN32
     typedef int SOCKET;
 #endif
 
