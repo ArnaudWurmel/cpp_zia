@@ -2,6 +2,7 @@
 // Created by wurmel_a on 20/10/17.
 //
 
+#include <sys/select.h>
 #include "VHost.h"
 #include "Socket/ISocketAcceptor.h"
 #include "../Exceptions/Exceptions.h"
@@ -65,7 +66,6 @@ void    zia::VHost::monitoreSocket(std::unique_ptr<ISocketAcceptor>& socketAccep
         }
     }
     it = _clientList.begin();
-    std::cout << "Here" << std::endl;
     while (it != _clientList.end()) {
         if (FD_ISSET((*it)->getSocket(), &rsok)) {
             std::cout << "Readed : " << (*it)->read() << std::endl;

@@ -5,7 +5,6 @@
 #ifndef NETWORK_ISOCKETACCEPTOR_H
 #define NETWORK_ISOCKETACCEPTOR_H
 
-#include <boost/asio/detail/shared_ptr.hpp>
 # include "ISocket.h"
 
 namespace zia {

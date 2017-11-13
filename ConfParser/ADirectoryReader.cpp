@@ -2,7 +2,7 @@
 // Created by wurmel_a on 20/10/17.
 //
 
-#include <bits/unique_ptr.h>
+#include <memory>
 #include "ADirectoryReader.h"
 #include "LinuxDirectoryReader.h"
 
