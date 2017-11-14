@@ -16,7 +16,7 @@ namespace zia
 
         virtual bool    loadPage(std::string const&) const = 0;
         virtual std::string const&  getContentOfPage() const = 0;
-        virtual void    setContentOfPage() const = 0;
+        virtual void    setContentOfPage(std::string const&) const = 0;
     };
 }
 

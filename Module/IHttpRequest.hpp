@@ -16,6 +16,7 @@ namespace zia
 
         virtual std::string const& getMethod() = 0;
         virtual std::string const&  getRequestedPage() = 0;
+        virtual std::string const&  getInData() const = 0;
     };
 
 }
