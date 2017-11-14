@@ -12,9 +12,19 @@ namespace zia
     class   IHttpRequest : public zia::IHttpBase
     {
     public:
+        enum Method
+        {
+            GET,
+            POST,
+            PUT,
+            DELETE,
+            UPDATE
+        };
+    public:
         virtual ~IHttpRequest() {}
 
-        virtual std::string const& getMethod() = 0;
+        virtual void setMethod(Method const&) = 0;
+        virtual Method const& getMethod() = 0;
         virtual std::string const&  getRequestedPage() = 0;
         virtual std::string const&  getInData() const = 0;
         virtual void    setUriParameters(std::string const&, std::string const&) = 0;
