@@ -20,6 +20,7 @@ namespace zia {
 
         virtual bool    bind(unsigned short port) = 0;
         virtual void    write(std::string const&) = 0;
+        virtual bool    haveAvailableInput() const = 0;
         virtual bool    haveSomethingToWrite() const = 0;
         virtual void    flushWrite() = 0;
         virtual std::string    read() = 0;

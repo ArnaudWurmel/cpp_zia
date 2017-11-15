@@ -6,6 +6,7 @@
 #define NETWORK_ISOCKETACCEPTOR_H
 
 # include "ISocket.h"
+#include "../../Client/Client.hh"
 
 namespace zia {
     class   ISocketAcceptor {
@@ -21,7 +22,7 @@ namespace zia {
 
     public:
         static ISocketAcceptor  *getSocketAcceptor(unsigned short);
-        static int  getMaxFds(std::vector<std::shared_ptr<ISocket> > const&, SOCKET&);
+        static int  getMaxFds(std::vector<std::shared_ptr<Client> > const&, SOCKET&);
     };
 }
 

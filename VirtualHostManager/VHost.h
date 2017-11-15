@@ -11,6 +11,7 @@
 #include "../ConfParser/Configuration.h"
 #include "Socket/ISocket.h"
 #include "Socket/ISocketAcceptor.h"
+#include "../Client/Client.hh"
 
 namespace zia {
     class VHost {
@@ -27,7 +28,7 @@ namespace zia {
         void    monitoreSocket(std::unique_ptr<ISocketAcceptor>&);
 
     private:
-        std::vector<std::shared_ptr<zia::ISocket> >  _clientList;
+        std::vector<std::shared_ptr<zia::Client> >  _clientList;
         std::unique_ptr<std::thread>    _vhostLoop;
         Configuration   _hostConfiguration;
         std::condition_variable&    _cv;

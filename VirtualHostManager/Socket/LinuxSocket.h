@@ -26,6 +26,7 @@ namespace zia {
         virtual void    close();
         virtual bool    isOpen() const;
         virtual SOCKET&  getSocket();
+        virtual bool    haveAvailableInput() const;
         virtual bool    haveSomethingToWrite() const;
         virtual void    flushWrite();
 
@@ -36,6 +37,7 @@ namespace zia {
         int _socket;
         struct in_addr  sin_addr;
         std::queue<std::string> _writeList;
+        std::string _buffer;
     };
 }
 

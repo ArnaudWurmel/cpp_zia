@@ -62,19 +62,30 @@ bool    zia::LinuxSocket::setResultToBuffer(std::string &buffer, std::string &de
     return false;
 }
 
+bool    zia::LinuxSocket::haveAvailableInput() const {
+    std::string::const_iterator   it = _buffer.begin();
+
+    while (it != _buffer.end()) {
+        if (*it == '\r' && (it + 1) != _buffer.end() && *(it + 1) == '\n') {
+            return true;
+        }
+        ++it;
+    }
+    return false;
+}
+
 std::string zia::LinuxSocket::read() {
-    static std::string buffer = "";
     char tmp[READ_SIZE + 1];
     std::string result;
     ssize_t readed;
 
-    while (!setResultToBuffer(buffer, result)) {
+    while (!setResultToBuffer(_buffer, result)) {
         if ((readed = ::read(_socket, tmp, READ_SIZE)) <= 0) {
             close();
             return std::string();
         }
         tmp[readed] = '\0';
-        buffer = tmp;
+        _buffer = tmp;
     }
     return result;
 }

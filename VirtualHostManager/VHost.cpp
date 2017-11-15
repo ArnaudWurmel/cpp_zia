@@ -40,7 +40,7 @@ void    zia::VHost::hostLoop() {
 }
 
 void    zia::VHost::monitoreSocket(std::unique_ptr<ISocketAcceptor>& socketAcceptor) {
-    std::vector<std::shared_ptr<ISocket> >::iterator    it = _clientList.begin();
+    std::vector<std::shared_ptr<Client> >::iterator    it = _clientList.begin();
     fd_set  rsok;
     fd_set  wsok;
 
@@ -48,9 +48,9 @@ void    zia::VHost::monitoreSocket(std::unique_ptr<ISocketAcceptor>& socketAccep
     FD_ZERO(&wsok);
     FD_SET(socketAcceptor->getServerSocket(), &rsok);
     while (it != _clientList.end()) {
-        FD_SET((*it)->getSocket(), &rsok);
-        if ((*it)->haveSomethingToWrite()) {
-            FD_SET((*it)->getSocket(), &wsok);
+        FD_SET((*it)->getSocket()->getSocket(), &rsok);
+        if ((*it)->getSocket()->haveSomethingToWrite()) {
+            FD_SET((*it)->getSocket()->getSocket(), &wsok);
         }
         ++it;
     }
@@ -59,7 +59,7 @@ void    zia::VHost::monitoreSocket(std::unique_ptr<ISocketAcceptor>& socketAccep
     }
     if (FD_ISSET(socketAcceptor->getServerSocket(), &rsok)) {
         try {
-            _clientList.push_back(socketAcceptor->acceptClient());
+            _clientList.push_back(std::shared_ptr<Client>(new Client(socketAcceptor->acceptClient())));
         }
         catch (std::exception& e) {
             std::cerr << e.what() << std::endl;
@@ -67,13 +67,16 @@ void    zia::VHost::monitoreSocket(std::unique_ptr<ISocketAcceptor>& socketAccep
     }
     it = _clientList.begin();
     while (it != _clientList.end()) {
-        if (FD_ISSET((*it)->getSocket(), &rsok)) {
-            std::cout << "Readed : " << (*it)->read() << std::endl;
+        if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok)) {
+            (*it)->getSocket()->read();
+            while ((*it)->getSocket()->haveAvailableInput()) {
+                (*it)->getSocket()->read();
+            }
         }
-        if ((*it)->isOpen() && FD_ISSET((*it)->getSocket(), &wsok)) {
+        if ((*it)->getSocket()->isOpen() && FD_ISSET((*it)->getSocket()->getSocket(), &wsok)) {
 
         }
-        if (!(*it)->isOpen())
+        if (!(*it)->getSocket()->isOpen())
             _clientList.erase(it--);
         ++it;
     }

@@ -13,16 +13,16 @@ zia::ISocketAcceptor    *zia::ISocketAcceptor::getSocketAcceptor(unsigned short 
 #endif
 }
 
-int zia::ISocketAcceptor::getMaxFds(std::vector<std::shared_ptr<ISocket> > const& clientList, SOCKET& listener) {
+int zia::ISocketAcceptor::getMaxFds(std::vector<std::shared_ptr<Client> > const& clientList, SOCKET& listener) {
 #if _WIN32
     return 0;
 #else
     int maxFds = 0;
-    std::vector<std::shared_ptr<ISocket> >::const_iterator  it = clientList.begin();
+    std::vector<std::shared_ptr<Client> >::const_iterator  it = clientList.begin();
 
     while (it != clientList.end()) {
-        if ((*it)->getSocket() > maxFds)
-            maxFds = (*it)->getSocket();
+        if ((*it)->getSocket()->getSocket() > maxFds)
+            maxFds = (*it)->getSocket()->getSocket();
         ++it;
     }
     if (listener > maxFds)
