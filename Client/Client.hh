@@ -12,7 +12,7 @@
 namespace zia {
     class Client : public AClient, private Logger<Client> {
     public:
-        Client(std::shared_ptr<ISocket>&);
+        Client(std::shared_ptr<ISocket>);
         ~Client();
 
     public:

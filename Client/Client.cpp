@@ -4,7 +4,7 @@
 
 #include "Client.hh"
 
-zia::Client::Client(std::shared_ptr<ISocket>& socket) {
+zia::Client::Client(std::shared_ptr<ISocket> socket) {
     _waitingEnd = true;
     _socket = socket;
 }
