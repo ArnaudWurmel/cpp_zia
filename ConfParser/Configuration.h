@@ -7,6 +7,7 @@
 
 # include <string>
 # include "../Logger/Logger.hpp"
+# include "../api/conf.h"
 
 namespace zia {
     class Configuration : private Logger<Configuration> {
