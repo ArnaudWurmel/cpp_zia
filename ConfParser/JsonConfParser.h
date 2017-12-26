@@ -14,18 +14,18 @@ namespace zia {
     class JsonConfParser : public zia::AConfParser, private Logger<JsonConfParser> {
     public:
         JsonConfParser(std::string const& filePath = "./zia.conf");
-        ~JsonConfParser();
+        ~JsonConfParser() override;
 
     public:
-        void    loadConfiguration();
-        bool    checkConfiguration(ConfType);
-        Configuration const&    getConfiguration() const;
+        void    loadConfiguration() override;
+        Configuration const&    getConfiguration() const override;
 
     private:
         void    setHost(nlohmann::json const&);
         void    setPort(nlohmann::json const&);
         void    setModulePath(nlohmann::json const&);
         void    setSitePath(nlohmann::json const&);
+        void    setDebug(nlohmann::json const&);
 
     private:
         std::string _filepath;

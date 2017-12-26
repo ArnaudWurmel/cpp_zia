@@ -5,7 +5,6 @@
 #ifndef ZIA_ACONFPARSER_H
 #define ZIA_ACONFPARSER_H
 
-# include "../Logger/Logger.h"
 # include "Configuration.h"
 
 namespace zia {
@@ -19,7 +18,6 @@ namespace zia {
         virtual ~AConfParser() {}
 
         virtual void    loadConfiguration() = 0;
-        virtual bool    checkConfiguration(ConfType) = 0;
         virtual Configuration const&    getConfiguration() const = 0;
     };
 }

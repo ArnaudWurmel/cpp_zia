@@ -5,10 +5,11 @@
 #include "Configuration.h"
 
 zia::Configuration::Configuration() {
-    _port = 0;
-    _host = "";
-    _modulePath = "";
-    _sitePath = "";
+    _port = 80;
+    _host = "0.0.0.0";
+    _modulePath = "./modules_enabled/";
+    _sitePath = "./sites_enabled/";
+    _debug = false;
 }
 
 /**
@@ -73,6 +74,14 @@ void    zia::Configuration::setSitePath(std::string const& sitePath) {
  */
 std::string const&  zia::Configuration::getSitePath() const {
     return _sitePath;
+}
+
+void    zia::Configuration::setDebug(bool const& debug) {
+    _debug = debug;
+}
+
+bool const& zia::Configuration::debugEnabled() const {
+    return _debug;
 }
 
 zia::Configuration::~Configuration() {}
