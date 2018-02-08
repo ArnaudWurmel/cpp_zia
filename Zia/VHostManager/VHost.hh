@@ -16,9 +16,7 @@ namespace zia {
 
     public:
         void    configure(Configuration&);
-
-    private:
-        void    loadModules(Configuration&);
+        bool    instanciateModule();
 
     protected:
         void    say(std::string const& message) override;

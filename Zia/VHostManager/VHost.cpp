@@ -52,6 +52,10 @@ void    zia::VHost::configure(Configuration& configuration) {
     say("=========================");
 }
 
+bool    zia::VHost::instanciateModule() {
+    return false;
+}
+
 void    zia::VHost::say(std::string const &message) {
     if (LoggerConfiguration::isDebugEnabled()) {
         std::cerr << "<" << _name << "> : ";
