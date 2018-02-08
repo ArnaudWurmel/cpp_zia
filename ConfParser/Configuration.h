@@ -8,34 +8,23 @@
 # include <string>
 # include "../Logger/Logger.hpp"
 # include "../api/conf.h"
+# include "../api/conf.h"
 
 namespace zia {
     class Configuration : private Logger<Configuration> {
 
     public:
-        Configuration();
+        Configuration(api::Conf const& conf);
         ~Configuration();
 
     public:
-        void    setHost(std::string const&);
-        void    setPort(unsigned short);
-        void    setModulePath(std::string const&);
-        void    setSitePath(std::string const&);
-        void    setDebug(bool const&);
-
-    public:
-        std::string const&  getHost() const;
-        unsigned short  getPort() const;
-        std::string const&  getModulePath() const;
-        std::string const&  getSitePath() const;
-        bool const& debugEnabled() const;
+        template<typename T>
+        T const&    get(std::string const& key) {
+            return std::get<T>(_configuration[key].v);
+        }
 
     private:
-        std::string _host;
-        std::string _modulePath;
-        std::string _sitePath;
-        unsigned short  _port;
-        bool    _debug;
+        api::Conf   _configuration;
     };
 }
 

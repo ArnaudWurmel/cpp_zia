@@ -18,19 +18,22 @@ namespace zia {
 
     public:
         void    loadConfiguration() override;
-        Configuration const&    getConfiguration() const override;
+        api::Conf const&    getConfiguration() const override;
 
     private:
-        void    setHost(nlohmann::json const&);
-        void    setPort(nlohmann::json const&);
-        void    setModulePath(nlohmann::json const&);
-        void    setSitePath(nlohmann::json const&);
-        void    setDebug(nlohmann::json const&);
+        void    setValueForConfiguration(api::ConfObject& rootObject, std::string const&, nlohmann::json const&);
+        void    recursivityLoad(api::ConfObject& rootObject, nlohmann::json const&);
 
     private:
+        void    setString(api::ConfObject&, std::string const&, nlohmann::json const&);
+        void    setArray(api::ConfObject&, std::string const&, nlohmann::json const&);
+        void    setObject(api::ConfObject&, std::string const&, nlohmann::json const&);
+        void    setBoolean(api::ConfObject&, std::string const&, nlohmann::json const&);
+
+    private:
+        api::Conf   _configuration;
         std::string _filepath;
-        Configuration   _configuration;
-        std::map<std::string, void (zia::JsonConfParser::*)(nlohmann::json const&) >   _parsingPtrs;
+        std::map<std::string, std::function<void (api::ConfObject&, std::string const&, nlohmann::json const&)> >   _parsingPtrs;
     };
 }
 

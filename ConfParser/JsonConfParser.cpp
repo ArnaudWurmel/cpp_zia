@@ -6,14 +6,14 @@
 #include <fstream>
 #include "JsonConfParser.h"
 #include "../Zia/Exceptions/Exceptions.h"
+#include "../api/conf.h"
 
 zia::JsonConfParser::JsonConfParser(std::string const& filePath) {
     _filepath = filePath;
-    _parsingPtrs.insert(std::make_pair("host", &zia::JsonConfParser::setHost));
-    _parsingPtrs.insert(std::make_pair("port", &zia::JsonConfParser::setPort));
-    _parsingPtrs.insert(std::make_pair("site_enabled", &zia::JsonConfParser::setSitePath));
-    _parsingPtrs.insert(std::make_pair("module_enabled", &zia::JsonConfParser::setModulePath));
-    _parsingPtrs.insert(std::make_pair("debug", &zia::JsonConfParser::setDebug));
+    _parsingPtrs.insert(std::make_pair("string", std::bind(&zia::JsonConfParser::setString, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
+    _parsingPtrs.insert(std::make_pair("object", std::bind(&zia::JsonConfParser::setObject, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
+    _parsingPtrs.insert(std::make_pair("array", std::bind(&zia::JsonConfParser::setArray, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
+    _parsingPtrs.insert(std::make_pair("boolean", std::bind(&zia::JsonConfParser::setBoolean, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
 }
 
 /**
@@ -28,56 +28,76 @@ void    zia::JsonConfParser::loadConfiguration() {
     if (confFile.is_open()) {
         say("Configuration file opened");
         say("Parsing json file...");
+        _configuration.clear();
         nlohmann::json  json = nlohmann::json::parse(confFile);
-        nlohmann::json::iterator it = json.begin();
 
-        while (it != json.end()) {
-            if (_parsingPtrs.find(it.key()) != _parsingPtrs.end()) {
-                if (it.value().is_null())
-                    throw zia::ParsingExcept("Null value");
-                (this->*_parsingPtrs[it.key()])(it.value());
-            }
-            ++it;
-        }
+        recursivityLoad(_configuration, json);
         confFile.close();
     }
+}
+
+void    zia::JsonConfParser::setValueForConfiguration(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {
+    std::cout << value.type_name() << std::endl;
+    if (_parsingPtrs.find(value.type_name()) != _parsingPtrs.end()) {
+        _parsingPtrs[value.type_name()](rootObject, key, value);
+    }
+}
+
+void    zia::JsonConfParser::recursivityLoad(api::ConfObject& rootObject, nlohmann::json const& jsonLoad) {
+    nlohmann::json::const_iterator it = jsonLoad.begin();
+
+    while (it != jsonLoad.end()) {
+        nlohmann::json  subJson = it.value();
+
+        if (subJson.is_null()) {
+            throw zia::ParsingExcept("Null value");
+        }
+        setValueForConfiguration(rootObject, it.key(), subJson);
+        ++it;
+    }
+}
+
+void    zia::JsonConfParser::setString(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {
+    api::ConfValue object;
+
+    object.v = value.get<std::string>();
+    rootObject.insert(std::make_pair(key, object));
+
+}
+
+void    zia::JsonConfParser::setArray(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {
+    api::ConfValue object;
+    std::vector<std::string> vector = value.get<std::vector<std::string> >();
+    api::ConfArray array;
+    auto iterator = vector.begin();
+
+    while (iterator != vector.end()) {
+        api::ConfValue valueArray;
+
+        valueArray.v = *iterator;
+        array.push_back(valueArray);
+        ++iterator;
+    }
+    object.v = array;
+    rootObject.insert(std::make_pair(key, object));
+}
+
+void    zia::JsonConfParser::setObject(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {
+    recursivityLoad(rootObject, value);
+}
+
+void    zia::JsonConfParser::setBoolean(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {
+    api::ConfValue object;
+
+    object.v = value.get<bool>();
+    rootObject.insert(std::make_pair(key, object));
 }
 
 /**
  * @return the current configuration
  */
-zia::Configuration const&   zia::JsonConfParser::getConfiguration() const {
+zia::api::Conf const&   zia::JsonConfParser::getConfiguration() const {
     return _configuration;
-}
-
-void    zia::JsonConfParser::setHost(nlohmann::json const& json) {
-    if (!json.is_string())
-        throw zia::ParsingExcept("Not a string for host");
-    _configuration.setHost(json);
-}
-
-void    zia::JsonConfParser::setPort(nlohmann::json const& json) {
-    if (!json.is_number())
-        throw zia::ParsingExcept("Not a number for port");
-    _configuration.setPort(json.get<unsigned short>());
-}
-
-void    zia::JsonConfParser::setModulePath(nlohmann::json const& json) {
-    if (!json.is_string())
-        throw zia::ParsingExcept("Not a string for module_available");
-    _configuration.setModulePath(json);
-}
-
-void    zia::JsonConfParser::setSitePath(nlohmann::json const& json) {
-    if (!json.is_string())
-        throw zia::ParsingExcept("Not a string for site_available");
-    _configuration.setSitePath(json);
-}
-
-void    zia::JsonConfParser::setDebug(nlohmann::json const& json) {
-    if (!json.is_boolean())
-        throw zia::ParsingExcept("Not a bool for debug");
-    _configuration.setDebug(json.get<bool>());
 }
 
 zia::JsonConfParser::~JsonConfParser() {}

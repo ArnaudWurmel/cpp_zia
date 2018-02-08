@@ -13,7 +13,7 @@ zia::Zia::Zia() {
 
     try {
         confParser->loadConfiguration();
-        _configuration = confParser->getConfiguration();
+        _configuration = std::unique_ptr<Configuration>(new Configuration(confParser->getConfiguration()));
     }
     catch (std::exception& e) {
         say("Configuration file corrupted :`" + std::string(e.what()) + "`");
@@ -30,9 +30,15 @@ void    zia::Zia::preloading(int ac, char **av) {
 }
 
 void    zia::Zia::initComponent() {
-    if (!zia::LoggerConfiguration::isDebugEnabled() && _configuration.debugEnabled()) {
-        zia::LoggerConfiguration::setDebugEnabled(_configuration.debugEnabled());
+    try {
+        if (!zia::LoggerConfiguration::isDebugEnabled() && _configuration->get<bool>("debug")) {
+            zia::LoggerConfiguration::setDebugEnabled(_configuration->get<bool>("debug"));
+        }
     }
+    catch (std::exception& e) {
+        say(e.what());
+    }
+    say("Test debug");
 }
 
 zia::Zia::~Zia() = default;

@@ -6,6 +6,7 @@
 #define ZIA_ACONFPARSER_H
 
 # include "Configuration.h"
+# include "../api/conf.h"
 
 namespace zia {
     class AConfParser {
@@ -18,7 +19,7 @@ namespace zia {
         virtual ~AConfParser() {}
 
         virtual void    loadConfiguration() = 0;
-        virtual Configuration const&    getConfiguration() const = 0;
+        virtual api::Conf const&    getConfiguration() const = 0;
     };
 }
 

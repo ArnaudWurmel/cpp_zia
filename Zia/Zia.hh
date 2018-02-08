@@ -5,6 +5,7 @@
 #ifndef CPP_ZIA_ZIA_HH
 #define CPP_ZIA_ZIA_HH
 
+#include <memory>
 #include "../Logger/Logger.hpp"
 #include "../ConfParser/Configuration.h"
 
@@ -21,7 +22,7 @@ namespace zia {
         void    initComponent();
 
     private:
-        Configuration   _configuration;
+        std::unique_ptr<Configuration>   _configuration;
     };
 }
 
