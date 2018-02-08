@@ -44,6 +44,27 @@ CMakeFiles/cpp_zia.dir/Zia/ArgParsing/ArgParsing.cpp.o: Zia/ArgParsing/ArgParsin
 CMakeFiles/cpp_zia.dir/Zia/Exceptions/Exceptions.cpp.o: Zia/Exceptions/Exceptions.cpp
 CMakeFiles/cpp_zia.dir/Zia/Exceptions/Exceptions.cpp.o: Zia/Exceptions/Exceptions.h
 
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: ConfParser/Configuration.h
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: Logger/Logger.hpp
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: Logger/LoggerConfiguration.hh
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: Logger/LoggerHelper.hpp
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: Zia/VHostManager/VHost.cpp
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: Zia/VHostManager/VHost.hh
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: api/conf.h
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: ConfParser/AConfParser.h
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: ConfParser/ADirectoryReader.h
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: ConfParser/Configuration.h
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: ConfParser/JsonConfParser.h
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: Logger/Logger.hpp
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: Logger/LoggerConfiguration.hh
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: Logger/LoggerHelper.hpp
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: Zia/VHostManager/VHost.hh
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: Zia/VHostManager/VHostManager.cpp
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: Zia/VHostManager/VHostManager.hh
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: api/conf.h
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: lib/json.hpp
+
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: ConfParser/AConfParser.h
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: ConfParser/Configuration.h
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: ConfParser/JsonConfParser.h
@@ -52,6 +73,8 @@ CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: Logger/LoggerConfiguration.hh
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: Logger/LoggerHelper.hpp
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: Zia/ArgParsing/ArgParsing.hh
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: Zia/Exceptions/Exceptions.h
+CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: Zia/VHostManager/VHost.hh
+CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: Zia/VHostManager/VHostManager.hh
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: Zia/Zia.cpp
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: Zia/Zia.hh
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o: api/conf.h
@@ -61,6 +84,8 @@ CMakeFiles/cpp_zia.dir/main.cpp.o: ConfParser/Configuration.h
 CMakeFiles/cpp_zia.dir/main.cpp.o: Logger/Logger.hpp
 CMakeFiles/cpp_zia.dir/main.cpp.o: Logger/LoggerConfiguration.hh
 CMakeFiles/cpp_zia.dir/main.cpp.o: Logger/LoggerHelper.hpp
+CMakeFiles/cpp_zia.dir/main.cpp.o: Zia/VHostManager/VHost.hh
+CMakeFiles/cpp_zia.dir/main.cpp.o: Zia/VHostManager/VHostManager.hh
 CMakeFiles/cpp_zia.dir/main.cpp.o: Zia/Zia.hh
 CMakeFiles/cpp_zia.dir/main.cpp.o: api/conf.h
 CMakeFiles/cpp_zia.dir/main.cpp.o: main.cpp

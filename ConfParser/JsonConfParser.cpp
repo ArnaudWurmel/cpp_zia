@@ -14,6 +14,7 @@ zia::JsonConfParser::JsonConfParser(std::string const& filePath) {
     _parsingPtrs.insert(std::make_pair("object", std::bind(&zia::JsonConfParser::setObject, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
     _parsingPtrs.insert(std::make_pair("array", std::bind(&zia::JsonConfParser::setArray, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
     _parsingPtrs.insert(std::make_pair("boolean", std::bind(&zia::JsonConfParser::setBoolean, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
+    _parsingPtrs.insert(std::make_pair("number", std::bind(&zia::JsonConfParser::setNumber, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
 }
 
 /**
@@ -29,15 +30,15 @@ void    zia::JsonConfParser::loadConfiguration() {
         say("Configuration file opened");
         say("Parsing json file...");
         _configuration.clear();
-        nlohmann::json  json = nlohmann::json::parse(confFile);
+        nlohmann::json  json;// = nlohmann::json::parse(confFile);
 
+        confFile >> json;
         recursivityLoad(_configuration, json);
         confFile.close();
     }
 }
 
 void    zia::JsonConfParser::setValueForConfiguration(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {
-    std::cout << value.type_name() << std::endl;
     if (_parsingPtrs.find(value.type_name()) != _parsingPtrs.end()) {
         _parsingPtrs[value.type_name()](rootObject, key, value);
     }
@@ -93,6 +94,13 @@ void    zia::JsonConfParser::setBoolean(api::ConfObject& rootObject, std::string
     rootObject.insert(std::make_pair(key, object));
 }
 
+void    zia::JsonConfParser::setNumber(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {
+    api::ConfValue  object;
+
+    object.v = value.get<long long>();
+    rootObject.insert(std::make_pair(key, object));
+}
+
 /**
  * @return the current configuration
  */
@@ -100,4 +108,4 @@ zia::api::Conf const&   zia::JsonConfParser::getConfiguration() const {
     return _configuration;
 }
 
-zia::JsonConfParser::~JsonConfParser() {}
+zia::JsonConfParser::~JsonConfParser() = default;

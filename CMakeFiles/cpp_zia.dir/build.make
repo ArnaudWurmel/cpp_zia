@@ -297,6 +297,54 @@ CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o.provides: CMakeFile
 CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o.provides.build: CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o
 
 
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: CMakeFiles/cpp_zia.dir/flags.make
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o: Zia/VHostManager/VHostManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o"
+	g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o -c /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.cpp
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.i"
+	g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.cpp > CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.i
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.s"
+	g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.cpp -o CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.s
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o.requires
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o.provides: CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_zia.dir/build.make CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o.provides
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o.provides.build: CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o
+
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: CMakeFiles/cpp_zia.dir/flags.make
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o: Zia/VHostManager/VHost.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o"
+	g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o -c /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.cpp
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.i"
+	g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.cpp > CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.i
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.s"
+	g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.cpp -o CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.s
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o.requires
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o.provides: CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_zia.dir/build.make CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o.provides
+
+CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o.provides.build: CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o
+
+
 # Object files for target cpp_zia
 cpp_zia_OBJECTS = \
 "CMakeFiles/cpp_zia.dir/main.cpp.o" \
@@ -308,7 +356,9 @@ cpp_zia_OBJECTS = \
 "CMakeFiles/cpp_zia.dir/ConfParser/ADirectoryReader.cpp.o" \
 "CMakeFiles/cpp_zia.dir/ConfParser/Configuration.cpp.o" \
 "CMakeFiles/cpp_zia.dir/ConfParser/JsonConfParser.cpp.o" \
-"CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o"
+"CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o" \
+"CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o" \
+"CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o"
 
 # External object files for target cpp_zia
 cpp_zia_EXTERNAL_OBJECTS =
@@ -323,9 +373,11 @@ cpp_zia: CMakeFiles/cpp_zia.dir/ConfParser/ADirectoryReader.cpp.o
 cpp_zia: CMakeFiles/cpp_zia.dir/ConfParser/Configuration.cpp.o
 cpp_zia: CMakeFiles/cpp_zia.dir/ConfParser/JsonConfParser.cpp.o
 cpp_zia: CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o
+cpp_zia: CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o
+cpp_zia: CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o
 cpp_zia: CMakeFiles/cpp_zia.dir/build.make
 cpp_zia: CMakeFiles/cpp_zia.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable cpp_zia"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable cpp_zia"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp_zia.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -343,6 +395,8 @@ CMakeFiles/cpp_zia.dir/requires: CMakeFiles/cpp_zia.dir/ConfParser/ADirectoryRea
 CMakeFiles/cpp_zia.dir/requires: CMakeFiles/cpp_zia.dir/ConfParser/Configuration.cpp.o.requires
 CMakeFiles/cpp_zia.dir/requires: CMakeFiles/cpp_zia.dir/ConfParser/JsonConfParser.cpp.o.requires
 CMakeFiles/cpp_zia.dir/requires: CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o.requires
+CMakeFiles/cpp_zia.dir/requires: CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o.requires
+CMakeFiles/cpp_zia.dir/requires: CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o.requires
 
 .PHONY : CMakeFiles/cpp_zia.dir/requires
 

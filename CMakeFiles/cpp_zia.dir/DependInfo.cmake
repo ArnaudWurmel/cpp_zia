@@ -12,6 +12,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerConfiguration.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Logger/LoggerConfiguration.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/Zia/ArgParsing/ArgParsing.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Zia/ArgParsing/ArgParsing.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/Zia/Exceptions/Exceptions.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Zia/Exceptions/Exceptions.cpp.o"
+  "/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o"
+  "/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/Zia/Zia.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/main.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/main.cpp.o"
   )

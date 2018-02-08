@@ -8,6 +8,7 @@
 #include <memory>
 #include "../Logger/Logger.hpp"
 #include "../ConfParser/Configuration.h"
+#include "VHostManager/VHostManager.hh"
 
 namespace zia {
     class Zia : private Logger<Zia> {
@@ -19,10 +20,29 @@ namespace zia {
         ~Zia() override;
 
     public:
+        //
+        // Init component and exploit configuration for default configuration
+        //
         void    initComponent();
 
+        //
+        //  Execute VHostManger::run() method for run the VHosts
+        //
+        void    startVHosts();
+
     private:
+        //
+        //  Load VHosts with a VHostManager
+        //
+        void    loadVHosts();
+
+        //
+        //  Configuration Ressources
+        //
+    private:
+        std::unique_ptr<VHostManager>   _vHostManager;
         std::unique_ptr<Configuration>   _configuration;
+        std::string _vhostEnabledPath;
     };
 }
 

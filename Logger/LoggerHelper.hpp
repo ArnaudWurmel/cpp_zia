@@ -11,6 +11,8 @@ namespace zia {
     class ArgParsing;
     class Configuration;
     class JsonConfParser;
+    class VHostManager;
+    class VHost;
 
     template<typename T>
     struct LoggerHelper
@@ -45,6 +47,20 @@ namespace zia {
     struct LoggerHelper<zia::JsonConfParser> {
         static const char   *get() {
             return "JsonConfParser";
+        }
+    };
+
+    template<>
+    struct LoggerHelper<zia::VHostManager> {
+        static const char   *get() {
+            return "VHostManager";
+        }
+    };
+
+    template<>
+    struct LoggerHelper<zia::VHost> {
+        static const char   *get() {
+            return "VHost";
         }
     };
 }

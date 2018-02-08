@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp_zia.dir/ConfParser/Configuration.cpp.o"
   "CMakeFiles/cpp_zia.dir/ConfParser/JsonConfParser.cpp.o"
   "CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o"
+  "CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o"
+  "CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o"
   "cpp_zia.pdb"
   "cpp_zia"
 )

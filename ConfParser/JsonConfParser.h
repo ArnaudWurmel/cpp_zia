@@ -29,6 +29,7 @@ namespace zia {
         void    setArray(api::ConfObject&, std::string const&, nlohmann::json const&);
         void    setObject(api::ConfObject&, std::string const&, nlohmann::json const&);
         void    setBoolean(api::ConfObject&, std::string const&, nlohmann::json const&);
+        void    setNumber(api::ConfObject&, std::string const&, nlohmann::json const&);
 
     private:
         api::Conf   _configuration;

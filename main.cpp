@@ -7,9 +7,10 @@ int main(int ac, char **av) {
         zia::Zia    zia;
 
         zia.initComponent();
+        zia.startVHosts();
     }
     catch (std::exception& e) {
-        std::cerr << e.what() << std::endl;
+        return 1;
     }
     return 0;
 }

@@ -13,7 +13,7 @@ namespace zia {
     public:
         virtual ~ADirectoryReader() {}
 
-    public:
+    protected:
         virtual std::vector<std::string>    getFileNameFor(std::string const&) = 0;
 
     public:

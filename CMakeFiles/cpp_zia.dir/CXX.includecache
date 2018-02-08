@@ -37,8 +37,6 @@ string
 /Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.hpp
 ../api/conf.h
 /Users/wurmel_a/CLionProjects/cpp_zia/api/conf.h
-../api/conf.h
-/Users/wurmel_a/CLionProjects/cpp_zia/api/conf.h
 
 /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/JsonConfParser.cpp
 stdlib.h
@@ -122,6 +120,42 @@ exception
 string
 -
 
+/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.cpp
+vector
+-
+VHost.hh
+/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.hh
+
+/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.hh
+../../ConfParser/Configuration.h
+/Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/Configuration.h
+../../Logger/Logger.hpp
+/Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.hpp
+
+/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.cpp
+iostream
+-
+memory
+-
+../../ConfParser/AConfParser.h
+/Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/AConfParser.h
+../../ConfParser/ADirectoryReader.h
+/Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/ADirectoryReader.h
+VHostManager.hh
+/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.hh
+../../ConfParser/JsonConfParser.h
+/Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/JsonConfParser.h
+
+/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.hh
+string
+-
+list
+-
+../../Logger/Logger.hpp
+/Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.hpp
+VHost.hh
+/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.hh
+
 /Users/wurmel_a/CLionProjects/cpp_zia/Zia/Zia.cpp
 Zia.hh
 /Users/wurmel_a/CLionProjects/cpp_zia/Zia/Zia.hh
@@ -141,6 +175,8 @@ memory
 /Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.hpp
 ../ConfParser/Configuration.h
 /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/Configuration.h
+VHostManager/VHostManager.hh
+/Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.hh
 
 /Users/wurmel_a/CLionProjects/cpp_zia/api/conf.h
 map
