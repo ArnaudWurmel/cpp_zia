@@ -91,7 +91,6 @@ void    zia::module::NetworkModule::monitoreSocket() {
     }
     if (FD_ISSET(_acceptor->getServerSocket(), &rsok)) {
         try {
-            std::cout << "New client" << std::endl;
             _clientList.push_back(std::shared_ptr<Client>(new Client(_acceptor->acceptClient())));
         }
         catch (std::exception& e) {
@@ -101,17 +100,22 @@ void    zia::module::NetworkModule::monitoreSocket() {
     it = _clientList.begin();
     while (it != _clientList.end()) {
         if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok)) {
-            std::cout << "Read : " << (*it)->getSocket()->read() << std::endl;
+            (*it)->addInput((*it)->getSocket()->read());
             while ((*it)->getSocket()->haveAvailableInput()) {
-                std::cout << "Read : " << (*it)->getSocket()->read() << std::endl;
+                (*it)->addInput((*it)->getSocket()->read());
             }
         }
         if ((*it)->getSocket()->isOpen() && FD_ISSET((*it)->getSocket()->getSocket(), &wsok)) {
-
+            (*it)->getSocket()->flushWrite();
+        }
+        if ((*it)->isReady()) {
+            _onRequest((*it)->getRequest(), (*it)->getNetInfo());
         }
         if (!(*it)->getSocket()->isOpen())
-            _clientList.erase(it--);
-        ++it;
+            it = _clientList.erase(it--);
+        else {
+            ++it;
+        }
     }
 }
 

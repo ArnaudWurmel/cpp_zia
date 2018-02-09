@@ -18,14 +18,17 @@ namespace zia {
         void    endOfRequest();
         virtual api::ImplSocket const   *getSocket() const;
         virtual api::ImplSocket   *getSocket();
+        api::NetInfo    &getNetInfo();
+        std::vector<std::byte>  getRequest() const override;
+        bool    isReady() const override;
 
     public:
         void    addInput(std::string const&);
 
     private:
-        api::ImplSocket *_socket;
         std::string _content;
         bool    _waitingEnd;
+        api::NetInfo    _netInfos;
     };
 }
 

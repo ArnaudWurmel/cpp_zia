@@ -14,8 +14,11 @@ namespace   zia {
         virtual ~AClient() {}
 
         virtual void    endOfRequest() = 0;
+        virtual std::vector<std::byte>  getRequest() const = 0;
         virtual api::ImplSocket const   *getSocket() const = 0;
         virtual api::ImplSocket   *getSocket() = 0;
+        virtual api::NetInfo&   getNetInfo() = 0;
+        virtual bool    isReady() const = 0;
     };
 }
 

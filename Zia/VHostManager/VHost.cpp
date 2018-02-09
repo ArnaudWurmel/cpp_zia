@@ -67,7 +67,12 @@ bool    zia::VHost::run() {
 }
 
 void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
-    std::cout << "Request here" << std::endl;
+    auto iterator = raw.begin();
+
+    while (iterator != raw.end()) {
+        std::cout << *reinterpret_cast<char *>(&(*iterator));
+        ++iterator;
+    }
 }
 
 void    zia::VHost::say(std::string const &message) {

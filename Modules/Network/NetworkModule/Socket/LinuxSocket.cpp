@@ -14,6 +14,7 @@ zia::LinuxSocket::LinuxSocket(int socket) : _socket(socket) {}
 bool zia::LinuxSocket::bind(unsigned short port) {
     struct protoent *pe;
     struct sockaddr_in  serv_addr;
+    int enable = 1;
 
     if (_socket != -1) {
         ::close(_socket);
@@ -25,6 +26,9 @@ bool zia::LinuxSocket::bind(unsigned short port) {
     _socket = socket(AF_INET, SOCK_STREAM, pe->p_proto);
     if (_socket == -1) {
         return false;
+    }
+    if (setsockopt(_socket, SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(int)) < 0) {
+        perror("Error");
     }
     std::memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
