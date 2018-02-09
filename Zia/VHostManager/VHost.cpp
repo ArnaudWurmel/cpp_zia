@@ -16,18 +16,6 @@ void    zia::VHost::configure(Configuration& configuration) {
         _name = DEFAULT_NAME;
     }
     try {
-        _host = configuration.get<std::string>(KEY_HOST);
-    }
-    catch (std::exception&) {
-        _host = DEFAULT_HOST;
-    }
-    try {
-        _port = configuration.get<long long>(KEY_PORT);
-    }
-    catch (std::exception&) {
-        _port = DEFAULT_PORT;
-    }
-    try {
         _moduleList = configuration.getArray<std::string>(KEY_MODULES);
     }
     catch (std::exception&) {
@@ -47,27 +35,29 @@ void    zia::VHost::configure(Configuration& configuration) {
     }
     say("=========================");
     say(_name);
-    say(_host);
-    say(std::to_string(_port));
     say(_moduleNetwork);
     say("=========================");
+    _configuration = configuration;
 }
 
 bool    zia::VHost::instanciateModule() {
     _networkModule = std::unique_ptr<Module<api::Net> >(new Module<api::Net>(_moduleNetwork));
 
-    if (!_networkModule->load(_modulePathList)) {
+    if (!_networkModule->load(_modulePathList) || !_networkModule->get()->config(_configuration.getInitial())) {
         say("Can't load network module");
         return false;
     }
-
     auto iterator = _moduleList.begin();
 
     while (iterator != _moduleList.end()) {
+        std::shared_ptr<Module<api::Module> >   module(new Module<api::Module>(*iterator));
 
+        if (module->load(_modulePathList) && module->get()->config(_configuration.getInitial())) {
+            _instanciatedModules.push_back(module);
+        }
         ++iterator;
     }
-    return false;
+    return true;
 }
 
 void    zia::VHost::say(std::string const &message) {

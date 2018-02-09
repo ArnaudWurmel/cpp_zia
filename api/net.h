@@ -6,6 +6,7 @@
 #include <functional>
 #include <string>
 #include <vector>
+#include "conf.h"
 
 namespace zia::api {
     /**
@@ -51,6 +52,9 @@ namespace zia::api {
         using Callback = std::function<void(Raw, NetInfo)>;
 
         virtual ~Net() = default;
+
+
+        virtual bool    config(const Conf& conf) = 0;
 
         /**
         * Launch the server asynchronously, callback will be called when a request is received.

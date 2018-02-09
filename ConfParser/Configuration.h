@@ -61,6 +61,8 @@ namespace zia {
             return objectList;
         }
 
+        api::Conf const&    getInitial()  const;
+
     private:
         api::Conf   _configuration;
     };

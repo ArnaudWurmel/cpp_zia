@@ -23,16 +23,15 @@ namespace zia {
         void    say(std::string const& message) override;
 
     private:
-        std::vector<std::unique_ptr<Module<api::Module> > > _instanciateModules;
+        std::vector<std::shared_ptr<Module<api::Module> > > _instanciatedModules;
         std::unique_ptr<Module<api::Net> >  _networkModule;
 
     private:
         std::string _name;
-        std::string _host;
-        unsigned int    _port;
         std::vector<std::string> _modulePathList;
         std::vector<std::string>    _moduleList;
         std::string _moduleNetwork;
+        Configuration   _configuration;
     };
 }
 
