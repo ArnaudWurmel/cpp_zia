@@ -5,7 +5,8 @@
 #ifndef NETWORK_NETWORKMODULE_HH
 #define NETWORK_NETWORKMODULE_HH
 
-# include "../../api/net.h"
+# include "../../../api/net.h"
+# include "Socket/ISocketAcceptor.h"
 
 namespace zia::module {
     class NetworkModule : public api::Net {
@@ -20,8 +21,20 @@ namespace zia::module {
         bool    config(const api::Conf& conf) override;
 
     private:
+        bool    initNetwork();
+        void    threadLoop();
+        void    monitoreSocket();
+
+    private:
         std::string _host;
         unsigned short _port;
+        std::unique_ptr<zia::ISocketAcceptor>   _acceptor;
+
+    private:
+        std::unique_ptr<std::thread>    _threadLoop;
+        bool    _continue;
+        Callback    _onRequest;
+        std::vector<std::shared_ptr<Client> >   _clientList;
     };
 }
 

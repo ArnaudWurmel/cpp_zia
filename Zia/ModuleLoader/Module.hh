@@ -17,7 +17,10 @@ namespace zia {
         explicit Module(std::string const& moduleName) {
             _moduleName = moduleName;
         }
-        ~Module() = default;
+        ~Module() {
+            _module.reset();
+            _manager.reset();
+        }
 
     public:
         bool    load(std::vector<std::string> const& paths) {

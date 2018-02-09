@@ -18,9 +18,13 @@ namespace zia {
     public:
         void    configure(Configuration&);
         bool    instanciateModule();
+        bool    run();
 
     protected:
         void    say(std::string const& message) override;
+
+    private:
+        void    callbackRequest(api::Net::Raw, api::NetInfo);
 
     private:
         std::vector<std::shared_ptr<Module<api::Module> > > _instanciatedModules;

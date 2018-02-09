@@ -36,6 +36,7 @@ namespace zia {
     class Configuration : private Logger<Configuration> {
 
     public:
+        Configuration();
         Configuration(api::Conf const& conf);
         ~Configuration();
 

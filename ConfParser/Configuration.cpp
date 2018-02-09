@@ -4,6 +4,8 @@
 
 #include "Configuration.h"
 
+zia::Configuration::Configuration() {}
+
 zia::Configuration::Configuration(api::Conf const& conf) : _configuration(conf) {}
 
 zia::api::Conf const&   zia::Configuration::getInitial() const {

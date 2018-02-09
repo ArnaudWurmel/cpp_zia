@@ -14,6 +14,19 @@ add_library(Network SHARED
         ../../api/module.h
         ../../ConfParser/Configuration.h
         ../../ConfParser/Configuration.cpp
-        NetworkModule.cpp NetworkModule.hh
-
+        NetworkModule/NetworkModule.cpp NetworkModule/NetworkModule.hh
+        NetworkModule/Socket/ImplSocket.h
+        NetworkModule/Socket/ISocketAcceptor.h
+        NetworkModule/Socket/ISocketAcceptor.cpp
+        NetworkModule/Socket/LinuxAcceptor.cpp
+        NetworkModule/Socket/LinuxAcceptor.h
+        NetworkModule/Socket/LinuxSocket.h
+        NetworkModule/Socket/LinuxSocket.cpp
+        Client/AClient.hh
+        Client/Client.cpp
+        Client/Client.hh
+        Exceptions/Exceptions.cpp Exceptions/Exceptions.hh
+        ../../Logger/Logger.hpp
+        ../../Logger/LoggerConfiguration.cpp
+        ../../Logger/LoggerHelper.hpp
         )

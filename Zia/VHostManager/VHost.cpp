@@ -60,6 +60,16 @@ bool    zia::VHost::instanciateModule() {
     return true;
 }
 
+bool    zia::VHost::run() {
+    api::Net::Callback callback = std::bind(&zia::VHost::callbackRequest, this, std::placeholders::_1, std::placeholders::_2);
+
+    return _networkModule->get()->run(callback);
+}
+
+void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
+    std::cout << "Request here" << std::endl;
+}
+
 void    zia::VHost::say(std::string const &message) {
     if (LoggerConfiguration::isDebugEnabled()) {
         std::cerr << "<" << _name << "> : ";

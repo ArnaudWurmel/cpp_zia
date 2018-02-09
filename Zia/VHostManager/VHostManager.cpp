@@ -40,7 +40,17 @@ bool    zia::VHostManager::initVHosts() {
 }
 
 void    zia::VHostManager::run() {
+    auto iterator = _vhostsList.begin();
 
+    while (iterator != _vhostsList.end()) {
+        if (!(*iterator)->run()) {
+            iterator = _vhostsList.erase(iterator);
+        }
+        else {
+            ++iterator;
+        }
+    }
+    while (_vhostsList.size());
 }
 
 zia::VHostManager::~VHostManager() = default;
