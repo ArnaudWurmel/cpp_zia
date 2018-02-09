@@ -1,5 +1,5 @@
 ./cmake-build-debug/
-./CMakeFiles/*
+./CMakeFiles/
 cpp_zia
 cpp_zia.cbp
 Makefile
