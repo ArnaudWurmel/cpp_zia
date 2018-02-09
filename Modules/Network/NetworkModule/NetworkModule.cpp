@@ -80,17 +80,22 @@ void    zia::module::NetworkModule::monitoreSocket() {
     FD_ZERO(&wsok);
     FD_SET(_acceptor->getServerSocket(), &rsok);
     while (it != _clientList.end()) {
-        FD_SET((*it)->getSocket()->getSocket(), &rsok);
+        if (!(*it)->isReady()) {
+            std::cout << "Set read" << std::endl;
+            FD_SET((*it)->getSocket()->getSocket(), &rsok);
+        }
         if ((*it)->getSocket()->haveSomethingToWrite()) {
             FD_SET((*it)->getSocket()->getSocket(), &wsok);
         }
         ++it;
     }
+    std::cout << "Before select" << std::endl;
     if (select(zia::ISocketAcceptor::getMaxFds(_clientList, _acceptor->getServerSocket()), &rsok, &wsok, NULL, NULL) == -1) {
         throw zia::module::NetworkException("Socket return -1");
     }
     if (FD_ISSET(_acceptor->getServerSocket(), &rsok)) {
         try {
+            std::cout << "New client" << std::endl;
             _clientList.push_back(std::shared_ptr<Client>(new Client(_acceptor->acceptClient())));
         }
         catch (std::exception& e) {
@@ -110,9 +115,10 @@ void    zia::module::NetworkModule::monitoreSocket() {
         }
         if ((*it)->isReady()) {
             _onRequest((*it)->getRequest(), (*it)->getNetInfo());
+            it = _clientList.erase(it);
         }
-        if (!(*it)->getSocket()->isOpen())
-            it = _clientList.erase(it--);
+        else if (!(*it)->getSocket()->isOpen())
+            it = _clientList.erase(it);
         else {
             ++it;
         }

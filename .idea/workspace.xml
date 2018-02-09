@@ -15,12 +15,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o" />
       <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Modules/Network/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/Client/AClient.hh" afterPath="$PROJECT_DIR$/Modules/Network/Client/AClient.hh" />
       <change beforePath="$PROJECT_DIR$/Modules/Network/Client/Client.cpp" afterPath="$PROJECT_DIR$/Modules/Network/Client/Client.cpp" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/Client/Client.hh" afterPath="$PROJECT_DIR$/Modules/Network/Client/Client.hh" />
       <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/NetworkModule.cpp" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/NetworkModule.cpp" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxSocket.cpp" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxSocket.cpp" />
       <change beforePath="$PROJECT_DIR$/Zia/VHostManager/VHost.cpp" afterPath="$PROJECT_DIR$/Zia/VHostManager/VHost.cpp" />
+      <change beforePath="$PROJECT_DIR$/zia_root/site_enabled/test.conf" afterPath="$PROJECT_DIR$/zia_root/site_enabled/test.conf" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -37,7 +35,7 @@
       <file leaf-file-name="Zia.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Zia/Zia.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="442">
               <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
               <folding />
             </state>
@@ -77,8 +75,8 @@
       <file leaf-file-name="VHost.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="66" column="1" lean-forward="true" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+            <state relative-caret-position="656">
+              <caret line="84" column="45" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
               <folding>
                 <element signature="e#50#67#0" expanded="true" />
               </folding>
@@ -86,10 +84,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="test.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zia_root/site_enabled/test.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="VHost.hh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.hh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
+            <state relative-caret-position="352">
               <caret line="26" column="59" lean-forward="false" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
               <folding>
                 <element signature="e#101#144#0" expanded="true" />
@@ -108,31 +116,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zia_root/site_enabled/test.conf">
+      <file leaf-file-name="http.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/http.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            <state relative-caret-position="-728">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Configuration.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConfParser/Configuration.h">
+      <file leaf-file-name="module.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/module.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="38" column="24" lean-forward="false" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Configuration.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConfParser/Configuration.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="468">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -190,10 +188,10 @@
         <option value="$PROJECT_DIR$/ConfParser/Configuration.h" />
         <option value="$PROJECT_DIR$/ConfParser/Configuration.cpp" />
         <option value="$PROJECT_DIR$/Zia/ModuleLoader/Module.hh" />
-        <option value="$PROJECT_DIR$/zia_root/site_enabled/test.conf" />
         <option value="$PROJECT_DIR$/Zia/Zia.hh" />
         <option value="$PROJECT_DIR$/Zia/VHostManager/VHostManager.cpp" />
         <option value="$PROJECT_DIR$/Zia/VHostManager/VHost.hh" />
+        <option value="$PROJECT_DIR$/zia_root/site_enabled/test.conf" />
         <option value="$PROJECT_DIR$/Zia/VHostManager/VHost.cpp" />
       </list>
     </option>
@@ -205,7 +203,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -258,19 +256,12 @@
             <path>
               <item name="cpp_zia" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="cpp_zia" type="462c0819:PsiDirectoryNode" />
-              <item name="Zia" type="462c0819:PsiDirectoryNode" />
+              <item name="Logger" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cpp_zia" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="cpp_zia" type="462c0819:PsiDirectoryNode" />
               <item name="Zia" type="462c0819:PsiDirectoryNode" />
-              <item name="ArgParsing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cpp_zia" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="cpp_zia" type="462c0819:PsiDirectoryNode" />
-              <item name="Zia" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cpp_zia" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -338,15 +329,15 @@
       <updated>1514206265032</updated>
       <workItem from="1514206266355" duration="13947000" />
       <workItem from="1514638569370" duration="67000" />
-      <workItem from="1518081341203" duration="32012000" />
+      <workItem from="1518081341203" duration="34866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46026000" />
+    <option name="totallyTimeSpent" value="48880000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1864139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -355,10 +346,10 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27010924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27010924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2144985" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.83316785" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39821252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -569,14 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/http.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/conf.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -632,14 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/module.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -716,14 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zia_root/site_enabled/test.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConfParser/Configuration.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -748,14 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Zia/Zia.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHostManager.hh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -764,20 +723,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="26" column="59" lean-forward="false" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-          <folding>
-            <element signature="e#101#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/net.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="40" column="6" lean-forward="false" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zia/Zia.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/module.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/http.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-728">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zia_root/site_enabled/test.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -790,10 +771,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="26" column="59" lean-forward="false" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+          <folding>
+            <element signature="e#101#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="66" column="1" lean-forward="true" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+        <state relative-caret-position="656">
+          <caret line="84" column="45" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
           <folding>
             <element signature="e#50#67#0" expanded="true" />
           </folding>

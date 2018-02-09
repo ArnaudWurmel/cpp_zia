@@ -2,6 +2,7 @@
 // Created by Arnaud WURMEL on 24/10/2017.
 //
 
+#include <iostream>
 #include "Client.hh"
 
 zia::Client::Client(api::ImplSocket * socket) {
@@ -15,6 +16,7 @@ void    zia::Client::addInput(std::string const& input) {
     }
     else if (_waitingEnd)
         _content = _content + input + "\n";
+    std::cout << input << std::endl;
 }
 
 void    zia::Client::endOfRequest() {

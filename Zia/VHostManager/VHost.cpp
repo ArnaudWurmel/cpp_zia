@@ -67,10 +67,22 @@ bool    zia::VHost::run() {
 }
 
 void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
+    std::string request;
     auto iterator = raw.begin();
 
     while (iterator != raw.end()) {
-        std::cout << *reinterpret_cast<char *>(&(*iterator));
+        request += *reinterpret_cast<char *>(&(*iterator));
+        ++iterator;
+    }
+    say("Handle new request : \n" + request + "======");
+    api::HttpDuplex httpDuplex;
+
+    httpDuplex.raw_req = raw;
+    httpDuplex.info = netInfo;
+    auto itModule = _instanciatedModules.begin();
+
+    while (itModule != _instanciatedModules.end()) {
+        (*itModule)->get()->exec(httpDuplex);
         ++iterator;
     }
 }
