@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o"
   "CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o"
   "CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o"
+  "CMakeFiles/cpp_zia.dir/Zia/ModuleLoader/DLLManager/ADLLManager.cpp.o"
   "cpp_zia.pdb"
   "cpp_zia"
 )

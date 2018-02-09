@@ -27,7 +27,9 @@ bool    zia::VHostManager::initVHosts() {
             std::shared_ptr<VHost>  vHost(new VHost);
 
             vHost->configure(configuration);
-            _vhostsList.push_back(vHost);
+            if (vHost->instanciateModule()) {
+                _vhostsList.push_back(vHost);
+            }
         }
         catch (std::exception& e) {
             say(e.what());

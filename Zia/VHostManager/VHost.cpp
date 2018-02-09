@@ -2,6 +2,7 @@
 // Created by Arnaud WURMEL on 08/02/2018.
 //
 
+#include <memory>
 #include <vector>
 #include "VHost.hh"
 
@@ -53,6 +54,19 @@ void    zia::VHost::configure(Configuration& configuration) {
 }
 
 bool    zia::VHost::instanciateModule() {
+    _networkModule = std::unique_ptr<Module<api::Net> >(new Module<api::Net>(_moduleNetwork));
+
+    if (!_networkModule->load(_modulePathList)) {
+        say("Can't load network module");
+        return false;
+    }
+
+    auto iterator = _moduleList.begin();
+
+    while (iterator != _moduleList.end()) {
+
+        ++iterator;
+    }
     return false;
 }
 

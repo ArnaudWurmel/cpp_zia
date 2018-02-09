@@ -7,6 +7,7 @@
 
 #include "../../ConfParser/Configuration.h"
 # include "../../Logger/Logger.hpp"
+#include "../ModuleLoader/Module.hh"
 
 namespace zia {
     class VHost : public Logger<VHost> {
@@ -20,6 +21,10 @@ namespace zia {
 
     protected:
         void    say(std::string const& message) override;
+
+    private:
+        std::vector<std::unique_ptr<Module<api::Module> > > _instanciateModules;
+        std::unique_ptr<Module<api::Net> >  _networkModule;
 
     private:
         std::string _name;

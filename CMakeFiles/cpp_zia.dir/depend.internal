@@ -44,14 +44,28 @@ CMakeFiles/cpp_zia.dir/Zia/ArgParsing/ArgParsing.cpp.o
 CMakeFiles/cpp_zia.dir/Zia/Exceptions/Exceptions.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/Exceptions/Exceptions.cpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/Exceptions/Exceptions.h
+CMakeFiles/cpp_zia.dir/Zia/ModuleLoader/DLLManager/ADLLManager.cpp.o
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/ADLLManager.cpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/ADLLManager.hh
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/conf.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/http.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/module.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/net.h
 CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/Configuration.h
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.hpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerConfiguration.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerHelper.hpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/ADLLManager.hh
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/Module.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.cpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/api/conf.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/http.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/module.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/net.h
 CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/AConfParser.h
  /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/ADirectoryReader.h
@@ -60,10 +74,16 @@ CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.hpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerConfiguration.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerHelper.hpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/ADLLManager.hh
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/Module.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.cpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/api/conf.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/http.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/module.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/net.h
  /Users/wurmel_a/CLionProjects/cpp_zia/lib/json.hpp
 CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/AConfParser.h
@@ -74,19 +94,31 @@ CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerHelper.hpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ArgParsing/ArgParsing.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/Exceptions/Exceptions.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/ADLLManager.hh
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/Module.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/Zia.cpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/Zia.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/api/conf.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/http.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/module.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/net.h
  /Users/wurmel_a/CLionProjects/cpp_zia/lib/json.hpp
 CMakeFiles/cpp_zia.dir/main.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/Configuration.h
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.hpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerConfiguration.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerHelper.hpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/ADLLManager.hh
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/Module.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHostManager.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/Zia/Zia.hh
  /Users/wurmel_a/CLionProjects/cpp_zia/api/conf.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/http.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/module.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/api/net.h
  /Users/wurmel_a/CLionProjects/cpp_zia/main.cpp
