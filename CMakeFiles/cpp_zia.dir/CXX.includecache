@@ -155,6 +155,8 @@ DLLManager/LinuxDLLManager.hpp
 /Users/wurmel_a/CLionProjects/cpp_zia/Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp
 
 /Users/wurmel_a/CLionProjects/cpp_zia/Zia/VHostManager/VHost.cpp
+cstring
+-
 memory
 -
 vector

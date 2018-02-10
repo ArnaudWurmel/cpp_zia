@@ -25,6 +25,7 @@ namespace zia {
 
     private:
         void    callbackRequest(api::Net::Raw, api::NetInfo);
+        void    tryToSetRespBody(api::HttpDuplex&);
 
     private:
         std::vector<std::shared_ptr<Module<api::Module> > > _instanciatedModules;

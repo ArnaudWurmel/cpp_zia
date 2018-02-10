@@ -111,8 +111,10 @@ bool    zia::LinuxSocket::haveSomethingToWrite() const {
 }
 
 void    zia::LinuxSocket::flushWrite() {
-    ::write(_socket, _writeList.front().data(), sizeof(std::byte) * _writeList.front().size());
-    _writeList.pop();
+    if (_writeList.size()) {
+        ::write(_socket, _writeList.front().data(), sizeof(std::byte) * _writeList.front().size());
+        _writeList.pop();
+    }
 }
 
 zia::LinuxSocket::~LinuxSocket() {

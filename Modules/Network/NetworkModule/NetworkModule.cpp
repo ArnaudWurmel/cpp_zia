@@ -91,14 +91,17 @@ void    zia::module::NetworkModule::monitoreSocket() {
     FD_ZERO(&wsok);
     FD_SET(_acceptor->getServerSocket(), &rsok);
     while (it != _clientList.end()) {
-        if (!(*it)->isReady() && !(*it)->requestTreated()) {
+        if (!(*it)->getSocket()->isOpen()) {
+            delete (*it)->getSocket();
+            it = _clientList.erase(it);
+        }
+        else {
             FD_SET((*it)->getSocket()->getSocket(), &rsok);
+            if ((*it)->getSocket()->haveSomethingToWrite()) {
+                FD_SET((*it)->getSocket()->getSocket(), &wsok);
+            }
+            ++it;
         }
-        //std::cout << "something to write <" << (*it)->getSocket()->haveSomethingToWrite() << ">" << std::endl;
-        if ((*it)->getSocket()->haveSomethingToWrite()) {
-            FD_SET((*it)->getSocket()->getSocket(), &wsok);
-        }
-        ++it;
     }
     timeout.tv_sec = 0;
     timeout.tv_usec = 100;
@@ -123,18 +126,12 @@ void    zia::module::NetworkModule::monitoreSocket() {
         }
         if ((*it)->getSocket()->isOpen() && FD_ISSET((*it)->getSocket()->getSocket(), &wsok)) {
             (*it)->getSocket()->flushWrite();
-            if (!(*it)->getSocket()->haveSomethingToWrite()) {
-                delete (*it)->getSocket();
-                it = _clientList.erase(it);
-            }
+            (*it)->getSocket()->close();
         }
         else if ((*it)->isReady() && !(*it)->requestTreated()) {
             _onRequest((*it)->getRequest(), (*it)->getNetInfo());
-            ++it;
         }
-        else {
-            ++it;
-        }
+        ++it;
     }
 }
 

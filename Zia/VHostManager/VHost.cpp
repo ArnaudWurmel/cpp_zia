@@ -2,6 +2,7 @@
 // Created by Arnaud WURMEL on 08/02/2018.
 //
 
+#include <cstring>
 #include <memory>
 #include <vector>
 #include "VHost.hh"
@@ -79,11 +80,20 @@ void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
 
     httpDuplex.raw_req = raw;
     httpDuplex.info = netInfo;
+    //
+    // Data mock
+    //
+    httpDuplex.resp.headers["Content-Type"] = "text/html";
+    httpDuplex.resp.status = api::HttpResponse::Status::found;
+    tryToSetRespBody(httpDuplex);
+    //
+    // ===================
+    //
     auto itModule = _instanciatedModules.begin();
 
     while (itModule != _instanciatedModules.end()) {
         (*itModule)->get()->exec(httpDuplex);
-        ++iterator;
+        ++itModule;
     }
     _networkModule->get()->send(netInfo.sock, httpDuplex.raw_resp);
 }
@@ -92,6 +102,17 @@ void    zia::VHost::say(std::string const &message) {
     if (LoggerConfiguration::isDebugEnabled()) {
         std::cerr << "<" << _name << "> : ";
         Logger::say(message);
+    }
+}
+
+void    zia::VHost::tryToSetRespBody(api::HttpDuplex& duplex) {
+    std::string text = "<html><head><title>Coucou</title></head><body><p>Toussa pour afficher un texte...</p></body</html>";
+
+    auto iterator = text.begin();
+
+    while (iterator != text.end()) {
+        duplex.resp.body.push_back(std::byte(*iterator));
+        ++iterator;
     }
 }
 
