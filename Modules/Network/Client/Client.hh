@@ -21,6 +21,8 @@ namespace zia {
         api::NetInfo    &getNetInfo();
         std::vector<std::byte>  getRequest() const override;
         bool    isReady() const override;
+        bool    requestTreated() const;
+        void    requestDone();
 
     public:
         void    addInput(std::string const&);
@@ -28,6 +30,7 @@ namespace zia {
     private:
         std::string _content;
         bool    _waitingEnd;
+        bool    _threated;
         api::NetInfo    _netInfos;
     };
 }

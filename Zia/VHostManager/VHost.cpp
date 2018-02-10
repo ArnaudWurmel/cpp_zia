@@ -85,6 +85,7 @@ void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
         (*itModule)->get()->exec(httpDuplex);
         ++iterator;
     }
+    _networkModule->get()->send(netInfo.sock, httpDuplex.raw_resp);
 }
 
 void    zia::VHost::say(std::string const &message) {

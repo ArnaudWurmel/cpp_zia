@@ -8,6 +8,7 @@
 zia::Client::Client(api::ImplSocket * socket) {
     _waitingEnd = true;
     _netInfos.sock = socket;
+    _threated = false;
 }
 
 void    zia::Client::addInput(std::string const& input) {
@@ -16,7 +17,6 @@ void    zia::Client::addInput(std::string const& input) {
     }
     else if (_waitingEnd)
         _content = _content + input + "\n";
-    std::cout << input << std::endl;
 }
 
 void    zia::Client::endOfRequest() {
@@ -44,6 +44,14 @@ std::vector<std::byte>  zia::Client::getRequest() const {
         ++it;
     }
     return request;
+}
+
+bool    zia::Client::requestTreated() const {
+    return _threated;
+}
+
+void    zia::Client::requestDone() {
+    _threated = true;
 }
 
 bool    zia::Client::isReady() const {

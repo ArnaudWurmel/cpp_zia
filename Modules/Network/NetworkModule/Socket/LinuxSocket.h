@@ -6,6 +6,7 @@
 #define ZIA_LINUXSOCKET_H
 
 #ifndef _WIN32
+# include <list>
 # include <netinet/in.h>
 # include <sys/types.h>
 # include <sys/socket.h>
@@ -22,7 +23,7 @@ namespace zia {
 
     public:
         virtual bool    bind(unsigned short port);
-        virtual void    write(std::string const&);
+        virtual void    write(std::vector<std::byte> const&);
         virtual std::string    read();
         virtual void    close();
         virtual bool    isOpen() const;
@@ -37,7 +38,7 @@ namespace zia {
     private:
         int _socket;
         struct in_addr  sin_addr;
-        std::queue<std::string> _writeList;
+        std::queue<std::vector<std::byte> > _writeList;
         std::string _buffer;
     };
 }

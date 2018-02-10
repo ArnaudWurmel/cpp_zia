@@ -44,8 +44,8 @@ bool zia::LinuxSocket::bind(unsigned short port) {
     return true;
 }
 
-void zia::LinuxSocket::write(std::string const &) {
-
+void zia::LinuxSocket::write(std::vector<std::byte> const& message) {
+    _writeList.push(message);
 }
 
 bool    zia::LinuxSocket::setResultToBuffer(std::string &buffer, std::string &dest) {
@@ -111,7 +111,8 @@ bool    zia::LinuxSocket::haveSomethingToWrite() const {
 }
 
 void    zia::LinuxSocket::flushWrite() {
-
+    ::write(_socket, _writeList.front().data(), sizeof(std::byte) * _writeList.front().size());
+    _writeList.pop();
 }
 
 zia::LinuxSocket::~LinuxSocket() {

@@ -26,6 +26,16 @@ bool    zia::module::NetworkModule::stop() {
 }
 
 bool    zia::module::NetworkModule::send(api::ImplSocket *sock, Raw resp) {
+    auto iterator = _clientList.begin();
+
+    while (iterator != _clientList.end()) {
+        if ((*iterator)->getSocket()->getSocket() == sock->getSocket()) {
+            (*iterator)->getSocket()->write(resp);
+            (*iterator)->requestDone();
+            return true;
+        }
+        ++iterator;
+    }
     return false;
 }
 
@@ -73,6 +83,7 @@ void    zia::module::NetworkModule::threadLoop() {
 
 void    zia::module::NetworkModule::monitoreSocket() {
     std::vector<std::shared_ptr<Client> >::iterator    it = _clientList.begin();
+    struct timeval  timeout;
     fd_set  rsok;
     fd_set  wsok;
 
@@ -80,22 +91,22 @@ void    zia::module::NetworkModule::monitoreSocket() {
     FD_ZERO(&wsok);
     FD_SET(_acceptor->getServerSocket(), &rsok);
     while (it != _clientList.end()) {
-        if (!(*it)->isReady()) {
-            std::cout << "Set read" << std::endl;
+        if (!(*it)->isReady() && !(*it)->requestTreated()) {
             FD_SET((*it)->getSocket()->getSocket(), &rsok);
         }
+        //std::cout << "something to write <" << (*it)->getSocket()->haveSomethingToWrite() << ">" << std::endl;
         if ((*it)->getSocket()->haveSomethingToWrite()) {
             FD_SET((*it)->getSocket()->getSocket(), &wsok);
         }
         ++it;
     }
-    std::cout << "Before select" << std::endl;
-    if (select(zia::ISocketAcceptor::getMaxFds(_clientList, _acceptor->getServerSocket()), &rsok, &wsok, NULL, NULL) == -1) {
+    timeout.tv_sec = 0;
+    timeout.tv_usec = 100;
+    if (select(zia::ISocketAcceptor::getMaxFds(_clientList, _acceptor->getServerSocket()), &rsok, &wsok, NULL, &timeout) == -1) {
         throw zia::module::NetworkException("Socket return -1");
     }
     if (FD_ISSET(_acceptor->getServerSocket(), &rsok)) {
         try {
-            std::cout << "New client" << std::endl;
             _clientList.push_back(std::shared_ptr<Client>(new Client(_acceptor->acceptClient())));
         }
         catch (std::exception& e) {
@@ -112,13 +123,15 @@ void    zia::module::NetworkModule::monitoreSocket() {
         }
         if ((*it)->getSocket()->isOpen() && FD_ISSET((*it)->getSocket()->getSocket(), &wsok)) {
             (*it)->getSocket()->flushWrite();
+            if (!(*it)->getSocket()->haveSomethingToWrite()) {
+                delete (*it)->getSocket();
+                it = _clientList.erase(it);
+            }
         }
-        if ((*it)->isReady()) {
+        else if ((*it)->isReady() && !(*it)->requestTreated()) {
             _onRequest((*it)->getRequest(), (*it)->getNetInfo());
-            it = _clientList.erase(it);
+            ++it;
         }
-        else if (!(*it)->getSocket()->isOpen())
-            it = _clientList.erase(it);
         else {
             ++it;
         }
