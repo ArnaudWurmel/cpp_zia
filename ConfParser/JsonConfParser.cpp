@@ -86,9 +86,7 @@ void    zia::JsonConfParser::setObject(api::ConfObject& rootObject, std::string 
     api::ConfObject ressources;
     api::ConfValue  confValue;
 
-    std::cout << "Key : " << key << std::endl;
     recursivityLoad(ressources, value);
-    std::cout << std::get<bool>(ressources["rewrite_uri"].v) << std::endl;
     confValue.v = ressources;
     rootObject.insert(std::make_pair(key, confValue));
 }

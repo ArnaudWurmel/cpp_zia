@@ -72,15 +72,6 @@ void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
 
     httpDuplex.raw_req = raw;
     httpDuplex.info = netInfo;
-    //
-    // Data mock
-    //
-    httpDuplex.resp.headers["Content-Type"] = "text/html";
-    httpDuplex.resp.status = api::HttpResponse::Status::found;
-    tryToSetRespBody(httpDuplex);
-    //
-    // ===================
-    //
     printRequest(httpDuplex);
     auto itModule = _instanciatedModules.begin();
 

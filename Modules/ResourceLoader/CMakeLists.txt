@@ -17,4 +17,4 @@ add_library(ResourceLoader SHARED
         ../../Logger/Logger.cpp
         ../../Logger/LoggerHelper.hpp
         ../../Logger/LoggerConfiguration.cpp
-        ResourceLoader/ResourceLoader.cpp ResourceLoader/ResourceLoader.hh)
+        ResourceLoader/ResourceLoader.cpp ResourceLoader/ResourceLoader.hh ResourceLoader/Uri/Uri.cpp ResourceLoader/Uri/Uri.hh ResourceLoader/File/AFile.hh ResourceLoader/File/AFile.cpp ResourceLoader/File/LinuxFile.cpp ResourceLoader/File/LinuxFile.hh)

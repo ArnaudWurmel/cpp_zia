@@ -178,7 +178,7 @@ void    zia::module::HttpReceiver::printHeaders(zia::api::HttpDuplex const &http
     auto iterator = http.req.headers.begin();
 
     while (iterator != http.req.headers.end()) {
-        say("" + (*iterator).first + "=" + (*iterator).second + "");
+        say((*iterator).first + "=" + (*iterator).second);
         ++iterator;
     }
 }
