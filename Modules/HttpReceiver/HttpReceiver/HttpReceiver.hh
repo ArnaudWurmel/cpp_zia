@@ -33,9 +33,6 @@ namespace zia::module {
         void    printHeaders(zia::api::HttpDuplex const& http) const;
 
     private:
-        std::string _rootDirectory;
-
-    private:
         static std::map<std::string, zia::api::HttpRequest::Version>   _versionTranslate;
         static std::map<std::string, zia::api::HttpRequest::Method>    _methodTranslate;
     };

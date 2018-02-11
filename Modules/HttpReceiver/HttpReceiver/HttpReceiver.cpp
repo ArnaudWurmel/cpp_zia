@@ -34,14 +34,6 @@ bool    zia::module::HttpReceiver::config(const zia::api::Conf& conf) {
         zia::LoggerConfiguration::setDebugEnabled(value);
     }
     catch (std::exception&) {}
-    try {
-        _rootDirectory = configuration.get<std::string>(KEY_ROOT);
-    }
-    catch (std::exception&) {
-        _rootDirectory = DEFAULT_ROOT;
-        say("Warning: using default root for VHost");
-    }
-    say("Initialize with root : `" + _rootDirectory + "`");
     return true;
 }
 
