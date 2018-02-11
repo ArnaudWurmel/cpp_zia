@@ -14,7 +14,10 @@ std::map<std::string, std::string>  zia::module::ResourceLoader::_extContentType
         {"css", "text/css"},
         {"csv", "text/csv"},
         {"js", "text/javascript"},
-        {"xml", "text/xml"}
+        {"xml", "text/xml"},
+        {"gif", "image/gif"},
+        {"jpeg", "image/jpeg"},
+        {"png", "image/png"}
 };
 
 zia::module::ResourceLoader::ResourceLoader() {}
@@ -91,15 +94,18 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
             std::shared_ptr<AFile>  tmpFile = AFile::get();
             std::string tmpPath = file->getFullPath() + "/" + *indexFileIt;
 
+            std::cout << tmpPath << std::endl;
             if (tmpFile->load(tmpPath) && !tmpFile->isDir()) {
                 found = true;
                 trueFile = tmpFile;
             }
             ++indexFileIt;
         }
-        http.resp.status = zia::api::HttpResponse::Status::not_found;
-        showErrorPage(http);
-        return false;
+        if (!found) {
+            http.resp.status = zia::api::HttpResponse::Status::not_found;
+            showErrorPage(http);
+            return false;
+        }
     }
     if (trueFile->isDir()) {
         http.resp.status = zia::api::HttpResponse::Status::forbidden;

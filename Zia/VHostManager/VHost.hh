@@ -25,7 +25,6 @@ namespace zia {
 
     private:
         void    callbackRequest(api::Net::Raw, api::NetInfo);
-        void    tryToSetRespBody(api::HttpDuplex&);
 
     private:
         void    printRequest(api::HttpDuplex&);

@@ -100,15 +100,4 @@ void    zia::VHost::printRequest(api::HttpDuplex& http) {
     say("Handle new request : \n" + request + "======");
 }
 
-void    zia::VHost::tryToSetRespBody(api::HttpDuplex& duplex) {
-    std::string text = "<html><head><title>Coucou</title></head><body><p>Toussa pour afficher un texte...</p></body</html>";
-
-    auto iterator = text.begin();
-
-    while (iterator != text.end()) {
-        duplex.resp.body.push_back(std::byte(*iterator));
-        ++iterator;
-    }
-}
-
 zia::VHost::~VHost() {}
