@@ -7,6 +7,7 @@
 #include "../../../ConfParser/Configuration.h"
 #include "Uri/Uri.hh"
 #include "File/AFile.hh"
+#include "../../../ConfParser/ADirectoryReader.h"
 
 std::map<std::string, std::string>  zia::module::ResourceLoader::_extContentTypeMap = {
         {"html", "text/html"},
@@ -34,16 +35,16 @@ bool    zia::module::ResourceLoader::config(const zia::api::Conf &conf) {
 
         _rewriteUri = subConfiguration.get<bool>("rewrite_uri");
         _indexFiles = subConfiguration.getArray<std::string>("index");
+        _useErrorPage = subConfiguration.get<bool>("use_error_page");
+        _errorsPath = subConfiguration.get<std::string>("error_pages");
     }
     catch (std::exception& e) {
         std::cout << e.what() << std::endl;
         _rootDirectory = DEFAULT_ROOT;
         _rewriteUri = false;
+        _useErrorPage = false;
+        _errorsPath = "";
         say("Warning: using default root for VHost");
-    }
-    say("Initialize with root : `" + _rootDirectory + "`");
-    if (!_rewriteUri) {
-        say("Warning: Doesn't use uri rewriting");
     }
     std::shared_ptr<AFile>  root = AFile::get();
 
@@ -52,6 +53,10 @@ bool    zia::module::ResourceLoader::config(const zia::api::Conf &conf) {
         return false;
     }
     _rootDirectory = root->getFullPath();
+    say("Initialize with root : `" + _rootDirectory + "`");
+    if (!_rewriteUri) {
+        say("Warning: Doesn't use uri rewriting");
+    }
     return true;
 }
 
@@ -60,6 +65,7 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
 
     if (uri.parse(http.req.uri) == false) {
         http.resp.status = zia::api::HttpResponse::Status::bad_request;
+        showErrorPage(http);
         return false;
     }
     say("Requested file : " + uri.getRequestedFile());
@@ -68,6 +74,7 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
 
     if (!file->load(completeFilePath)) {
         http.resp.status = zia::api::HttpResponse::Status::not_found;
+        showErrorPage(http);
         return false;
     }
     if (file->getFullPath().compare(0, _rootDirectory.size(), _rootDirectory)) {
@@ -90,6 +97,9 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
             }
             ++indexFileIt;
         }
+        http.resp.status = zia::api::HttpResponse::Status::not_found;
+        showErrorPage(http);
+        return false;
     }
     if (trueFile->isDir()) {
         http.resp.status = zia::api::HttpResponse::Status::forbidden;
@@ -103,6 +113,7 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
             handleContentType(trueFile, http);
         }
     }
+    showErrorPage(http);
     return true;
 }
 
@@ -143,6 +154,28 @@ void    zia::module::ResourceLoader::handleContentType(std::shared_ptr<AFile> co
         }
         else {
             http.resp.headers["Content-Type"] = "text/plain";
+        }
+    }
+}
+
+void    zia::module::ResourceLoader::showErrorPage(zia::api::HttpDuplex& http) {
+    if (_useErrorPage) {
+        std::vector<std::string> files = zia::ADirectoryReader::getFileNameOfDirectory(_errorsPath);
+        auto it = files.begin();
+
+        while (it != files.end()) {
+            std::string expectedName = std::to_string(static_cast<int>(http.resp.status)) + ".html";
+
+            if ((*it) == expectedName) {
+                std::shared_ptr<AFile>  file = AFile::get();
+
+                if (file->load(_errorsPath + "/" + *it) && !file->isDir()) {
+                    loadFileContent(file, http);
+                    handleContentType(file, http);
+                }
+                return ;
+            }
+            ++it;
         }
     }
 }

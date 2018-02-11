@@ -22,12 +22,15 @@ namespace zia::module {
     private:
         bool    loadFileContent(std::shared_ptr<AFile> const& file, zia::api::HttpDuplex&);
         void    handleContentType(std::shared_ptr<AFile> const& file, zia::api::HttpDuplex&);
+        void    showErrorPage(zia::api::HttpDuplex&);
 
     private:
         std::string _rootDirectory;
         bool    _rewriteUri;
+        bool    _useErrorPage;
         std::vector<std::string>    _indexFiles;
         static std::map<std::string, std::string>  _extContentTypeMap;
+        std::string _errorsPath;
     };
 }
 
