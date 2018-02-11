@@ -12,22 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660496c3-f5b7-469d-ae8a-4b3ca52c989a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/ConfParser/Configuration.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/ConfParser/Configuration.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/ConfParser/JsonConfParser.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/ConfParser/JsonConfParser.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/ArgParsing/ArgParsing.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/ArgParsing/ArgParsing.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/ConfParser/Configuration.h" afterPath="$PROJECT_DIR$/ConfParser/Configuration.h" />
-      <change beforePath="$PROJECT_DIR$/Logger/Logger.hpp" afterPath="$PROJECT_DIR$/Logger/Logger.hpp" />
-      <change beforePath="$PROJECT_DIR$/Logger/LoggerHelper.hpp" afterPath="$PROJECT_DIR$/Logger/LoggerHelper.hpp" />
-      <change beforePath="$PROJECT_DIR$/Modules/HttpSender/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Modules/HttpSender/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Modules/Network/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/Client/Client.cpp" afterPath="$PROJECT_DIR$/Modules/Network/Client/Client.cpp" />
-      <change beforePath="$PROJECT_DIR$/Zia/VHostManager/VHost.cpp" afterPath="$PROJECT_DIR$/Zia/VHostManager/VHost.cpp" />
-      <change beforePath="$PROJECT_DIR$/Zia/VHostManager/VHost.hh" afterPath="$PROJECT_DIR$/Zia/VHostManager/VHost.hh" />
-      <change beforePath="$PROJECT_DIR$/zia_root/site_enabled/test.conf" afterPath="$PROJECT_DIR$/zia_root/site_enabled/test.conf" />
+      <change beforePath="$PROJECT_DIR$/Modules/HttpReceiver/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Modules/HttpReceiver/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Modules/HttpReceiver/HttpReceiver/HttpReceiver.cpp" afterPath="$PROJECT_DIR$/Modules/HttpReceiver/HttpReceiver/HttpReceiver.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -137,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="74">
-              <caret line="93" column="58" lean-forward="false" selection-start-line="93" selection-start-column="58" selection-end-line="93" selection-end-column="58" />
+              <caret line="93" column="59" lean-forward="true" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
               <folding>
                 <element signature="e#50#68#0" expanded="true" />
               </folding>
@@ -392,12 +378,12 @@
       <workItem from="1514206266355" duration="13947000" />
       <workItem from="1514638569370" duration="67000" />
       <workItem from="1518081341203" duration="37430000" />
-      <workItem from="1518272629842" duration="16984000" />
+      <workItem from="1518272629842" duration="17594000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68428000" />
+    <option name="totallyTimeSpent" value="69038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -790,7 +776,7 @@
     <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
-          <caret line="93" column="58" lean-forward="false" selection-start-line="93" selection-start-column="58" selection-end-line="93" selection-end-column="58" />
+          <caret line="93" column="59" lean-forward="true" selection-start-line="93" selection-start-column="59" selection-end-line="93" selection-end-column="59" />
           <folding>
             <element signature="e#50#68#0" expanded="true" />
           </folding>

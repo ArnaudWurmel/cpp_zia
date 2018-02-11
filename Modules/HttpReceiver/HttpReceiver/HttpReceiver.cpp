@@ -50,7 +50,7 @@ bool    zia::module::HttpReceiver::exec(zia::api::HttpDuplex& http) {
 
     if (rawSplit.size() == 0 || !handleParseMethodUriVersion(rawSplit[0], http)) {
         //
-        //  Handle error
+        //  Handle error method inconnue
         //
         return false;
     }
@@ -59,7 +59,7 @@ bool    zia::module::HttpReceiver::exec(zia::api::HttpDuplex& http) {
     while (iterator != rawSplit.end()) {
         if (!handleParseHeader(*iterator, http)) {
             //
-            //  Handle error
+            //  Handle error retourner une erreur 500
             //
             std::cout << "Can't parse header" << std::endl;
             return false;
