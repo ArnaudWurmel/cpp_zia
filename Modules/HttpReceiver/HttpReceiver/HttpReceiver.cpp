@@ -49,12 +49,14 @@ bool    zia::module::HttpReceiver::exec(zia::api::HttpDuplex& http) {
     auto iterator = rawSplit.begin() + 1;
 
     while (iterator != rawSplit.end()) {
-        if (!handleParseHeader(*iterator, http)) {
-            //
-            //  Handle error retourner une erreur 500
-            //
-            std::cout << "Can't parse header" << std::endl;
-            return false;
+        if ((*iterator).size()) {
+            if (!handleParseHeader(*iterator, http)) {
+                //
+                //  Handle error retourner une erreur 500
+                //
+                std::cout << "Can't parse header" << std::endl;
+                return false;
+            }
         }
         ++iterator;
     }

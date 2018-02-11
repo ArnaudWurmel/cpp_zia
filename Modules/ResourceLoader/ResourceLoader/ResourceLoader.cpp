@@ -94,7 +94,6 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
             std::shared_ptr<AFile>  tmpFile = AFile::get();
             std::string tmpPath = file->getFullPath() + "/" + *indexFileIt;
 
-            std::cout << tmpPath << std::endl;
             if (tmpFile->load(tmpPath) && !tmpFile->isDir()) {
                 found = true;
                 trueFile = tmpFile;

@@ -13,7 +13,7 @@
 # include "ImplSocket.h"
 # include "../../../../api/net.h"
 
-# define READ_SIZE (14)
+# define READ_SIZE (8192)
 
 namespace zia {
     class LinuxSocket : public api::ImplSocket {
