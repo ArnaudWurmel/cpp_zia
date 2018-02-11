@@ -30,9 +30,8 @@ void    zia::JsonConfParser::loadConfiguration() {
         say("Configuration file opened");
         say("Parsing json file...");
         _configuration.clear();
-        nlohmann::json  json;// = nlohmann::json::parse(confFile);
+        nlohmann::json  json = nlohmann::json::parse(confFile);
 
-        confFile >> json;
         recursivityLoad(_configuration, json);
         confFile.close();
     }
@@ -84,7 +83,14 @@ void    zia::JsonConfParser::setArray(api::ConfObject& rootObject, std::string c
 }
 
 void    zia::JsonConfParser::setObject(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {
-    recursivityLoad(rootObject, value);
+    api::ConfObject ressources;
+    api::ConfValue  confValue;
+
+    std::cout << "Key : " << key << std::endl;
+    recursivityLoad(ressources, value);
+    std::cout << std::get<bool>(ressources["rewrite_uri"].v) << std::endl;
+    confValue.v = ressources;
+    rootObject.insert(std::make_pair(key, confValue));
 }
 
 void    zia::JsonConfParser::setBoolean(api::ConfObject& rootObject, std::string const& key, nlohmann::json const& value) {

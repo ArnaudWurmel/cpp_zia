@@ -7,6 +7,7 @@
 
 namespace zia::module {
     class HttpReceiver;
+    class ResourceLoader;
 }
 
 namespace zia {
@@ -72,6 +73,13 @@ namespace zia {
     struct LoggerHelper<zia::module::HttpReceiver> {
         static const char   *get() {
             return "HttpReceiver";
+        }
+    };
+
+    template<>
+    struct LoggerHelper<zia::module::ResourceLoader> {
+        static const char   *get() {
+            return "ResourceLoader";
         }
     };
 }

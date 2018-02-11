@@ -18,4 +18,4 @@ add_library(HttpReceiver SHARED
         ../../Logger/Logger.cpp
         ../../Logger/LoggerHelper.hpp
         ../../Logger/LoggerConfiguration.cpp
-        )
+        HttpHandler.cpp HttpHandler.hh)

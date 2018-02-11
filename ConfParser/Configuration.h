@@ -20,6 +20,7 @@
 # define KEY_MODULE_NET "module_net"
 # define KEY_MODULE_PATH "modules_path"
 # define KEY_ROOT "root"
+# define KEY_RESOURCE "resource"
 
 //
 //  DEFAULTS VALUES FOR MANDATORY VALUES
@@ -35,12 +36,14 @@
 
 
 namespace zia {
-    class Configuration : private Logger<Configuration> {
+    class Configuration {
 
     public:
-        Configuration();
-        Configuration(api::Conf const& conf);
-        ~Configuration();
+        Configuration() {}
+
+        Configuration(api::Conf const& conf) : _configuration(conf) {}
+
+        ~Configuration() = default;
 
     public:
         template<typename T>
@@ -64,7 +67,9 @@ namespace zia {
             return objectList;
         }
 
-        api::Conf const&    getInitial()  const;
+        api::Conf const&    getInitial()  const {
+            return _configuration;
+        }
 
     private:
         api::Conf   _configuration;
