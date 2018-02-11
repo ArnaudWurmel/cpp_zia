@@ -24,7 +24,7 @@ namespace zia {
         }
 
     protected:
-        virtual void    say(std::string const& message) {
+        virtual void    say(std::string const& message) const {
             if (LoggerConfiguration::isDebugEnabled()) {
                 std::cerr << "[" << LoggerHelper<T>::get() << "] <" << message << ">" << std::endl;
             }

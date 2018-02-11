@@ -13,10 +13,13 @@ zia::Client::Client(api::ImplSocket * socket) {
 
 void    zia::Client::addInput(std::string const& input) {
     if (input.empty()) {
-        endOfRequest();
+        if (!_content.empty()) {
+            endOfRequest();
+        }
     }
-    else if (_waitingEnd)
-        _content = _content + input + "\n";
+    else if (_waitingEnd) {
+        _content = _content + input + "\r\n";
+    }
 }
 
 void    zia::Client::endOfRequest() {

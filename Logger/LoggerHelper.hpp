@@ -5,6 +5,10 @@
 #ifndef CPP_ZIA_LOGGERHELPER_HPP
 #define CPP_ZIA_LOGGERHELPER_HPP
 
+namespace zia::module {
+    class HttpReceiver;
+}
+
 namespace zia {
 
     class Zia;
@@ -63,7 +67,13 @@ namespace zia {
             return "VHost";
         }
     };
-}
 
+    template<>
+    struct LoggerHelper<zia::module::HttpReceiver> {
+        static const char   *get() {
+            return "HttpReceiver";
+        }
+    };
+}
 
 #endif //CPP_ZIA_LOGGERHELPER_HPP

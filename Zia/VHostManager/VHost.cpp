@@ -68,14 +68,6 @@ bool    zia::VHost::run() {
 }
 
 void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
-    std::string request;
-    auto iterator = raw.begin();
-
-    while (iterator != raw.end()) {
-        request += *reinterpret_cast<char *>(&(*iterator));
-        ++iterator;
-    }
-    say("Handle new request : \n" + request + "======");
     api::HttpDuplex httpDuplex;
 
     httpDuplex.raw_req = raw;
@@ -89,6 +81,7 @@ void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
     //
     // ===================
     //
+    printRequest(httpDuplex);
     auto itModule = _instanciatedModules.begin();
 
     while (itModule != _instanciatedModules.end()) {
@@ -98,11 +91,22 @@ void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
     _networkModule->get()->send(netInfo.sock, httpDuplex.raw_resp);
 }
 
-void    zia::VHost::say(std::string const &message) {
+void    zia::VHost::say(std::string const &message) const {
     if (LoggerConfiguration::isDebugEnabled()) {
         std::cerr << "<" << _name << "> : ";
         Logger::say(message);
     }
+}
+
+void    zia::VHost::printRequest(api::HttpDuplex& http) {
+    std::string request;
+    auto iterator = http.raw_req.begin();
+
+    while (iterator != http.raw_req.end()) {
+        request += *reinterpret_cast<char *>(&(*iterator));
+        ++iterator;
+    }
+    say("Handle new request : \n" + request + "======");
 }
 
 void    zia::VHost::tryToSetRespBody(api::HttpDuplex& duplex) {

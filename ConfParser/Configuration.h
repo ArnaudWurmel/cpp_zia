@@ -19,6 +19,7 @@
 # define KEY_PORT "port"
 # define KEY_MODULE_NET "module_net"
 # define KEY_MODULE_PATH "modules_path"
+# define KEY_ROOT "root"
 
 //
 //  DEFAULTS VALUES FOR MANDATORY VALUES
@@ -29,6 +30,7 @@
 # define DEFAULT_PORT 80
 # define DEFAULT_MODULE_NET "network"
 # define DEFAULT_MODULE_PATH {"."}
+# define DEFAULT_ROOT "/var/www/html"
 
 
 
