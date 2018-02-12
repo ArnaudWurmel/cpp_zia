@@ -25,10 +25,12 @@ namespace zia {
         virtual bool    bind(unsigned short port);
         virtual void    write(std::vector<std::byte> const&);
         virtual std::string    read();
+        virtual std::string    read(size_t size);
         virtual void    close();
         virtual bool    isOpen() const;
         virtual SOCKET&  getSocket();
         virtual bool    haveAvailableInput() const;
+        virtual bool    haveAvailableInput(size_t size) const;
         virtual bool    haveSomethingToWrite() const;
         virtual void    flushWrite();
 

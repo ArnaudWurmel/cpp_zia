@@ -116,6 +116,7 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
         http.resp.status = zia::api::HttpResponse::Status::forbidden;
     }
     else {
+        http.req.uri = uri.getRequestedFile() + uri.getArgs();
         if (!loadFileContent(trueFile, http)) {
             http.resp.status = zia::api::HttpResponse::Status::internal_server_error;
         }

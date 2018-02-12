@@ -72,7 +72,28 @@ bool    zia::LinuxSocket::haveAvailableInput() const {
         }
         ++it;
     }
+    std::cout << "No input in " << _buffer << std::endl;
     return false;
+}
+
+bool    zia::LinuxSocket::haveAvailableInput(size_t size) const {
+    return _buffer.size() >= size;
+}
+
+std::string zia::LinuxSocket::read(size_t size) {
+    std::string res;
+
+    if (_buffer.size() >= size) {
+        auto it = _buffer.begin();
+        unsigned int i = 0;
+
+        while (i < size) {
+            res += *it;
+            it = _buffer.erase(it);
+            ++i;
+        }
+    }
+    return res;
 }
 
 std::string zia::LinuxSocket::read() {

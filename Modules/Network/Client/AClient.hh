@@ -19,6 +19,10 @@ namespace   zia {
         virtual api::ImplSocket   *getSocket() = 0;
         virtual api::NetInfo&   getNetInfo() = 0;
         virtual bool    isReady() const = 0;
+        virtual bool    mustReadBody() const = 0;
+        virtual bool    isReadingBody() const = 0;
+        virtual void    startReadingBody() = 0;
+        virtual size_t  getBodySize() const = 0;
     };
 }
 

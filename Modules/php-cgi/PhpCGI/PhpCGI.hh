@@ -23,6 +23,10 @@ namespace zia::module {
 
     private:
         std::string _bin;
+        std::string _rootDirectory;
+
+    private:
+        static std::map<zia::api::HttpRequest::Method, std::string>    _methodConverter;
     };
 }
 

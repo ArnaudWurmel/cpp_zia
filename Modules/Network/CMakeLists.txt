@@ -29,4 +29,8 @@ add_library(Network SHARED
         ../../Logger/Logger.hpp
         ../../Logger/LoggerConfiguration.cpp
         ../../Logger/LoggerHelper.hpp
+        ../HttpReceiver/HttpReceiver/HttpReceiver.cpp
+        ../HttpReceiver/HttpReceiver/HttpReceiver.hh
+        ../HttpReceiver/HttpHandler.cpp
+        ../HttpReceiver/HttpHandler.hh
         )

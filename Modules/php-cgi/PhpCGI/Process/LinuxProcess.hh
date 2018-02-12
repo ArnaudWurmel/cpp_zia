@@ -14,7 +14,7 @@ namespace zia::module {
         ~LinuxProcess() override;
 
     public:
-        bool    execute(std::string const& input, std::string const& path);
+        bool    execute(std::vector<std::string> const& input, std::map<std::string, std::string> const& env, zia::api::Net::Raw const&);
         std::string const&  getOutput() const;
 
     private:

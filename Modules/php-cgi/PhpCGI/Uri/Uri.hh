@@ -18,6 +18,7 @@ namespace zia::module {
         bool    parse(std::string const&);
         std::string const&  getRequestedFile() const;
         std::string const&  getArgs() const;
+        std::map<std::string, std::string>  getArgsMap() const;
 
     private:
         std::string _requestedFile;

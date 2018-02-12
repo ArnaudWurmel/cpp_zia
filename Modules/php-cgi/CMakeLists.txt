@@ -21,4 +21,6 @@ add_library(php-cgi SHARED
         ../../ConfParser/ADirectoryReader.cpp
         ../../ConfParser/LinuxDirectoryReader.h
         ../../ConfParser/LinuxDirectoryReader.cpp
+        PhpCGI/Uri/Uri.cpp
+        PhpCGI/Uri/Uri.hh
         PhpCGI/PhpCGI.cpp PhpCGI/PhpCGI.hh PhpCGI/Process/AProcess.cpp PhpCGI/Process/AProcess.hh PhpCGI/Process/LinuxProcess.cpp PhpCGI/Process/LinuxProcess.hh)

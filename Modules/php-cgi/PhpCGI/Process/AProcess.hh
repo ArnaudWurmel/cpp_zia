@@ -6,6 +6,8 @@
 #define PHP_CGI_APROCESS_HH
 
 # include <memory>
+# include <vector>
+#include "../../../../api/net.h"
 
 namespace zia::module {
     class AProcess {
@@ -13,7 +15,7 @@ namespace zia::module {
         virtual ~AProcess() = default;
 
     public:
-        virtual bool    execute(std::string const& input, std::string const& path) = 0;
+        virtual bool    execute(std::vector<std::string> const& args, std::map<std::string, std::string> const& env, zia::api::Net::Raw const&) = 0;
         virtual std::string const&  getOutput() const = 0;
 
     public:

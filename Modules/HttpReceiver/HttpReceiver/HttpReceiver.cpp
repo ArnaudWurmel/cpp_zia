@@ -2,6 +2,7 @@
 // Created by Arnaud WURMEL on 10/02/2018.
 //
 
+#include <algorithm>
 #include <iostream>
 #include "HttpReceiver.hh"
 #include "../../../ConfParser/Configuration.h"
@@ -22,7 +23,7 @@ std::map<std::string, zia::api::HttpRequest::Method>    zia::module::HttpReceive
         { "DELETE", zia::api::HttpRequest::Method::delete_ },
         { "HEAD", zia::api::HttpRequest::Method::head },
         { "TRACE", zia::api::HttpRequest::Method::trace },
-        { "CONNET", zia::api::HttpRequest::Method::connect }
+        { "CONNECT", zia::api::HttpRequest::Method::connect }
 };
 
 zia::module::HttpReceiver::HttpReceiver() {}
@@ -57,9 +58,18 @@ bool    zia::module::HttpReceiver::exec(zia::api::HttpDuplex& http) {
                 return false;
             }
         }
+        else {
+            break;
+        }
         ++iterator;
     }
     say("Headers parsed");
+    if (http.req.headers.find("content-length") != http.req.headers.end()) {
+        int bodyValue = std::stoi(http.req.headers["content-length"]);
+        if (bodyValue >= 0 && bodyValue < http.raw_req.size()) {
+            http.req.body = std::vector<std::byte>(http.raw_req.end() - bodyValue, http.raw_req.end());
+        }
+    }
     printHeaders(http);
     return true;
 }
@@ -77,6 +87,7 @@ bool    zia::module::HttpReceiver::handleParseHeader(zia::api::Net::Raw &raw, zi
     std::pair<std::string, std::string> header;
 
     header.first = headerRepresentation[0];
+    std::transform(header.first.begin(), header.first.end(), header.first.begin(), ::tolower);
     if (headerRepresentation.size() == 2) {
         header.second = headerRepresentation[1];
     }
@@ -115,7 +126,7 @@ bool    zia::module::HttpReceiver::handleParseMethodUriVersion(zia::api::Net::Ra
     return true;
 }
 
-std::vector<zia::api::Net::Raw> zia::module::HttpReceiver::parseRequestByLine(zia::api::Net::Raw const &raw) const {
+std::vector<zia::api::Net::Raw> zia::module::HttpReceiver::parseRequestByLine(zia::api::Net::Raw const &raw) {
     std::vector<zia::api::Net::Raw> res;
     auto itByte = raw.begin();
 
@@ -126,6 +137,9 @@ std::vector<zia::api::Net::Raw> zia::module::HttpReceiver::parseRequestByLine(zi
             line.push_back(*itByte);
             ++itByte;
         }
+        if (line.empty()) {
+            return res;
+        }
         res.push_back(line);
         if (itByte != raw.end()) {
             ++itByte;
@@ -135,7 +149,7 @@ std::vector<zia::api::Net::Raw> zia::module::HttpReceiver::parseRequestByLine(zi
     return res;
 }
 
-std::string zia::module::HttpReceiver::getStringFromRaw(zia::api::Net::Raw &raw) const {
+std::string zia::module::HttpReceiver::getStringFromRaw(zia::api::Net::Raw &raw) {
     std::string res;
     auto byteIt = raw.begin();
 

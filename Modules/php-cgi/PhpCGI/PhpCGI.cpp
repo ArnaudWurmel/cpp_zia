@@ -5,6 +5,18 @@
 #include "PhpCGI.hh"
 #include "../../../ConfParser/Configuration.h"
 #include "Process/AProcess.hh"
+#include "Uri/Uri.hh"
+
+std::map<zia::api::HttpRequest::Method, std::string> zia::module::PhpCGI::_methodConverter = {
+        { zia::api::HttpRequest::Method::get, "GET" },
+        { zia::api::HttpRequest::Method::options, "OPTIONS" },
+        { zia::api::HttpRequest::Method::post, "POST" },
+        { zia::api::HttpRequest::Method::put, "PUT" },
+        { zia::api::HttpRequest::Method::delete_, "DELETE" },
+        { zia::api::HttpRequest::Method::head, "HEAD" },
+        { zia::api::HttpRequest::Method::trace, "TRACE" },
+        { zia::api::HttpRequest::Method::connect, "CONNECT" }
+};
 
 zia::module::PhpCGI::PhpCGI() = default;
 
@@ -16,6 +28,12 @@ bool    zia::module::PhpCGI::config(zia::api::Conf const &conf) {
         zia::LoggerConfiguration::setDebugEnabled(value);
     }
     catch (std::exception&) {}
+    try {
+        _rootDirectory = configuration.get<std::string>(KEY_ROOT);
+    }
+    catch (std::exception&) {
+        _rootDirectory = DEFAULT_ROOT;
+    }
     try {
         zia::api::Conf  subConf = configuration.get<zia::api::Conf>("php-cgi");
         Configuration   subConfiguration(subConf);
@@ -29,17 +47,35 @@ bool    zia::module::PhpCGI::config(zia::api::Conf const &conf) {
 }
 
 bool    zia::module::PhpCGI::exec(zia::api::HttpDuplex &http) {
-    if (http.resp.headers["Content-Type"] == "text/php") {
+    if (http.resp.headers["Content-Type"] == "text/php" && http.resp.status == zia::api::HttpResponse::Status::ok) {
         http.resp.headers["Content-Type"] = "text/html";
         std::shared_ptr<AProcess>   process = AProcess::get();
-        std::string input;
-        auto it = http.resp.body.begin();
+        std::vector<std::string>    args;
+        std::map<std::string, std::string>    env;
+        Uri uri;
 
-        while (it != http.resp.body.end()) {
-            input += *reinterpret_cast<char *>(&(*it));
+        uri.parse(http.req.uri);
+        args.push_back(_bin);
+        args.push_back("-q");
+        if (_methodConverter.find(http.req.method) != _methodConverter.end()) {
+            env.insert(std::make_pair("REQUEST_METHOD", _methodConverter[http.req.method]));
+        }
+        env.insert(std::make_pair("QUERY_STRING", uri.getArgs()));
+        env.insert(std::make_pair("SCRIPT_FILENAME", _rootDirectory + "/" + uri.getRequestedFile()));
+        env.insert(std::make_pair("REDIRECT_STATUS", "CGI"));
+        if (http.req.headers.find("content-type") != http.req.headers.end()) {
+            env.insert(std::make_pair("CONTENT_TYPE", http.req.headers["content-type"]));
+        }
+        if (http.req.headers.find("content-length") != http.req.headers.end()) {
+            env.insert(std::make_pair("CONTENT_LENGTH", http.req.headers["content-length"]));
+        }
+        auto it = env.begin();
+
+        while (it != env.end()) {
+            std::cout << (*it).first << "=" << (*it).second << std::endl;
             ++it;
         }
-        if (process->execute(input, _bin)) {
+        if (process->execute(args, env, http.req.body)) {
             std::string output = process->getOutput();
             parseHeaderFromPHP(http, output);
             return true;

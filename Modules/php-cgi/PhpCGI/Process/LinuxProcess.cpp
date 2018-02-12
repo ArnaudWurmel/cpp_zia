@@ -10,17 +10,37 @@
 #include <zconf.h>
 #include <iostream>
 #include <memory.h>
+#include <vector>
 
 zia::module::LinuxProcess::LinuxProcess() = default;
 
-bool    zia::module::LinuxProcess::execute(std::string const &input, std::string const &path) {
+bool    zia::module::LinuxProcess::execute(std::vector<std::string> const &argsVec, std::map<std::string, std::string> const &env, zia::api::Net::Raw const& input) {
     pid_t pid;
     int pipefd[2];
     int infd[2];
-    char    *args[2];
+    char    **args;
+    char    **envTab;
 
-    args[0] = strdup(path.c_str());
-    args[1] = nullptr;
+    args = new char*[argsVec.size() + 1];
+    int i = 0;
+    while (i < argsVec.size()) {
+        args[i] = new char[argsVec[i].size()];
+        args[i] = strcpy(args[i], argsVec[i].c_str());
+        ++i;
+    }
+    args[i] = nullptr;
+    envTab = new char*[env.size() + 1];
+    i = 0;
+    auto it = env.begin();
+    while (i < env.size()) {
+        std::string tmp = (*it).first + "=" + (*it).second;
+
+        envTab[i] = new char[tmp.size() + 1];
+        envTab[i] = strcpy(envTab[i], tmp.c_str());
+        ++i;
+        ++it;
+    }
+    envTab[i] = nullptr;
     if (pipe(pipefd) == -1 || pipe(infd) == -1) {
         return false;
     }
@@ -36,7 +56,7 @@ bool    zia::module::LinuxProcess::execute(std::string const &input, std::string
         dup2(infd[0], STDIN_FILENO);
         close(infd[0]);
         close(infd[1]);
-        execve(args[0], args, nullptr);
+        execve(args[0], args, envTab);
         exit(0);
     }
     else {
@@ -45,7 +65,9 @@ bool    zia::module::LinuxProcess::execute(std::string const &input, std::string
         ssize_t nbytes;
 
         close(infd[0]);
-        write(infd[1], input.data(), input.size());
+        std::cout << "Write : " << write(infd[1], input.data(), input.size()) << std::endl;
+        std::cout << "Write : " << write(0, input.data(), input.size()) << std::endl;
+
         close(infd[1]);
         close(pipefd[1]);
         wait(NULL);
@@ -56,6 +78,18 @@ bool    zia::module::LinuxProcess::execute(std::string const &input, std::string
         close(pipefd[0]);
         _output = output;
     }
+    i = 0;
+    while (i < argsVec.size()) {
+        delete args[i];
+        ++i;
+    }
+    delete[] args;
+    i = 0;
+    while (i < env.size()) {
+        delete envTab[i];
+        ++i;
+    }
+    delete[] envTab;
     return true;
 }
 
