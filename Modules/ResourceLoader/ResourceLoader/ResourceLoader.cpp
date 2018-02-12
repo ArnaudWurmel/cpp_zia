@@ -114,7 +114,7 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
             http.resp.status = zia::api::HttpResponse::Status::internal_server_error;
         }
         else {
-            http.resp.status = zia::api::HttpResponse::Status::found;
+            http.resp.status = zia::api::HttpResponse::Status::ok;
             handleContentType(trueFile, http);
         }
     }

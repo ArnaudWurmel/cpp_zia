@@ -14,14 +14,14 @@ std::map<std::string, zia::api::HttpRequest::Version>   zia::module::HttpReceive
 };
 
 std::map<std::string, zia::api::HttpRequest::Method>    zia::module::HttpReceiver::_methodTranslate = {
-        {"GET", zia::api::HttpRequest::Method::get},
-        {"OPTIONS", zia::api::HttpRequest::Method::options},
-        {"POST", zia::api::HttpRequest::Method::post},
-        {"PUT", zia::api::HttpRequest::Method::put},
-        {"DELETE", zia::api::HttpRequest::Method::delete_},
-        {"HEAD", zia::api::HttpRequest::Method::head},
-        {"TRACE", zia::api::HttpRequest::Method::trace},
-        {"CONNET", zia::api::HttpRequest::Method::connect}
+        { "GET", zia::api::HttpRequest::Method::get },
+        { "OPTIONS", zia::api::HttpRequest::Method::options },
+        { "POST", zia::api::HttpRequest::Method::post },
+        { "PUT", zia::api::HttpRequest::Method::put },
+        { "DELETE", zia::api::HttpRequest::Method::delete_ },
+        { "HEAD", zia::api::HttpRequest::Method::head },
+        { "TRACE", zia::api::HttpRequest::Method::trace },
+        { "CONNET", zia::api::HttpRequest::Method::connect }
 };
 
 zia::module::HttpReceiver::HttpReceiver() {}
