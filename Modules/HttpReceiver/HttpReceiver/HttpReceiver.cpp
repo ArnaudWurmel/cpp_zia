@@ -5,6 +5,7 @@
 #include <iostream>
 #include "HttpReceiver.hh"
 #include "../../../ConfParser/Configuration.h"
+#include "../HttpHandler.hh"
 
 std::map<std::string, zia::api::HttpRequest::Version>   zia::module::HttpReceiver::_versionTranslate = {
         {"HTTP/0.9", zia::api::HttpRequest::Version::http_0_9},
@@ -41,9 +42,7 @@ bool    zia::module::HttpReceiver::exec(zia::api::HttpDuplex& http) {
     std::vector<zia::api::Net::Raw> rawSplit = parseRequestByLine(http.raw_req);
 
     if (rawSplit.size() == 0 || !handleParseMethodUriVersion(rawSplit[0], http)) {
-        //
-        //  Handle error method inconnue
-        //
+        HttpHandler::fillHttpRep(http);
         return false;
     }
     auto iterator = rawSplit.begin() + 1;
