@@ -23,15 +23,26 @@ namespace zia {
         bool    isReady() const override;
         bool    requestTreated() const;
         void    requestDone();
+        bool    mustReadBody() const;
+        void    startReadingBody();
+        bool    isReadingBody() const;
+        size_t  getBodySize() const;
 
     public:
         void    addInput(std::string const&);
+
+    private:
+        void    checkBodySize(std::string const&);
 
     private:
         std::string _content;
         bool    _waitingEnd;
         bool    _threated;
         api::NetInfo    _netInfos;
+        bool    _mustReadBody;
+        size_t  _bodySize;
+        size_t  _readedSize;
+        bool    _isReadingBody;
     };
 }
 

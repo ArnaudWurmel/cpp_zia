@@ -10,6 +10,9 @@
 #include "../../../ConfParser/ADirectoryReader.h"
 
 std::map<std::string, std::string>  zia::module::ResourceLoader::_extContentTypeMap = {
+        {"php", "text/php"},
+        {"php3", "text/php"},
+        {"php5", "text/php"},
         {"html", "text/html"},
         {"css", "text/css"},
         {"csv", "text/csv"},
@@ -66,6 +69,9 @@ bool    zia::module::ResourceLoader::config(const zia::api::Conf &conf) {
 bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
     Uri uri;
 
+    if (http.resp.status != zia::api::HttpResponse::Status::continue_) {
+        return false;
+    }
     if (uri.parse(http.req.uri) == false) {
         http.resp.status = zia::api::HttpResponse::Status::bad_request;
         showErrorPage(http);
@@ -110,6 +116,7 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
         http.resp.status = zia::api::HttpResponse::Status::forbidden;
     }
     else {
+        http.req.uri = uri.getRequestedFile() + uri.getArgs();
         if (!loadFileContent(trueFile, http)) {
             http.resp.status = zia::api::HttpResponse::Status::internal_server_error;
         }
@@ -154,6 +161,7 @@ void    zia::module::ResourceLoader::handleContentType(std::shared_ptr<AFile> co
             --i;
         }
         ext = std::string(ext.rbegin(), ext.rend());
+        std::cout << "Ext : " << ext << std::endl;
         if (_extContentTypeMap.find(ext) != _extContentTypeMap.end()) {
             http.resp.headers["Content-Type"] = _extContentTypeMap[ext];
         }

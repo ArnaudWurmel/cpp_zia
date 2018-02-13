@@ -118,10 +118,15 @@ void    zia::module::NetworkModule::monitoreSocket() {
     }
     it = _clientList.begin();
     while (it != _clientList.end()) {
-        if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok)) {
-            (*it)->addInput((*it)->getSocket()->read());
-            while ((*it)->getSocket()->haveAvailableInput()) {
+        if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok) || ((*it)->isReadingBody() && (*it)->getSocket()->haveAvailableInput((*it)->getBodySize()))) {
+            if ((*it)->isReadingBody() && (*it)->getSocket()->haveAvailableInput((*it)->getBodySize())) {
+                (*it)->addInput((*it)->getSocket()->read((*it)->getBodySize()));
+            }
+            else if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok)) {
                 (*it)->addInput((*it)->getSocket()->read());
+                while ((*it)->getSocket()->haveAvailableInput()) {
+                    (*it)->addInput((*it)->getSocket()->read());
+                }
             }
         }
         if ((*it)->getSocket()->isOpen() && FD_ISSET((*it)->getSocket()->getSocket(), &wsok)) {

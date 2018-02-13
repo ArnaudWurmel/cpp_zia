@@ -72,6 +72,7 @@ void    zia::VHost::callbackRequest(api::Net::Raw raw, api::NetInfo netInfo) {
 
     httpDuplex.raw_req = raw;
     httpDuplex.info = netInfo;
+    httpDuplex.resp.status = zia::api::HttpResponse::Status::continue_;
     printRequest(httpDuplex);
     auto itModule = _instanciatedModules.begin();
 

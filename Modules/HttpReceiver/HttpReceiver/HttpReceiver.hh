@@ -24,10 +24,10 @@ namespace zia::module {
         bool    handleParseMethodUriVersion(zia::api::Net::Raw& raw, zia::api::HttpDuplex& http);
         bool    handleParseHeader(zia::api::Net::Raw& raw, zia::api::HttpDuplex& http);
 
-    private:
-        std::vector<zia::api::Net::Raw> parseRequestByLine(zia::api::Net::Raw const& raw) const;
-        std::string getStringFromRaw(zia::api::Net::Raw& raw) const;
-        std::vector<std::string>    splitStringWithSeparator(std::string const&, std::string const&, bool once = false);
+    public:
+        static std::vector<zia::api::Net::Raw> parseRequestByLine(zia::api::Net::Raw const& raw);
+        static std::string getStringFromRaw(zia::api::Net::Raw& raw);
+        static std::vector<std::string>    splitStringWithSeparator(std::string const&, std::string const&, bool once = false);
 
     private:
         void    printHeaders(zia::api::HttpDuplex const& http) const;
