@@ -56,7 +56,6 @@ bool    zia::module::PhpCGI::exec(zia::api::HttpDuplex &http) {
 
         uri.parse(http.req.uri);
         args.push_back(_bin);
-        args.push_back("-q");
         if (_methodConverter.find(http.req.method) != _methodConverter.end()) {
             env.insert(std::make_pair("REQUEST_METHOD", _methodConverter[http.req.method]));
         }
@@ -68,12 +67,6 @@ bool    zia::module::PhpCGI::exec(zia::api::HttpDuplex &http) {
         }
         if (http.req.headers.find("content-length") != http.req.headers.end()) {
             env.insert(std::make_pair("CONTENT_LENGTH", http.req.headers["content-length"]));
-        }
-        auto it = env.begin();
-
-        while (it != env.end()) {
-            std::cout << (*it).first << "=" << (*it).second << std::endl;
-            ++it;
         }
         if (process->execute(args, env, http.req.body)) {
             std::string output = process->getOutput();
