@@ -5,6 +5,7 @@
 #ifndef NETWORK_NETWORKMODULE_HH
 #define NETWORK_NETWORKMODULE_HH
 
+#include <thread>
 # include "../../../api/net.h"
 # include "Socket/ISocketAcceptor.h"
 
