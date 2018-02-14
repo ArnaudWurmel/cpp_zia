@@ -43,3 +43,5 @@ add_executable(cpp_zia
         Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp
         Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp
         )
+
+target_link_libraries(cpp_zia dl)
