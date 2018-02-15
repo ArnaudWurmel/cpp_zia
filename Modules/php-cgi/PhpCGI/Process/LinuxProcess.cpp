@@ -65,12 +65,10 @@ bool    zia::module::LinuxProcess::execute(std::vector<std::string> const &argsV
         ssize_t nbytes;
 
         close(infd[0]);
-        std::cout << "Write : " << write(infd[1], input.data(), input.size()) << std::endl;
-        std::cout << "Write : " << write(0, input.data(), input.size()) << std::endl;
-
+        write(infd[1], input.data(), input.size());
         close(infd[1]);
         close(pipefd[1]);
-        wait(NULL);
+        wait(nullptr);
         while ((nbytes = read(pipefd[0], buffer, sizeof(buffer) - 1)) > 0) {
             buffer[nbytes] = '\0';
             output += buffer;

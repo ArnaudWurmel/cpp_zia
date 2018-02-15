@@ -27,12 +27,16 @@ namespace zia {
         void    startReadingBody();
         bool    isReadingBody() const;
         size_t  getBodySize() const;
+        bool    mustKeepAlive() const;
+        void    reset();
 
     public:
         void    addInput(std::string const&);
 
     private:
+        void    checkKeepAlive(std::string const&);
         void    checkBodySize(std::string const&);
+        std::pair<std::string, std::string>  getHeaderFrom(std::string const&) const;
 
     private:
         std::string _content;
@@ -43,6 +47,7 @@ namespace zia {
         size_t  _bodySize;
         size_t  _readedSize;
         bool    _isReadingBody;
+        bool    _keepAlive;
     };
 }
 

@@ -131,7 +131,12 @@ void    zia::module::NetworkModule::monitoreSocket() {
         }
         if ((*it)->getSocket()->isOpen() && FD_ISSET((*it)->getSocket()->getSocket(), &wsok)) {
             (*it)->getSocket()->flushWrite();
-            (*it)->getSocket()->close();
+            if ((*it)->mustKeepAlive()) {
+                (*it)->reset();
+            }
+            else {
+                (*it)->getSocket()->close();
+            }
         }
         else if ((*it)->isReady() && !(*it)->requestTreated()) {
             _onRequest((*it)->getRequest(), (*it)->getNetInfo());

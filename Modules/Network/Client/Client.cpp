@@ -14,6 +14,7 @@ zia::Client::Client(api::ImplSocket * socket) {
     _bodySize = 0;
     _readedSize = 0;
     _isReadingBody = false;
+    _keepAlive = true;
 }
 
 void    zia::Client::addInput(std::string const& input) {
@@ -23,9 +24,9 @@ void    zia::Client::addInput(std::string const& input) {
         }
     }
     else if (_waitingEnd) {
+        checkKeepAlive(input);
         if (_isReadingBody) {
             _readedSize += input.size();
-            std::cout << _readedSize << std::endl;
             _content = _content + input;
         }
         else {
@@ -56,28 +57,19 @@ void    zia::Client::startReadingBody() {
 }
 
 void    zia::Client::checkBodySize(std::string const& input) {
-    std::vector<std::string>    headerRepresentation = zia::module::HttpReceiver::splitStringWithSeparator(input, ": ", true);
-
-    if (headerRepresentation.size() != 2) {
-        headerRepresentation = zia::module::HttpReceiver::splitStringWithSeparator(input, ":", true);
-    }
-    if (headerRepresentation.size() == 0) {
-        return ;
-    }
-    std::pair<std::string, std::string> header;
-
-    header.first = headerRepresentation[0];
-    if (headerRepresentation.size() == 2) {
-        header.second = headerRepresentation[1];
-    }
-    else {
-        header.second = "";
-    }
+    std::pair<std::string, std::string> header = getHeaderFrom(input);
     _mustReadBody = std::equal(header.first.begin(), header.first.end(), std::string("Content-Length").begin(), [](auto a, auto b){return std::tolower(a)==std::tolower(b);});
-    std::cout << _mustReadBody << std::endl;
     if (_mustReadBody) {
         _bodySize = std::stoi(header.second);
-        std::cout << _bodySize << std::endl;
+    }
+}
+
+void    zia::Client::checkKeepAlive(std::string const& input) {
+    std::pair<std::string, std::string> header = getHeaderFrom(input);
+
+    bool state = std::equal(header.first.begin(), header.first.end(), std::string("Connection").begin(), [](auto a, auto b){return std::tolower(a)==std::tolower(b);});
+    if (state) {
+        _keepAlive = std::equal(header.second.begin(), header.second.end(), std::string("keep-alive").begin(), [](auto a, auto b){return std::tolower(a)==std::tolower(b);});
     }
 }
 
@@ -108,6 +100,27 @@ std::vector<std::byte>  zia::Client::getRequest() const {
     return request;
 }
 
+std::pair<std::string, std::string>  zia::Client::getHeaderFrom(std::string const& input) const {
+    std::vector<std::string>    headerRepresentation = zia::module::HttpReceiver::splitStringWithSeparator(input, ": ", true);
+    std::pair<std::string, std::string> header;
+
+    if (headerRepresentation.size() != 2) {
+        headerRepresentation = zia::module::HttpReceiver::splitStringWithSeparator(input, ":", true);
+    }
+    if (headerRepresentation.size() == 0) {
+        return header;
+    }
+
+    header.first = headerRepresentation[0];
+    if (headerRepresentation.size() == 2) {
+        header.second = headerRepresentation[1];
+    }
+    else {
+        header.second = "";
+    }
+    return header;
+}
+
 bool    zia::Client::requestTreated() const {
     return _threated;
 }
@@ -122,6 +135,21 @@ bool    zia::Client::isReady() const {
 
 bool    zia::Client::mustReadBody() const {
     return _mustReadBody;
+}
+
+void    zia::Client::reset() {
+    _content.clear();
+    _threated = false;
+    _mustReadBody = false;
+    _bodySize = 0;
+    _readedSize = 0;
+    _isReadingBody = false;
+    _keepAlive = false;
+    _waitingEnd = true;
+}
+
+bool    zia::Client::mustKeepAlive() const {
+    return _keepAlive;
 }
 
 zia::Client::~Client() {}
