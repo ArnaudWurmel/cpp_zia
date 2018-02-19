@@ -7,6 +7,7 @@
 
 #include "ADirectoryReader.h"
 
+#ifdef _WIN32
 namespace zia {
     class WindowsDirectoryReader : public ADirectoryReader {
     public:
@@ -19,5 +20,6 @@ namespace zia {
 		std::wstring s2ws(const std::string& s);
     };
 }
+#endif
 
 #endif //ZIA_WINDOWSDIRECTORYREADER_H

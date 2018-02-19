@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/Configuration.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/ConfParser/Configuration.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/JsonConfParser.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/ConfParser/JsonConfParser.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/LinuxDirectoryReader.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o"
+  "/Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/WindowsDirectoryReader.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/ConfParser/WindowsDirectoryReader.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Logger/Logger.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/Logger/LoggerConfiguration.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Logger/LoggerConfiguration.cpp.o"
   "/Users/wurmel_a/CLionProjects/cpp_zia/Zia/ArgParsing/ArgParsing.cpp" "/Users/wurmel_a/CLionProjects/cpp_zia/CMakeFiles/cpp_zia.dir/Zia/ArgParsing/ArgParsing.cpp.o"

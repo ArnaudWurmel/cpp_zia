@@ -29,6 +29,8 @@ add_executable(cpp_zia
         ConfParser/JsonConfParser.h
         ConfParser/LinuxDirectoryReader.cpp
         ConfParser/LinuxDirectoryReader.h
+        ConfParser/WindowsDirectoryReader.cpp
+        ConfParser/WindowsDirectoryReader.h
         api/http.h
         api/conf.h
         api/net.h

@@ -27,6 +27,10 @@ CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/ADirectoryReader.h
  /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/LinuxDirectoryReader.cpp
  /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/LinuxDirectoryReader.h
+CMakeFiles/cpp_zia.dir/ConfParser/WindowsDirectoryReader.cpp.o
+ /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/ADirectoryReader.h
+ /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/WindowsDirectoryReader.cpp
+ /Users/wurmel_a/CLionProjects/cpp_zia/ConfParser/WindowsDirectoryReader.h
 CMakeFiles/cpp_zia.dir/Logger/Logger.cpp.o
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.cpp
  /Users/wurmel_a/CLionProjects/cpp_zia/Logger/Logger.hpp

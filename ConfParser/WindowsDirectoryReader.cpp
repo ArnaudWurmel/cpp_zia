@@ -2,7 +2,8 @@
 // Created by marcha_1 on 2/02/18.
 //
 
-//#include "stdafx.h"
+#ifdef _WIN32
+#include "stdafx.h"
 #include <vector>
 #include <string>
 #include <windows.h>
@@ -71,3 +72,4 @@ std::wstring zia::WindowsDirectoryReader::s2ws(const std::string& s)
 }
 
 zia::WindowsDirectoryReader::~WindowsDirectoryReader() {}
+#endif
