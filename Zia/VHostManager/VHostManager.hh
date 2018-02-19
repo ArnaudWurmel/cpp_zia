@@ -19,6 +19,8 @@ namespace zia {
     public:
         bool    initVHosts();
         void    run();
+        bool    isRunning() const;
+        void    stop();
 
     private:
         std::string _sitePath;

@@ -39,6 +39,6 @@ SOCKET& zia::LinuxAcceptor::getServerSocket() {
     return _serverSocket->getSocket();
 }
 
-zia::LinuxAcceptor::~LinuxAcceptor() {}
+zia::LinuxAcceptor::~LinuxAcceptor() = default;
 
 #endif

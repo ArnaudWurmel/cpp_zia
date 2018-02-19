@@ -105,6 +105,7 @@ void    zia::module::NetworkModule::monitoreSocket() {
     }
     timeout.tv_sec = 0;
     timeout.tv_usec = 100;
+    std::cout << "Waiting" << std::endl;
     if (select(zia::ISocketAcceptor::getMaxFds(_clientList, _acceptor->getServerSocket()), &rsok, &wsok, NULL, &timeout) == -1) {
         throw zia::module::NetworkException("Socket return -1");
     }
@@ -119,10 +120,12 @@ void    zia::module::NetworkModule::monitoreSocket() {
     it = _clientList.begin();
     while (it != _clientList.end()) {
         if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok) || ((*it)->isReadingBody() && (*it)->getSocket()->haveAvailableInput((*it)->getBodySize()))) {
+            std::cout << (*it)->isReadingBody() << " " << (*it)->getSocket()->haveAvailableInput((*it)->getBodySize()) << std::endl;
             if ((*it)->isReadingBody() && (*it)->getSocket()->haveAvailableInput((*it)->getBodySize())) {
                 (*it)->addInput((*it)->getSocket()->read((*it)->getBodySize()));
             }
             else if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok)) {
+                std::cout << "Here" << std::endl;
                 (*it)->addInput((*it)->getSocket()->read());
                 while ((*it)->getSocket()->haveAvailableInput()) {
                     (*it)->addInput((*it)->getSocket()->read());
@@ -145,4 +148,9 @@ void    zia::module::NetworkModule::monitoreSocket() {
     }
 }
 
-zia::module::NetworkModule::~NetworkModule() = default;
+zia::module::NetworkModule::~NetworkModule() {
+    _continue = false;
+    if (_threadLoop) {
+        _threadLoop->join();
+    }
+}
