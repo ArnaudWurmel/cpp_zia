@@ -35,6 +35,15 @@ namespace zia {
         //  Load VHosts with a VHostManager
         //
         void    loadVHosts();
+        void    handleInput(std::string const&);
+
+    private:
+        void    handleExit(std::vector<std::string> const&);
+        void    handleReload(std::vector<std::string> const&);
+
+    private:
+        std::vector<std::string>    getTokenFrom(std::string const&);
+
 
         //
         //  Configuration Ressources
@@ -43,6 +52,9 @@ namespace zia {
         std::unique_ptr<VHostManager>   _vHostManager;
         std::unique_ptr<Configuration>   _configuration;
         std::string _vhostEnabledPath;
+
+    private:
+        std::map<std::string, std::function<void (std::vector<std::string> const&)> >   _functionPtrs;
     };
 }
 

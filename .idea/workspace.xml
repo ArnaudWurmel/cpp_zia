@@ -12,67 +12,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660496c3-f5b7-469d-ae8a-4b3ca52c989a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/Logger.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/Logger/Logger.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/Logger/Logger.hh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Logger/create.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zia_root/module_enabled/Logger.dylib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cpp_zia.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.9.4/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/ConfParser/ADirectoryReader.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/ConfParser/Configuration.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/ConfParser/JsonConfParser.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/ConfParser/LinuxDirectoryReader.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Logger/Logger.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Logger/LoggerConfiguration.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/ArgParsing/ArgParsing.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/Exceptions/Exceptions.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/ModuleLoader/DLLManager/ADLLManager.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHost.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/main.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/feature_tests.cxx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConfParser/ADirectoryReader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ConfParser/ADirectoryReader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConfParser/WindowsDirectoryReader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ConfParser/WindowsDirectoryReader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/ADLLManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/ADLLManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zia/ModuleLoader/Module.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/ModuleLoader/Module.hh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/NetworkModule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/NetworkModule.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxAcceptor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxAcceptor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxSocket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxSocket.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/ResourceLoader/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/ResourceLoader/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/ResourceLoader/ResourceLoader/ResourceLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/ResourceLoader/ResourceLoader/ResourceLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/php-cgi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/php-cgi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zia/VHostManager/VHostManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/VHostManager/VHostManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zia/VHostManager/VHostManager.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/VHostManager/VHostManager.hh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Zia/Zia.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/Zia.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zia/Zia.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/Zia.hh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/HttpReceiver.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/HttpReceiver.dylib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/HttpSender.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/HttpSender.dylib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/ResourceLoader.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/ResourceLoader.dylib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/network.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/network.dylib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/php-cgi.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/php-cgi.dylib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zia_root/site_enabled/test.conf" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/site_enabled/test.conf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -99,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -108,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/Zia/Zia.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1360">
-              <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+              <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -400,12 +397,12 @@
       <workItem from="1519058594618" duration="18000" />
       <workItem from="1519058734837" duration="32000" />
       <workItem from="1519059266897" duration="621000" />
-      <workItem from="1519126839398" duration="649000" />
+      <workItem from="1519126839398" duration="1128000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117943000" />
+    <option name="totallyTimeSpent" value="118422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -760,7 +757,7 @@
     <entry file="file://$PROJECT_DIR$/Zia/Zia.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
-          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+          <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -798,7 +795,7 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>

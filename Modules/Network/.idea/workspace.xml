@@ -26,7 +26,7 @@
       <file leaf-file-name="Client.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/Client.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="1207">
               <caret line="71" column="24" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="24" />
             </state>
           </provider>
@@ -44,8 +44,8 @@
       <file leaf-file-name="NetworkModule.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NetworkModule/NetworkModule.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="121" column="48" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
+            <state relative-caret-position="2091">
+              <caret line="123" column="48" selection-start-line="123" selection-start-column="48" selection-end-line="123" selection-end-column="48" />
               <folding>
                 <element signature="e#50#73#0" expanded="true" />
               </folding>
@@ -56,8 +56,8 @@
       <file leaf-file-name="ImplSocket.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NetworkModule/Socket/ImplSocket.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-96">
-              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            <state relative-caret-position="119">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
               <folding>
                 <element signature="e#96#113#0" expanded="true" />
                 <element signature="e#214#233#0" expanded="true" />
@@ -78,7 +78,7 @@
       <file leaf-file-name="LinuxSocket.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NetworkModule/Socket/LinuxSocket.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
+            <state relative-caret-position="425">
               <caret line="25" column="20" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
@@ -87,8 +87,8 @@
       <file leaf-file-name="LinuxSocket.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NetworkModule/Socket/LinuxSocket.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1349">
-              <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+            <state relative-caret-position="986">
+              <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -271,19 +271,18 @@
       <workItem from="1519058296587" duration="215000" />
       <workItem from="1519058668461" duration="21000" />
       <workItem from="1519058781994" duration="1761000" />
+      <workItem from="1519127490253" duration="480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37847000" />
+    <option name="totallyTimeSpent" value="38327000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25016677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24785195" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49966645" visible="true" weight="0.32692307" />
       <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.496998" weight="0.3282967" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50033355" side_tool="true" weight="0.32692307" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.40024185" />
@@ -299,6 +298,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49966645" visible="true" weight="0.32692307" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,8 +606,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NetworkModule/NetworkModule.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="48" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
+        <state relative-caret-position="2091">
+          <caret line="123" column="48" selection-start-line="123" selection-start-column="48" selection-end-line="123" selection-end-column="48" />
           <folding>
             <element signature="e#50#73#0" expanded="true" />
           </folding>
@@ -623,7 +623,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/Client.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="1207">
           <caret line="71" column="24" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="24" />
         </state>
       </provider>
@@ -639,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#334#393#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,8 +651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NetworkModule/Socket/ImplSocket.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="119">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding>
             <element signature="e#96#113#0" expanded="true" />
             <element signature="e#214#233#0" expanded="true" />
@@ -665,15 +662,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NetworkModule/Socket/LinuxSocket.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
+        <state relative-caret-position="425">
           <caret line="25" column="20" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NetworkModule/Socket/LinuxSocket.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1349">
-          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+        <state relative-caret-position="986">
+          <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
         </state>
       </provider>
     </entry>

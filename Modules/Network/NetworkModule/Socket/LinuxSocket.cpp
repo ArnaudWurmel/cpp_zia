@@ -72,7 +72,6 @@ bool    zia::LinuxSocket::haveAvailableInput() const {
         }
         ++it;
     }
-    std::cout << "No input in " << _buffer << std::endl;
     return false;
 }
 
@@ -106,6 +105,7 @@ std::string zia::LinuxSocket::read() {
             close();
             return std::string();
         }
+        std::cout << readed << std::endl;
         tmp[readed] = '\0';
         _buffer = tmp;
     }

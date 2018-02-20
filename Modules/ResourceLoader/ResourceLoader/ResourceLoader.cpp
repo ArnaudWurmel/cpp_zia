@@ -161,7 +161,6 @@ void    zia::module::ResourceLoader::handleContentType(std::shared_ptr<AFile> co
             --i;
         }
         ext = std::string(ext.rbegin(), ext.rend());
-        std::cout << "Ext : " << ext << std::endl;
         if (_extContentTypeMap.find(ext) != _extContentTypeMap.end()) {
             http.resp.headers["Content-Type"] = _extContentTypeMap[ext];
         }

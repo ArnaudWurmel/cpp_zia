@@ -50,7 +50,14 @@ void    zia::VHostManager::run() {
             ++iterator;
         }
     }
-    while (_vhostsList.size());
+}
+
+void    zia::VHostManager::stop() {
+    _vhostsList.clear();
+}
+
+bool    zia::VHostManager::isRunning() const {
+    return _vhostsList.size() > 0;
 }
 
 zia::VHostManager::~VHostManager() = default;
