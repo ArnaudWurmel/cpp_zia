@@ -5,12 +5,13 @@
 #include <memory>
 #include "ADirectoryReader.h"
 #include "LinuxDirectoryReader.h"
+#include "WindowsDirectoryReader.h"
 
 std::vector<std::string>    zia::ADirectoryReader::getFileNameOfDirectory(std::string const& filePath) {
     std::unique_ptr<ADirectoryReader>    reader;
 
 #if _WIN32
-    throw std::exception();
+    reader = std::unique_ptr<ADirectoryReader>(new WindowsDirectoryReader());
 #else
     reader = std::unique_ptr<ADirectoryReader>(new LinuxDirectoryReader());
 #endif

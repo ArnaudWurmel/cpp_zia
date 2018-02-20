@@ -5,7 +5,21 @@ if(APPLE)
     set(CMAKE_CXX_COMPILER g++-7)
 endif()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+if (NOT MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
+endif()
+
+if (WIN32)
+    set(OS_ONLY_FILES
+            ConfParser/WindowsDirectoryReader.cpp
+            ConfParser/WindowsDirectoryReader.h)
+else()
+    set(OS_ONLY_FILES
+            ConfParser/LinuxDirectoryReader.cpp
+            ConfParser/LinuxDirectoryReader.h)
+endif()
 
 add_executable(cpp_zia
         main.cpp
@@ -27,10 +41,6 @@ add_executable(cpp_zia
         ConfParser/Configuration.h
         ConfParser/JsonConfParser.cpp
         ConfParser/JsonConfParser.h
-        ConfParser/LinuxDirectoryReader.cpp
-        ConfParser/LinuxDirectoryReader.h
-        ConfParser/WindowsDirectoryReader.cpp
-        ConfParser/WindowsDirectoryReader.h
         api/http.h
         api/conf.h
         api/net.h
@@ -44,6 +54,9 @@ add_executable(cpp_zia
         Zia/ModuleLoader/DLLManager/ADLLManager.hh
         Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp
         Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp
+        ${OS_ONLY_FILES}
         )
 
-target_link_libraries(cpp_zia dl)
+if (UNIX)
+    target_link_libraries(cpp_zia dl)
+endif()

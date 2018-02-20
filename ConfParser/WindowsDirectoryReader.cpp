@@ -3,7 +3,7 @@
 //
 
 #ifdef _WIN32
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <vector>
 #include <string>
 #include <windows.h>
@@ -29,7 +29,8 @@ std::vector<std::string>    zia::WindowsDirectoryReader::getFileNameFor(std::str
 
 		stemp = s2ws(filepath);
 		filepathw = stemp.c_str();
-		StringCchCopy(szDir, MAX_PATH, filepathw);
+        std::string convertor(stemp.begin(), stemp.end());
+		StringCchCopy(szDir, MAX_PATH, convertor.c_str());
 		StringCchCat(szDir, 500, TEXT("\\*"));
 		hFind = FindFirstFile(szDir, &ffd);
 
@@ -44,7 +45,9 @@ std::vector<std::string>    zia::WindowsDirectoryReader::getFileNameFor(std::str
 			{
 				filesize.LowPart = ffd.nFileSizeLow;
 				filesize.HighPart = ffd.nFileSizeHigh;
-				WideCharToMultiByte(CP_ACP, 0, ffd.cFileName, -1, ch, 260, &DefChar, NULL);
+                std::string tmpStr = ffd.cFileName;
+                std::wstring tmpWstr(tmpStr.begin(), tmpStr.end());
+				WideCharToMultiByte(CP_ACP, 0, tmpWstr.c_str(), -1, ch, 260, &DefChar, NULL);
 				fileList.push_back(std::string(ch));
 			}
 		} while (FindNextFile(hFind, &ffd) != 0);

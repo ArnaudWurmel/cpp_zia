@@ -6,7 +6,7 @@
 #include "LinuxDLLManager.hpp"
 
 #ifdef _WIN32
-	#include "WindowsDLLManager.hh"
+	#include "WindowsDLLManager.hpp"
 #else
     #include "LinuxDLLManager.hpp"
 #endif

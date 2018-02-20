@@ -46,11 +46,11 @@ void    zia::Zia::initComponent() {
             zia::LoggerConfiguration::setDebugEnabled(_configuration->get<bool>("debug"));
         }
         _vhostEnabledPath = _configuration->get<std::string>(KEY_SITE_PATH);
+        std::cout << _vhostEnabledPath << std::endl;
     }
     catch (std::exception& e) {
         say(e.what());
 
-        throw e;
         _vhostEnabledPath = DEFAULT_SITE_PATH;
     }
     say("Debug is enabled");
@@ -77,6 +77,7 @@ void    zia::Zia::loadVHosts() {
 //      May throw.
 //
 void    zia::Zia::startVHosts() {
+    std::cout << "Here" << std::endl;
     _vHostManager->run();
 }
 

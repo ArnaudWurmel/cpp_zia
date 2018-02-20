@@ -12,7 +12,7 @@
 
 namespace zia {
     template<typename T>
-    class WindowsDLLManager : public ADLLManager {
+    class WindowsDLLManager : public ADLLManager<T> {
     public:
         explicit WindowsDLLManager(std::string const& libPath) {
             _libPath = libPath;
@@ -38,7 +38,7 @@ namespace zia {
               	std::cout << "Can't instanciate module <" << GetLastError() << ">" << std::endl;
                	return false;
            	}
-           	_instancier = reinterpret_cast<api::Module *(*)()>(GetProcAddress(_handler, "instanciateMonster"));
+           	_instancier = reinterpret_cast<T *(*)()>(GetProcAddress(_handler, "instanciateMonster"));
            	if ((error = GetLastError()) != NULL) {
            	    std::cout << "Can't instanciate module <" << error << ">" << std::endl;
            	    return false;

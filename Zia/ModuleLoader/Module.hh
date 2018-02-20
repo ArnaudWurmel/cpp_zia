@@ -9,6 +9,7 @@
 # include "../../api/module.h"
 # include "DLLManager/ADLLManager.hh"
 #include "DLLManager/LinuxDLLManager.hpp"
+#include "DLLManager/WindowsDLLManager.hpp"
 
 namespace zia {
     template<typename T>
