@@ -6,6 +6,7 @@
 #include "NetworkModule.hh"
 #include "../../../ConfParser/Configuration.h"
 #include "../Exceptions/Exceptions.hh"
+/*#include "Socket/OpenSsl.hh"*/
 
 zia::module::NetworkModule::NetworkModule() {}
 
@@ -111,6 +112,7 @@ void    zia::module::NetworkModule::monitoreSocket() {
     if (FD_ISSET(_acceptor->getServerSocket(), &rsok)) {
         try {
             _clientList.push_back(std::shared_ptr<Client>(new Client(_acceptor->acceptClient())));
+	    /*_clientList.back().get()->getSocket()->openSSL();*/
         }
         catch (std::exception& e) {
             std::cerr << e.what() << std::endl;

@@ -36,5 +36,6 @@ add_library(Network SHARED
         ../HttpReceiver/HttpReceiver/HttpReceiver.cpp
         ../HttpReceiver/HttpReceiver/HttpReceiver.hh
         ../HttpReceiver/HttpHandler.cpp
-        ../HttpReceiver/HttpHandler.hh
-        )
+        ../HttpReceiver/HttpHandler.hh)
+
+target_link_libraries(Network ssl crypto pthread)
