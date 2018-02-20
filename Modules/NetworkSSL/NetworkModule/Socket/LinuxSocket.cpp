@@ -8,8 +8,11 @@
 #include <iostream>
 #include <netdb.h>
 #include "LinuxSocket.h"
+#include "../SSLConfiguration.hh"
 
-zia::LinuxSocket::LinuxSocket(int socket) : _socket(socket) {}
+zia::LinuxSocket::LinuxSocket(int socket) : _socket(socket) {
+    _ssl = false;
+}
 
 bool zia::LinuxSocket::bind(unsigned short port) {
     struct protoent *pe;
@@ -101,11 +104,16 @@ std::string zia::LinuxSocket::read() {
     ssize_t readed;
 
     while (!setResultToBuffer(_buffer, result)) {
-        if ((readed = SSL_read(cSSL, tmp, READ_SIZE)) <= 0) {
+        if (_ssl) {
+            readed = SSL_read(cSSL, tmp, READ_SIZE);
+        }
+        else {
+            readed = ::read(_socket, tmp, READ_SIZE);
+        }
+        if (readed <= 0) {
             close();
             return std::string();
         }
-        std::cout << readed << std::endl;
         tmp[readed] = '\0';
         _buffer = tmp;
     }
@@ -133,7 +141,12 @@ bool    zia::LinuxSocket::haveSomethingToWrite() const {
 
 void    zia::LinuxSocket::flushWrite() {
     if (_writeList.size()) {
-        SSL_write(cSSL, _writeList.front().data(), sizeof(std::byte) * _writeList.front().size());
+        if (_ssl) {
+            SSL_write(cSSL, _writeList.front().data(), sizeof(std::byte) * _writeList.front().size());
+        }
+        else {
+           ::write(_socket, _writeList.front().data(), sizeof(std::byte) * _writeList.front().size());
+        }
         _writeList.pop();
     }
 }
@@ -141,6 +154,9 @@ void    zia::LinuxSocket::flushWrite() {
 zia::LinuxSocket::~LinuxSocket() {
     if (_socket != -1)
         close();
+    if (_ssl) {
+        ShutdownSSL();
+    }
 }
 
 static int password_callback(char* buffer, int num, int rwflag, void* userdata)
@@ -183,32 +199,32 @@ bool zia::LinuxSocket::openSSL()
     }
   SSL_CTX_set_default_passwd_cb(this->sslctx, password_callback);
   SSL_CTX_set_options(sslctx, SSL_OP_SINGLE_DH_USE);
-  if (SSL_CTX_use_certificate_file(sslctx, "root_ca.pem", SSL_FILETYPE_PEM) <= 0)
+  if (SSL_CTX_use_certificate_file(sslctx, SSLConfiguration::get().getCert().c_str(), SSL_FILETYPE_PEM) <= 0)
     {
-      printf("LoadCertificates: use certificate_file\n");
-      ERR_print_errors_fp(stderr);
-      abort();
+        ERR_print_errors_fp(stderr);
+        return false;
     }
   /* set the private key from KeyFile (may be the same as CertFile) */
-  if (SSL_CTX_use_PrivateKey_file(sslctx, "root_ca.key", SSL_FILETYPE_PEM) <= 0)
+  if (SSL_CTX_use_PrivateKey_file(sslctx, SSLConfiguration::get().getKey().c_str(), SSL_FILETYPE_PEM) <= 0)
     {
-      printf("LoadCertificates: use PrivateKey_file\n");
-      ERR_print_errors_fp(stderr);
-      abort();
+        ERR_print_errors_fp(stderr);
+        return false;
     }
   /* verify private key */
   if (!SSL_CTX_check_private_key(this->sslctx))
-    {
-      printf("LoadCertificates: check_private_key\n");
-      fprintf(stderr, "Private key does not match the public certificate\n");
-      abort();
-    }
+  {
+        return false;
+  }
   cSSL = SSL_new(sslctx);
   SSL_set_fd(cSSL, _socket);
   if ((SSL_accept(cSSL)) <= 0)
     {
-      ShutdownSSL();
+        ShutdownSSL();
+        DestroySSL();
+        return false;
     }
+    _ssl = true;
+    return true;
 }
 
 #endif

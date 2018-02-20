@@ -53,6 +53,7 @@ namespace zia {
       struct in_addr  sin_addr;
         std::queue<std::vector<std::byte> > _writeList;
         std::string _buffer;
+		bool	_ssl;
     };
 }
 
