@@ -58,5 +58,5 @@ add_executable(cpp_zia
         )
 
 if (UNIX)
-    target_link_libraries(cpp_zia dl)
+    target_link_libraries(cpp_zia dl pthread)
 endif()

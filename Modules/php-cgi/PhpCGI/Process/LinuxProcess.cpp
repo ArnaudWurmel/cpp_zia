@@ -6,8 +6,7 @@
 #ifndef _WIN32
 
 # include <sys/wait.h>
-# include <sys/pipe.h>
-#include <zconf.h>
+# include <unistd.h>
 #include <iostream>
 #include <memory.h>
 #include <vector>

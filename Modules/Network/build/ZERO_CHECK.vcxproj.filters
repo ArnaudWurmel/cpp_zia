@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Erwan BALLET\Desktop\cpp_zia\Modules\Network\build\CMakeFiles\5a5cfb4a75674dc1cfe157c4c8202fcf\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{0BA8E08C-3B50-3902-9E2F-AAA07F97D513}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

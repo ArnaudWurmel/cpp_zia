@@ -10,6 +10,7 @@
 #include "NetworkModule.hh"
 #include "../../../ConfParser/Configuration.h"
 #include "../Exceptions/Exceptions.hh"
+/*#include "Socket/OpenSsl.hh"*/
 
 zia::module::NetworkModule::NetworkModule() {}
 
@@ -109,13 +110,13 @@ void    zia::module::NetworkModule::monitoreSocket() {
     }
     timeout.tv_sec = 0;
     timeout.tv_usec = 100;
-    std::cout << "Waiting" << std::endl;
     if (select(zia::ISocketAcceptor::getMaxFds(_clientList, _acceptor->getServerSocket()), &rsok, &wsok, NULL, &timeout) == -1) {
         throw zia::module::NetworkException("Socket return -1");
     }
     if (FD_ISSET(_acceptor->getServerSocket(), &rsok)) {
         try {
             _clientList.push_back(std::shared_ptr<Client>(new Client(_acceptor->acceptClient())));
+	    /*_clientList.back().get()->getSocket()->openSSL();*/
         }
         catch (std::exception& e) {
             std::cerr << e.what() << std::endl;
@@ -129,7 +130,6 @@ void    zia::module::NetworkModule::monitoreSocket() {
                 (*it)->addInput((*it)->getSocket()->read((*it)->getBodySize()));
             }
             else if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok)) {
-                std::cout << "Here" << std::endl;
                 (*it)->addInput((*it)->getSocket()->read());
                 while ((*it)->getSocket()->haveAvailableInput()) {
                     (*it)->addInput((*it)->getSocket()->read());

@@ -41,4 +41,7 @@ add_library(Network SHARED
 
 if (WIN32)
     target_link_libraries(Network wsock32 ws2_32)
+else()
+    target_link_libraries(Network ssl crypto pthread)
 endif()
+
