@@ -2,12 +2,13 @@
 // Created by wurmel_a on 20/10/17.
 //
 
+#include "WindowsAcceptor.h"
 #include "ISocketAcceptor.h"
 #include "LinuxAcceptor.h"
 
 zia::ISocketAcceptor    *zia::ISocketAcceptor::getSocketAcceptor(unsigned short port) {
 #if _WIN32
-    return NULL;
+    return new WindowsAcceptor(port);
 #else
     return new LinuxAcceptor(port);
 #endif

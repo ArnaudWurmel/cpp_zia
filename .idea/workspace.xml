@@ -12,64 +12,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660496c3-f5b7-469d-ae8a-4b3ca52c989a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/Logger.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/Logger/Logger.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/Logger/Logger.hh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Logger/create.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zia_root/module_enabled/Logger.dylib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cpp_zia.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/VHostManager/VHostManager.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/Zia/Zia.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/cpp_zia.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Network/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/Client/Client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/Client/Client.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/NetworkModule.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/NetworkModule.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxAcceptor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxAcceptor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxSocket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/LinuxSocket.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/ResourceLoader/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/ResourceLoader/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/ResourceLoader/ResourceLoader/ResourceLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/ResourceLoader/ResourceLoader/ResourceLoader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/php-cgi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/php-cgi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zia/VHostManager/VHostManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/VHostManager/VHostManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zia/VHostManager/VHostManager.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/VHostManager/VHostManager.hh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zia/Zia.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/Zia.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zia/Zia.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/Zia.hh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/ISocketAcceptor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/ISocketAcceptor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/ImplSocket.h" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/NetworkModule/Socket/ImplSocket.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Network/create.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Network/create.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zia/ModuleLoader/Module.hh" beforeDir="false" afterPath="$PROJECT_DIR$/Zia/ModuleLoader/Module.hh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/HttpReceiver.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/HttpReceiver.dylib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/HttpSender.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/HttpSender.dylib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/Logger.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/Logger.dylib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/ResourceLoader.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/ResourceLoader.dylib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/network.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/network.dylib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zia_root/module_enabled/php-cgi.dylib" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/module_enabled/php-cgi.dylib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zia_root/site_enabled/test.conf" beforeDir="false" afterPath="$PROJECT_DIR$/zia_root/site_enabled/test.conf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -92,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -104,8 +62,8 @@
       <file leaf-file-name="Zia.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Zia/Zia.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
+            <state relative-caret-position="140">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
             </state>
           </provider>
         </entry>
@@ -140,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WindowsDLLManager.hpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WindowsDLLManager.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+            <state relative-caret-position="371">
+              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
               <folding>
                 <element signature="e#240#252#0" expanded="true" />
               </folding>
@@ -152,23 +110,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ADLLManager.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/ADLLManager.cpp">
+      <file leaf-file-name="VHost.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+            <state relative-caret-position="187">
+              <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinuxDLLManager.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp">
+      <file leaf-file-name="Module.hh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/Module.hh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="221">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
               <folding>
-                <element signature="e#320#332#0" expanded="true" />
+                <element signature="e#115#132#0" expanded="true" />
+                <element signature="e#877#976#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADLLManager.hh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/ADLLManager.hh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -246,21 +214,21 @@
         <option value="$PROJECT_DIR$/zia_root/errors/404.html" />
         <option value="$PROJECT_DIR$/zia_root/www/html/index.html" />
         <option value="$PROJECT_DIR$/Zia/VHostManager/VHost.hh" />
-        <option value="$PROJECT_DIR$/Zia/VHostManager/VHost.cpp" />
         <option value="$PROJECT_DIR$/zia_root/site_enabled/test.conf" />
         <option value="$PROJECT_DIR$/Modules/php-cgi/PhpCGI/PhpCGI.cpp" />
         <option value="$PROJECT_DIR$/Modules/HttpReceiver/HttpReceiver/HttpReceiver.cpp" />
         <option value="$PROJECT_DIR$/zia_root/www/html/landing/test.php" />
         <option value="$PROJECT_DIR$/Modules/php-cgi/PhpCGI/Process/LinuxProcess.cpp" />
         <option value="$PROJECT_DIR$/ConfParser/WindowsDirectoryReader.h" />
-        <option value="$PROJECT_DIR$/Zia/ModuleLoader/Module.hh" />
-        <option value="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp" />
         <option value="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/ADLLManager.cpp" />
         <option value="$PROJECT_DIR$/ConfParser/WindowsDirectoryReader.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Zia/Zia.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/ConfParser/ADirectoryReader.cpp" />
+        <option value="$PROJECT_DIR$/Zia/Zia.cpp" />
+        <option value="$PROJECT_DIR$/Zia/VHostManager/VHost.cpp" />
+        <option value="$PROJECT_DIR$/Zia/ModuleLoader/Module.hh" />
+        <option value="$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp" />
       </list>
     </option>
   </component>
@@ -272,8 +240,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1080" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -305,6 +275,11 @@
               <item name="cpp_zia" type="b2602c69:ProjectViewProjectNode" />
               <item name="cpp_zia" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_zia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_zia" type="462c0819:PsiDirectoryNode" />
+              <item name="ConfParser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cpp_zia" type="b2602c69:ProjectViewProjectNode" />
@@ -345,7 +320,8 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Network" />
+    <property name="http.client.ignore.private.env.files.were.configured" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunDashboard">
@@ -362,7 +338,7 @@
   </component>
   <component name="RunManager" selected="Application.cpp_zia">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="cpp_zia" RUN_TARGET_NAME="cpp_zia" EXPLICIT_BUILD_TARGET_NAME="all" />
-    <configuration name="cpp_zia" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-d" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cpp_zia" TARGET_NAME="cpp_zia" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="cpp_zia" RUN_TARGET_NAME="cpp_zia" />
+    <configuration name="cpp_zia" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cpp_zia" TARGET_NAME="cpp_zia" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="cpp_zia" RUN_TARGET_NAME="cpp_zia" />
     <list>
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.cpp_zia" />
@@ -397,12 +373,12 @@
       <workItem from="1519058594618" duration="18000" />
       <workItem from="1519058734837" duration="32000" />
       <workItem from="1519059266897" duration="621000" />
-      <workItem from="1519126839398" duration="1128000" />
+      <workItem from="1519126839398" duration="6385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118422000" />
+    <option name="totallyTimeSpent" value="123679000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,10 +391,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1870456" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1870456" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32889965" />
-      <window_info anchor="bottom" id="CMake" order="7" visible="true" weight="0.37749287" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.6161137" visible="true" weight="0.4074074" />
+      <window_info anchor="bottom" id="CMake" order="7" weight="0.37749287" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5271195" side_tool="true" weight="0.29493546" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.26923078" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.62980515" weight="0.477208" />
@@ -430,7 +408,6 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.6161137" weight="0.4074074" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -528,13 +505,6 @@
     <entry file="file:///usr/local/Cellar/gcc/7.3.0/include/c++/7.3.0/bits/stl_function.h" />
     <entry file="file:///usr/local/Cellar/gcc/7.3.0/include/c++/7.3.0/bits/stl_tree.h" />
     <entry file="file:///usr/local/Cellar/gcc/7.3.0/include/c++/7.3.0/bits/stl_map.h" />
-    <entry file="file://$PROJECT_DIR$/ConfParser/Configuration.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zia_root/www/html/landing/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -560,13 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="1" column="6126" selection-start-line="1" selection-start-column="6126" selection-end-line="1" selection-end-column="6126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="79" column="7" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -713,20 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/Module.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/ADLLManager.hh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/LinuxDLLManager.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -737,27 +686,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-          <folding>
-            <element signature="e#240#252#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/ADLLManager.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Zia/Zia.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="147" column="41" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -796,6 +728,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConfParser/Configuration.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zia/Zia.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zia/VHostManager/VHost.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/Module.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+          <folding>
+            <element signature="e#115#132#0" expanded="true" />
+            <element signature="e#877#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/ADLLManager.hh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+          <folding>
+            <element signature="e#240#252#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

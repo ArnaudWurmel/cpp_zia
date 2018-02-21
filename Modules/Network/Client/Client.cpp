@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <cctype>
 #include "Client.hh"
 #include "../../HttpReceiver/HttpReceiver/HttpReceiver.hh"
 

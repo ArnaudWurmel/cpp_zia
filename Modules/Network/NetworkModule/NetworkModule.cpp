@@ -2,7 +2,11 @@
 // Created by Arnaud WURMEL on 09/02/2018.
 //
 
-#include <sys/select.h>
+#ifndef _WIN32
+    #include <sys/select.h>
+#endif
+#include <memory>
+#include <thread>
 #include "NetworkModule.hh"
 #include "../../../ConfParser/Configuration.h"
 #include "../Exceptions/Exceptions.hh"

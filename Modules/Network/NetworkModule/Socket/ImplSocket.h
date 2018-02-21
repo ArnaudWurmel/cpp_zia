@@ -12,6 +12,8 @@
 
 #if !_WIN32
     typedef int SOCKET;
+#else
+    #include <WinSock2.h>
 #endif
 
 namespace zia {
@@ -29,7 +31,7 @@ namespace zia {
         virtual std::string     read(size_t size) = 0;
         virtual void    close() = 0;
         virtual bool    isOpen() const = 0;
-        virtual SOCKET&  getSocket() = 0;
+        virtual SOCKET & getSocket() = 0;
     };
 }
 

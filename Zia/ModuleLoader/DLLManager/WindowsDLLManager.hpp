@@ -15,6 +15,7 @@ namespace zia {
     class WindowsDLLManager : public ADLLManager<T> {
     public:
         explicit WindowsDLLManager(std::string const& libPath) {
+            std::cout << "here" << std::endl;
             _libPath = libPath;
         }
 
@@ -33,14 +34,13 @@ namespace zia {
             DWORD	error;
 
             _handler = LoadLibrary(path.c_str());
-           	std::cout << "Loading " << path.c_str() << std::endl;
            	if (!_handler) {
               	std::cout << "Can't instanciate module <" << GetLastError() << ">" << std::endl;
                	return false;
            	}
-           	_instancier = reinterpret_cast<T *(*)()>(GetProcAddress(_handler, "instanciateMonster"));
+           	_instancier = reinterpret_cast<T *(*)()>(GetProcAddress(_handler, "create"));
            	if ((error = GetLastError()) != NULL) {
-           	    std::cout << "Can't instanciate module <" << error << ">" << std::endl;
+           	    std::cout << "Can't instanciate module 2 <" << error << ">" << std::endl;
            	    return false;
            	}
            	return true;

@@ -37,4 +37,8 @@ add_library(Network SHARED
         ../HttpReceiver/HttpReceiver/HttpReceiver.hh
         ../HttpReceiver/HttpHandler.cpp
         ../HttpReceiver/HttpHandler.hh
-        )
+        NetworkModule/Socket/WindowsSocket.cpp NetworkModule/Socket/WindowsSocket.h NetworkModule/Socket/WindowsAcceptor.cpp NetworkModule/Socket/WindowsAcceptor.h)
+
+if (WIN32)
+    target_link_libraries(Network wsock32 ws2_32)
+endif()
