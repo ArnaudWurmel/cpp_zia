@@ -56,7 +56,12 @@ add_executable(cpp_zia
         Zia/ModuleLoader/DLLManager/WindowsDLLManager.hpp
         ${OS_ONLY_FILES}
         )
+	
+
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT cpp_zia)
 
 if (UNIX)
     target_link_libraries(cpp_zia dl pthread)
+else()
+	target_link_libraries(cpp_zia pthreadVC2)
 endif()

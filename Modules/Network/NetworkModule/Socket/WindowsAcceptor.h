@@ -25,6 +25,7 @@ namespace zia {
     private:
         std::unique_ptr<WindowsSocket>    _serverSocket;
         unsigned short  _port;
+		WSADATA	_wsaData;
     };
 
 }

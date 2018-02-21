@@ -16,7 +16,6 @@ zia::WindowsSocket::~WindowsSocket() {
 }
 
 bool zia::WindowsSocket::bind(unsigned short port) {
-    WSADATA wsaData;
     int iResult;
     struct addrinfo *result = NULL;
     struct addrinfo hints;
@@ -24,7 +23,8 @@ bool zia::WindowsSocket::bind(unsigned short port) {
     if (_socket != INVALID_SOCKET) {
         closesocket(_socket);
     }
-    iResult = WSAStartup(MAKEWORD(2,2), &wsaData);
+    iResult = WSAStartup(MAKEWORD(2, 0), &_wsaData);
+	std::cout << "StartUp : " <<  iResult << std::endl;
     if (iResult != 0)
         return false;
 
@@ -101,12 +101,12 @@ bool    zia::WindowsSocket::setResultToBuffer(std::string &buffer, std::string &
 
     while (it != buffer.end()) {
         if (*it == '\r' && (it + 1) != buffer.end() && *(it + 1) == '\n') {
-            buffer.erase(it);
-            buffer.erase(it);
+            it = buffer.erase(it);
+            it = buffer.erase(it);
             return true;
         }
         dest = dest + *it;
-        buffer.erase(it);
+        it = buffer.erase(it);
     }
     return false;
 }

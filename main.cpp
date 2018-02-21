@@ -11,6 +11,7 @@ int main(int ac, char **av) {
     }
     catch (std::exception& e) {
         std::cout << e.what() << std::endl;
+		while (1);
         return 1;
     }
     return 0;

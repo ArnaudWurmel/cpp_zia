@@ -36,6 +36,7 @@ namespace zia {
         SOCKET _socket;
         std::queue<std::vector<std::byte> > _writeList;
         std::string _buffer;
+		WSADATA _wsaData;
     };
 }
 

@@ -33,6 +33,7 @@ namespace zia {
             std::string path = _libPath + ".dll";
             DWORD	error;
 
+			std::cout << _libPath + ".dll" << std::endl;
             _handler = LoadLibrary(path.c_str());
            	if (!_handler) {
               	std::cout << "Can't instanciate module <" << GetLastError() << ">" << std::endl;

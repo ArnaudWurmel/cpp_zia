@@ -33,12 +33,10 @@ namespace zia {
 #else
                 _manager = std::shared_ptr<ADLLManager<T> >(new LinuxDLLManager<T>(*iterator + "/" + _moduleName));
 #endif
-                std::cout << "Before init" << std::endl;
                 if (_manager->init()) {
-                    std::cout << "initializec" << std::endl;
 					T	*ptr = _manager->create();
 
-					std::cout << ptr << std::endl;
+					Sleep(1);
                     _module = std::unique_ptr<T>(ptr);
 
                     if (_module) {

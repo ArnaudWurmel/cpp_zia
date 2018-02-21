@@ -58,20 +58,26 @@ void    zia::Client::startReadingBody() {
 }
 
 void    zia::Client::checkBodySize(std::string const& input) {
-    std::pair<std::string, std::string> header = getHeaderFrom(input);
-    _mustReadBody = std::equal(header.first.begin(), header.first.end(), std::string("Content-Length").begin(), [](auto a, auto b){return std::tolower(a)==std::tolower(b);});
-    if (_mustReadBody) {
-        _bodySize = std::stoi(header.second);
-    }
+	try {
+		std::pair<std::string, std::string> header = getHeaderFrom(input);
+		_mustReadBody = std::equal(header.first.begin(), header.first.end(), std::string("Content-Length").begin(), [](auto a, auto b) {return std::tolower(a) == std::tolower(b);});
+		if (_mustReadBody) {
+			_bodySize = std::stoi(header.second);
+		}
+	}
+	catch (std::exception&) {}
 }
 
 void    zia::Client::checkKeepAlive(std::string const& input) {
-    std::pair<std::string, std::string> header = getHeaderFrom(input);
+	try {
+		std::pair<std::string, std::string> header = getHeaderFrom(input);
 
-    bool state = std::equal(header.first.begin(), header.first.end(), std::string("Connection").begin(), [](auto a, auto b){return std::tolower(a)==std::tolower(b);});
-    if (state) {
-        _keepAlive = std::equal(header.second.begin(), header.second.end(), std::string("keep-alive").begin(), [](auto a, auto b){return std::tolower(a)==std::tolower(b);});
-    }
+		bool state = std::equal(header.first.begin(), header.first.end(), std::string("Connection").begin(), [](auto a, auto b) {return std::tolower(a) == std::tolower(b);});
+		if (state) {
+			_keepAlive = std::equal(header.second.begin(), header.second.end(), std::string("keep-alive").begin(), [](auto a, auto b) {return std::tolower(a) == std::tolower(b);});
+		}
+	}
+	catch (std::exception&) {}
 }
 
 void    zia::Client::endOfRequest() {
@@ -108,8 +114,8 @@ std::pair<std::string, std::string>  zia::Client::getHeaderFrom(std::string cons
     if (headerRepresentation.size() != 2) {
         headerRepresentation = zia::module::HttpReceiver::splitStringWithSeparator(input, ":", true);
     }
-    if (headerRepresentation.size() == 0) {
-        return header;
+    if (headerRepresentation.size() != 0) {
+		throw std::exception();
     }
 
     header.first = headerRepresentation[0];

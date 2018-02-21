@@ -39,8 +39,10 @@ add_library(Network SHARED
         ../HttpReceiver/HttpHandler.hh
         NetworkModule/Socket/WindowsSocket.cpp NetworkModule/Socket/WindowsSocket.h NetworkModule/Socket/WindowsAcceptor.cpp NetworkModule/Socket/WindowsAcceptor.h)
 
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Network)
+
 if (WIN32)
-    target_link_libraries(Network wsock32 ws2_32)
+    target_link_libraries(Network wsock32 ws2_32 pthreadVC2)
 else()
     target_link_libraries(Network ssl crypto pthread)
 endif()

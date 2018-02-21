@@ -111,6 +111,7 @@ void    zia::module::NetworkModule::monitoreSocket() {
     timeout.tv_sec = 0;
     timeout.tv_usec = 100;
     if (select(zia::ISocketAcceptor::getMaxFds(_clientList, _acceptor->getServerSocket()), &rsok, &wsok, NULL, &timeout) == -1) {
+		printf("select() returned with error %d\n", WSAGetLastError());
         throw zia::module::NetworkException("Socket return -1");
     }
     if (FD_ISSET(_acceptor->getServerSocket(), &rsok)) {

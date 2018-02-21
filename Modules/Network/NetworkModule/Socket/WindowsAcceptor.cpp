@@ -12,6 +12,7 @@ zia::WindowsAcceptor::WindowsAcceptor(unsigned short port) : _port(port){
 }
 
 void zia::WindowsAcceptor::startAccept() {
+	WSAStartup(MAKEWORD(2, 0), &_wsaData);
     std::cout << "Start acccept" << std::endl;
 	_serverSocket = std::unique_ptr<WindowsSocket>(new WindowsSocket());
     if (!_serverSocket->bind(_port)) {
