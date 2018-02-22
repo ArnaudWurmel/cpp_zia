@@ -1,7 +1,7 @@
 //
 // Created by Erwan BALLET on 20/02/2018.
 //
-
+#ifdef _WIN32
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include "WindowsSocket.h"
@@ -164,3 +164,4 @@ std::string zia::WindowsSocket::read(size_t size) {
     }
     return res;
 }
+ #endif

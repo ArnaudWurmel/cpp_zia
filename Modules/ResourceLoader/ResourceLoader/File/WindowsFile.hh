@@ -5,7 +5,9 @@
 #ifndef RESOURCELOADER_WINDOWSFILE_HH
 #define RESOURCELOADER_WINDOWSFILE_HH
 
+#ifdef _WIN32
 # include <Windows.h>
+#endif
 # include <sys/stat.h>
 # include "AFile.hh"
 

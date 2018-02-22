@@ -2,6 +2,7 @@
 // Created by Erwan BALLET on 20/02/2018.
 //
 
+#ifdef _WIN32
 #include <WS2tcpip.h>
 #include <iostream>
 #include "WindowsAcceptor.h"
@@ -44,3 +45,4 @@ SOCKET &zia::WindowsAcceptor::getServerSocket() {
 }
 
 zia::WindowsAcceptor::~WindowsAcceptor() = default;
+ #endif

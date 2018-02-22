@@ -44,6 +44,7 @@ namespace zia {
       	void	ShutdownSSL();
       	void	InitializeSSL();
       	void 	DestroySSL();
+      	bool	LoadCertificates();
 
     private:
         int _socket;
@@ -53,7 +54,7 @@ namespace zia {
       struct in_addr  sin_addr;
         std::queue<std::vector<std::byte> > _writeList;
         std::string _buffer;
-		bool	_ssl;
+      	bool	_ssl;
     };
 }
 

@@ -5,6 +5,7 @@
 #ifndef NETWORK_WINDOWSACCEPTOR_H
 #define NETWORK_WINDOWSACCEPTOR_H
 
+#ifdef _WIN32
 #include <WinSock2.h>
 #include "ISocketAcceptor.h"
 #include "WindowsSocket.h"
@@ -29,5 +30,5 @@ namespace zia {
     };
 
 }
-
+ #endif
 #endif //NETWORK_WINDOWSACCEPTOR_H

@@ -35,8 +35,6 @@ namespace zia {
 #endif
                 if (_manager->init()) {
 					T	*ptr = _manager->create();
-
-					Sleep(1);
                     _module = std::unique_ptr<T>(ptr);
 
                     if (_module) {

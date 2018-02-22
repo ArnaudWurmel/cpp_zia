@@ -190,6 +190,27 @@ void zia::LinuxSocket::DestroySSL()
   EVP_cleanup();
 }
 
+bool zia::LinuxSocket::LoadCertificates()
+{
+  if (SSL_CTX_use_certificate_file(sslctx, SSLConfiguration::get().getCert().c_str(), SSL_FILETYPE_PEM) <= 0)
+    {
+      ERR_print_errors_fp(stderr);
+      return false;
+    }
+  /* set the private key from KeyFile (may be the same as CertFile) */
+  if (SSL_CTX_use_PrivateKey_file(sslctx, SSLConfiguration::get().getKey().c_str(), SSL_FILETYPE_PEM) <= 0)
+    {
+      ERR_print_errors_fp(stderr);
+      return false;
+    }
+  /* verify private key */
+  if (!SSL_CTX_check_private_key(this->sslctx))
+    {
+      return false;
+    }
+  return true;
+}
+
 bool zia::LinuxSocket::openSSL()
 {
   InitializeSSL();
@@ -199,22 +220,8 @@ bool zia::LinuxSocket::openSSL()
     }
   SSL_CTX_set_default_passwd_cb(this->sslctx, password_callback);
   SSL_CTX_set_options(sslctx, SSL_OP_SINGLE_DH_USE);
-  if (SSL_CTX_use_certificate_file(sslctx, SSLConfiguration::get().getCert().c_str(), SSL_FILETYPE_PEM) <= 0)
-    {
-        ERR_print_errors_fp(stderr);
-        return false;
-    }
-  /* set the private key from KeyFile (may be the same as CertFile) */
-  if (SSL_CTX_use_PrivateKey_file(sslctx, SSLConfiguration::get().getKey().c_str(), SSL_FILETYPE_PEM) <= 0)
-    {
-        ERR_print_errors_fp(stderr);
-        return false;
-    }
-  /* verify private key */
-  if (!SSL_CTX_check_private_key(this->sslctx))
-  {
-        return false;
-  }
+  if (!LoadCertificates())
+    return false;
   cSSL = SSL_new(sslctx);
   SSL_set_fd(cSSL, _socket);
   if ((SSL_accept(cSSL)) <= 0)
