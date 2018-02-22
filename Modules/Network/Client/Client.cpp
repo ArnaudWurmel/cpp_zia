@@ -19,6 +19,7 @@ zia::Client::Client(api::ImplSocket * socket) {
 }
 
 void    zia::Client::addInput(std::string const& input) {
+	std::cout << "<" << input << ">" << std::endl;
     if (input.empty() && !_mustReadBody) {
         if (!_content.empty()) {
             endOfRequest();

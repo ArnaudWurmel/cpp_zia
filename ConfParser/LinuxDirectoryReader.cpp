@@ -2,6 +2,7 @@
 // Created by wurmel_a on 20/10/17.
 //
 
+#ifndef _WIN32
 #include <dirent.h>
 #include "LinuxDirectoryReader.h"
 
@@ -23,3 +24,4 @@ std::vector<std::string>    zia::LinuxDirectoryReader::getFileNameFor(std::strin
 }
 
 zia::LinuxDirectoryReader::~LinuxDirectoryReader() {}
+#endif

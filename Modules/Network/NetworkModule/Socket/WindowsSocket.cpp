@@ -112,6 +112,7 @@ bool    zia::WindowsSocket::setResultToBuffer(std::string &buffer, std::string &
 }
 
 void zia::WindowsSocket::write(const std::vector<std::byte> &message) {
+	std::cout << "Return : " << message.size() << std::endl;
     _writeList.push(message);
 }
 
@@ -128,7 +129,8 @@ void zia::WindowsSocket::flushWrite() {
             tmp += *reinterpret_cast<char *>(&(*it));
             ++it;
         }
-        send(_socket, tmp.c_str(), sizeof(char) * tmp.size(), 0 );
+		std::cout << "return data : " << tmp << std::endl;
+		std::cout << "Write : " << (_socket, tmp.c_str(), sizeof(char) * tmp.size(), 0) << std::endl;
         _writeList.pop();
     }
 }
@@ -143,8 +145,9 @@ std::string zia::WindowsSocket::read() {
             close();
             return std::string();
         }
-        std::cout << readed << std::endl;
+        std::cout << "readed:" << readed << std::endl;
         tmp[readed] = '\0';
+		std::cout << "Buffer : " << tmp << std::endl;
         _buffer = tmp;
     }
     return result;

@@ -59,6 +59,7 @@ bool    zia::module::HttpSender::config(const zia::api::Conf& conf) {
 bool    zia::module::HttpSender::exec(zia::api::HttpDuplex& http) {
     std::vector<std::string>    resp;
 
+	std::cout << "Exec !!!!!!!!!" << std::endl;
     http.resp.headers["Server"] = Server;
     http.resp.headers["Content-Length"] = std::to_string(static_cast<int>(http.resp.body.size()) + 1);
     if (_statusMap.find(http.resp.status) == _statusMap.end()) {

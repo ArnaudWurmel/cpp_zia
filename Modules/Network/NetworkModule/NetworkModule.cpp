@@ -33,6 +33,7 @@ bool    zia::module::NetworkModule::stop() {
 bool    zia::module::NetworkModule::send(api::ImplSocket *sock, Raw resp) {
     auto iterator = _clientList.begin();
 
+	std::cout << "onSend" << std::endl;
     while (iterator != _clientList.end()) {
         if ((*iterator)->getSocket()->getSocket() == sock->getSocket()) {
             (*iterator)->getSocket()->write(resp);
@@ -117,7 +118,6 @@ void    zia::module::NetworkModule::monitoreSocket() {
     if (FD_ISSET(_acceptor->getServerSocket(), &rsok)) {
         try {
             _clientList.push_back(std::shared_ptr<Client>(new Client(_acceptor->acceptClient())));
-	    /*_clientList.back().get()->getSocket()->openSSL();*/
         }
         catch (std::exception& e) {
             std::cerr << e.what() << std::endl;

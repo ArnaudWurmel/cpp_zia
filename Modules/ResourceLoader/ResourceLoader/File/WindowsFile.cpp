@@ -2,23 +2,22 @@
 // Created by marcha_1 on 13/02/2018.
 //
 
-#ifndef _WIN32
+#ifdef _WIN32
 // ConsoleApplication4.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 
 #include <filesystem>	
 #include <iostream>
 #include <atlstr.h>
 #include <stdlib.h>
-#include "WindowsFile.h"
+#include "WindowsFile.hh"
 
 zia::module::WindowsFile::WindowsFile() = default;
 
 bool    zia::module::WindowsFile::load(std::string const& filePath) {
 
-	if ((_attributes = GetFileAttributes(result)) == INVALID_FILE_ATTRIBUTES) {
+	if ((_attributes = GetFileAttributes(filePath.c_str())) == INVALID_FILE_ATTRIBUTES) {
 		return false;
 	}
 	_path = filePath;

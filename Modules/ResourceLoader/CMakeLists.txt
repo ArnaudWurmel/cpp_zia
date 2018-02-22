@@ -21,4 +21,7 @@ add_library(ResourceLoader SHARED
         ../../ConfParser/ADirectoryReader.cpp
         ../../ConfParser/LinuxDirectoryReader.h
         ../../ConfParser/LinuxDirectoryReader.cpp
-        ResourceLoader/ResourceLoader.cpp ResourceLoader/ResourceLoader.hh ResourceLoader/Uri/Uri.cpp ResourceLoader/Uri/Uri.hh ResourceLoader/File/AFile.hh ResourceLoader/File/AFile.cpp ResourceLoader/File/LinuxFile.cpp ResourceLoader/File/LinuxFile.hh)
+        ResourceLoader/ResourceLoader.cpp ResourceLoader/ResourceLoader.hh ResourceLoader/Uri/Uri.cpp ResourceLoader/Uri/Uri.hh ResourceLoader/File/AFile.hh ResourceLoader/File/AFile.cpp ResourceLoader/File/LinuxFile.cpp ResourceLoader/File/LinuxFile.hh ResourceLoader/File/WindowsFile.cpp ResourceLoader/File/WindowsFile.hh
+	../../ConfParser/WindowsDirectoryReader.h
+	../../ConfParser/WindowsDirectoryReader.cpp
+)

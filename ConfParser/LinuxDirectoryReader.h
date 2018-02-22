@@ -4,7 +4,7 @@
 
 #ifndef ZIA_LINUXDIRECTORYREADER_H
 #define ZIA_LINUXDIRECTORYREADER_H
-
+#ifndef _WIN32
 #include "ADirectoryReader.h"
 
 namespace zia {
@@ -17,5 +17,5 @@ namespace zia {
         std::vector<std::string>    getFileNameFor(std::string const&);
     };
 }
-
+#endif
 #endif //ZIA_LINUXDIRECTORYREADER_H

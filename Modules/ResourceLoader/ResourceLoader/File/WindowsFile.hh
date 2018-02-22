@@ -5,10 +5,11 @@
 #ifndef RESOURCELOADER_WINDOWSFILE_HH
 #define RESOURCELOADER_WINDOWSFILE_HH
 
+# include <Windows.h>
 # include <sys/stat.h>
 # include "AFile.hh"
 
-#ifndef _WIN32
+#ifdef _WIN32
 namespace zia::module {
 	class WindowsFile : public AFile {
 	public:
