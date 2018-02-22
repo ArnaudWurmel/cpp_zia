@@ -130,15 +130,12 @@ bool    zia::module::ResourceLoader::exec(zia::api::HttpDuplex &http) {
 }
 
 bool    zia::module::ResourceLoader::loadFileContent(std::shared_ptr<AFile> const &file, zia::api::HttpDuplex& http) {
-    std::ifstream t(file->getFullPath());
-    std::string str;
+    std::ifstream t(file->getFullPath(), std::ios::binary);
+    std::string str((std::istreambuf_iterator<char>(t)),
+		std::istreambuf_iterator<char>());
 
-    t.seekg(0, std::ios::end);
-    str.reserve(t.tellg());
-    t.seekg(0, std::ios::beg);
 
-    str.assign((std::istreambuf_iterator<char>(t)),
-               std::istreambuf_iterator<char>());
+	std::cout << "Size: " << str.size() << std::endl;
     auto it = str.begin();
 
     http.resp.body.clear();

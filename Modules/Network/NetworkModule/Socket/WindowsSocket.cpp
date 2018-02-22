@@ -128,7 +128,7 @@ void zia::WindowsSocket::flushWrite() {
             tmp += *reinterpret_cast<char *>(&(*it));
             ++it;
         }
-		send(_socket, tmp.c_str(), sizeof(char) * tmp.size(), 0);
+		std::cout << send(_socket, reinterpret_cast<char *>(_writeList.front().data()), sizeof(std::byte) * _writeList.front().size(), 0) << " " << tmp.size() << std::endl;
         _writeList.pop();
     }
 }
