@@ -2,12 +2,12 @@
 // Created by Erwan BALLET on 22/02/2018.
 //
 
+#ifdef _WIN32
 #include <iostream>
 #include <strsafe.h>
 #include <tchar.h>
 #include "WindowsProcess.h"
 
-#ifdef _WIN32
 zia::module::WindowsProcess::WindowsProcess() = default;
 
 zia::module::WindowsProcess::~WindowsProcess() = default;
@@ -135,4 +135,4 @@ void zia::module::WindowsProcess::ReadFromPipe()
 std::string const &zia::module::WindowsProcess::getOutput() const {
     return _output;
 }
- #endif
+#endif
