@@ -1,5 +1,5 @@
 <?php
-    print_r($_SERVER);
+    echo "Coucou"; print_r($_SERVER);
     if (isset($_SERVER["QUERY_STRING"])) {
         $_GET = parse_url($_SERVER["QUERY_STRING"]);
         if (isset($_GET['query'])) {

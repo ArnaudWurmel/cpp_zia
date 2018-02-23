@@ -40,10 +40,9 @@ namespace zia {
                	return false;
            	}
            	_instancier = reinterpret_cast<T *(*)()>(GetProcAddress(_handler, "create"));
-           	/*if ((error = GetLastError()) != NULL) {
-           	    std::cout << "Can't instanciate module 2 <" << error << ">" << std::endl;
-           	    return false;
-           	}*/
+			if (!_instancier) {
+				return false;
+			}
            	return true;
 #else
     return false;

@@ -135,7 +135,6 @@ bool    zia::module::ResourceLoader::loadFileContent(std::shared_ptr<AFile> cons
 		std::istreambuf_iterator<char>());
 
 
-	std::cout << "Size: " << str.size() << std::endl;
     auto it = str.begin();
 
     http.resp.body.clear();

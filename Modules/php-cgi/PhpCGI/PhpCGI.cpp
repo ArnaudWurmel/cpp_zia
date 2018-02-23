@@ -81,6 +81,7 @@ void    zia::module::PhpCGI::parseHeaderFromPHP(zia::api::HttpDuplex& http, std:
     auto itOut = output.begin();
     bool    end = false;
 
+	http.resp.body.clear();
     while (!end && itOut != output.end()) {
         std::string line;
 
@@ -100,8 +101,6 @@ void    zia::module::PhpCGI::parseHeaderFromPHP(zia::api::HttpDuplex& http, std:
         line.clear();
     }
     if (end && itOut != output.end()) {
-        http.resp.body.clear();
-
         while (itOut != output.end()) {
             http.resp.body.push_back(std::byte(*itOut));
             ++itOut;

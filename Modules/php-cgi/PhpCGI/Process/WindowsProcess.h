@@ -21,7 +21,7 @@ namespace zia::module {
         std::string const&  getOutput() const override;
 
     private:
-        void CreateChildProcess(std::string, char **);
+        bool CreateChildProcess(std::string);
         void WriteToPipe(zia::api::Net::Raw const& input);
         void ReadFromPipe();
 
