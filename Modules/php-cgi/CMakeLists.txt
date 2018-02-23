@@ -5,7 +5,11 @@ if (APPLE)
     set(CMAKE_CXX_COMPILER g++-7)
 endif()
 
-set(CMAKE_CXX_STANDARD 17)
+if (NOT MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
+endif()
 
 add_library(php-cgi SHARED
         create.cpp
@@ -17,10 +21,6 @@ add_library(php-cgi SHARED
         ../../Logger/Logger.cpp
         ../../Logger/LoggerHelper.hpp
         ../../Logger/LoggerConfiguration.cpp
-        ../../ConfParser/ADirectoryReader.h
-        ../../ConfParser/ADirectoryReader.cpp
-        ../../ConfParser/LinuxDirectoryReader.h
-        ../../ConfParser/LinuxDirectoryReader.cpp
         PhpCGI/Uri/Uri.cpp
         PhpCGI/Uri/Uri.hh
-        PhpCGI/PhpCGI.cpp PhpCGI/PhpCGI.hh PhpCGI/Process/AProcess.cpp PhpCGI/Process/AProcess.hh PhpCGI/Process/LinuxProcess.cpp PhpCGI/Process/LinuxProcess.hh)
+        PhpCGI/PhpCGI.cpp PhpCGI/PhpCGI.hh PhpCGI/Process/AProcess.cpp PhpCGI/Process/AProcess.hh PhpCGI/Process/LinuxProcess.cpp PhpCGI/Process/LinuxProcess.hh PhpCGI/Process/WindowsProcess.cpp PhpCGI/Process/WindowsProcess.h)

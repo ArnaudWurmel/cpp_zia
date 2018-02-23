@@ -1,0 +1,38 @@
+//
+// Created by Erwan BALLET on 22/02/2018.
+//
+
+#ifndef CPP_ZIA_WINDOWPROCESS_H
+#define CPP_ZIA_WINDOWPROCESS_H
+
+#include <vector>
+#include <windows.h>
+#include <map>
+#include "AProcess.hh"
+
+namespace zia::module {
+    class WindowsProcess : public AProcess {
+    public:
+        WindowsProcess();
+        ~WindowsProcess() override;
+
+    public:
+        bool    execute(std::vector<std::string> const& argsVec, std::map<std::string, std::string> const& env, zia::api::Net::Raw const&);
+        std::string const&  getOutput() const override;
+
+    private:
+        void CreateChildProcess(std::string, char **);
+        void WriteToPipe(zia::api::Net::Raw const& input);
+        void ReadFromPipe();
+
+
+    private:
+        HANDLE g_hChildStd_IN_Rd = nullptr;
+        HANDLE g_hChildStd_IN_Wr = nullptr;
+        HANDLE g_hChildStd_OUT_Rd = nullptr;
+        HANDLE g_hChildStd_OUT_Wr = nullptr;
+        std::string _output;
+    };
+}
+
+#endif //CPP_ZIA_WINDOWPROCESS_H
