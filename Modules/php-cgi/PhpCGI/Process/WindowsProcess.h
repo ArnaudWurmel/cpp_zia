@@ -6,9 +6,10 @@
 #define CPP_ZIA_WINDOWPROCESS_H
 
 #include <vector>
-#include <windows.h>
 #include <map>
 #include "AProcess.hh"
+#ifdef _WIN32
+#include <windows.h>
 
 namespace zia::module {
     class WindowsProcess : public AProcess {
@@ -34,5 +35,5 @@ namespace zia::module {
         std::string _output;
     };
 }
-
+ #endif
 #endif //CPP_ZIA_WINDOWPROCESS_H
