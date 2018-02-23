@@ -7,6 +7,7 @@
 #include <tchar.h>
 #include "WindowsProcess.h"
 
+#ifdef _WIN32
 zia::module::WindowsProcess::WindowsProcess() = default;
 
 zia::module::WindowsProcess::~WindowsProcess() = default;
@@ -134,3 +135,4 @@ void zia::module::WindowsProcess::ReadFromPipe()
 std::string const &zia::module::WindowsProcess::getOutput() const {
     return _output;
 }
+ #endif
