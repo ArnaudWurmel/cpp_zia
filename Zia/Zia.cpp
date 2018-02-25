@@ -22,6 +22,7 @@ zia::Zia::Zia() {
     }
     _functionPtrs.insert(std::make_pair("exit", std::bind(&zia::Zia::handleExit, this, std::placeholders::_1)));
     _functionPtrs.insert(std::make_pair("reload", std::bind(&zia::Zia::handleReload, this, std::placeholders::_1)));
+    _functionPtrs.insert(std::make_pair("debug", std::bind(&zia::Zia::handleDebug, this, std::placeholders::_1)));
 }
 
 //
@@ -49,7 +50,6 @@ void    zia::Zia::initComponent() {
             zia::LoggerConfiguration::setDebugEnabled(_configuration->get<bool>("debug"));
         }
         _vhostEnabledPath = _configuration->get<std::string>(KEY_SITE_PATH);
-        std::cout << _vhostEnabledPath << std::endl;
     }
     catch (std::exception& e) {
         say(e.what());
@@ -126,6 +126,16 @@ std::vector<std::string>    zia::Zia::getTokenFrom(std::string const& input) {
 
 void    zia::Zia::handleExit(std::vector<std::string> const &) {
     _vHostManager->stop();
+}
+
+void    zia::Zia::handleDebug(std::vector<std::string> const &) {
+    LoggerConfiguration::setDebugEnabled(!LoggerConfiguration::isDebugEnabled());
+    if (LoggerConfiguration::isDebugEnabled()) {
+        std::cout << "Debug is now enabled" << std::endl;
+    }
+    else {
+        std::cout << "Debug is now disabled" << std::endl;
+    }
 }
 
 void    zia::Zia::handleReload(std::vector<std::string> const &) {

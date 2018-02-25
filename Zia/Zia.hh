@@ -40,6 +40,7 @@ namespace zia {
     private:
         void    handleExit(std::vector<std::string> const&);
         void    handleReload(std::vector<std::string> const&);
+        void    handleDebug(std::vector<std::string> const&);
 
     private:
         std::vector<std::string>    getTokenFrom(std::string const&);
