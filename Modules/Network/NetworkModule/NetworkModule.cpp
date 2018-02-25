@@ -33,7 +33,6 @@ bool    zia::module::NetworkModule::stop() {
 bool    zia::module::NetworkModule::send(api::ImplSocket *sock, Raw resp) {
     auto iterator = _clientList.begin();
 
-	std::cout << "onSend" << std::endl;
     while (iterator != _clientList.end()) {
         if ((*iterator)->getSocket()->getSocket() == sock->getSocket()) {
             (*iterator)->getSocket()->write(resp);
@@ -125,7 +124,6 @@ void    zia::module::NetworkModule::monitoreSocket() {
     it = _clientList.begin();
     while (it != _clientList.end()) {
         if (FD_ISSET((*it)->getSocket()->getSocket(), &rsok) || ((*it)->isReadingBody() && (*it)->getSocket()->haveAvailableInput((*it)->getBodySize()))) {
-            std::cout << (*it)->isReadingBody() << " " << (*it)->getSocket()->haveAvailableInput((*it)->getBodySize()) << std::endl;
             if ((*it)->isReadingBody() && (*it)->getSocket()->haveAvailableInput((*it)->getBodySize())) {
                 (*it)->addInput((*it)->getSocket()->read((*it)->getBodySize()));
             }
