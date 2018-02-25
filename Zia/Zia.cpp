@@ -140,7 +140,7 @@ void    zia::Zia::handleReload(std::vector<std::string> const &) {
         throw e;
     }
     initComponent();
-    startVHosts();
+    _vHostManager->run();
     std::cout << "Reloaded" << std::endl;
 }
 
