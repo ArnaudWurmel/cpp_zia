@@ -9,7 +9,7 @@ A module is a C++-based shared library that has a symbol named "create" and retu
 
 These modules can be combined into a pipeline.
 
-### Built-in modules:
+## Built-in modules:
 **HttpReceiver**: parse the http request
 
 **HttpSender**: set the http response
@@ -24,7 +24,7 @@ These modules can be combined into a pipeline.
 
 **php-cgi**: Execute php codes when needed (files ending with .php[1,2,3,...])
 
-### Team:
+## The team:
 thibaud.marchand@epitech.eu
 
 erwan.ballet@epitech.eu
